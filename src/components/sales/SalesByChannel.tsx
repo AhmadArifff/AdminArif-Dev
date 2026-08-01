@@ -23,7 +23,7 @@ export default function SalesByChannel() {
 
   const options: ApexOptions = {
     chart: {
-      fontFamily: "Outfit, sans-serif",
+      fontFamily: "'Outfit', sans-serif",
       type: "donut",
     },
     colors: ["#3641F5", "#7592FF", "#DDE9FF"],
@@ -31,7 +31,16 @@ export default function SalesByChannel() {
     legend: {
       show: true,
       position: "bottom",
-      fontFamily: "Outfit",
+      horizontalAlign: "center",
+      fontFamily: "'Outfit', sans-serif",
+      markers: {
+        radius: 12,
+      },
+    },
+    stroke: {
+      show: true,
+      colors: ["#ffffff"],
+      width: 2,
     },
     plotOptions: {
       pie: {
@@ -68,7 +77,7 @@ export default function SalesByChannel() {
 
   return (
     <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] sm:p-6">
-      <div className="flex items-center justify-between mb-9">
+      <div className="flex items-center justify-between">
         <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
           Sales by Channel
         </h3>
@@ -91,16 +100,14 @@ export default function SalesByChannel() {
         </div>
       </div>
       
-      <div>
-        <div className="flex justify-center mx-auto">
-          <ReactApexChart
-            options={options}
-            series={series}
-            type="donut"
-            height={286}
-          />
-        </div>
+      <div className="mt-8 flex justify-center mx-auto">
+        <ReactApexChart
+          options={options}
+          series={series}
+          type="donut"
+          height={286}
+        />
       </div>
     </div>
   );
-};
+}

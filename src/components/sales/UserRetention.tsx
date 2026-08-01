@@ -11,24 +11,29 @@ export default function UserRetention() {
   const options: ApexOptions = {
     chart: {
       type: "radialBar",
-      sparkline: {
-        enabled: true,
-      },
+      fontFamily: "'Outfit', sans-serif",
+      sparkline: { enabled: true },
     },
-    colors: ["#465FFF"],
+    colors: ["#3641F5"],
     plotOptions: {
       radialBar: {
-        hollow: {
-          size: "65%",
-        },
+        hollow: { size: "65%" },
+        track: { background: "#F3F4F6", margin: 0 },
         dataLabels: {
-          show: false,
+          show: true,
+          name: { show: false },
+          value: {
+            show: true,
+            fontSize: "14px",
+            fontWeight: 600,
+            offsetY: 5,
+            color: "#1F2937",
+            formatter: (val) => val + "%"
+          },
         },
       },
     },
-    stroke: {
-      lineCap: "round",
-    },
+    stroke: { lineCap: "round" },
   };
 
   const series = [24];
@@ -45,16 +50,13 @@ export default function UserRetention() {
           </p>
         </div>
         
-        <div className="relative">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-xl font-bold text-gray-800 dark:text-white/90">24%</span>
-          </div>
+        <div>
           <ReactApexChart
             options={options}
             series={series}
             type="radialBar"
-            height={120}
-            width={120}
+            height={100}
+            width={100}
           />
         </div>
       </div>
