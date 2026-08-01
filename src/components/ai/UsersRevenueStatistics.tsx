@@ -8,6 +8,10 @@ const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 export const UsersRevenueStatistics = () => {
   const [activeTab, setActiveTab] = useState("Monthly");
 
+  const formatYAxis = (val: number) => {
+    return (val / 1000) + "k";
+  };
+
   const options: ApexOptions = {
     legend: {
       show: true,
@@ -19,26 +23,27 @@ export const UsersRevenueStatistics = () => {
     chart: {
       fontFamily: "Outfit, sans-serif",
       height: 450,
-      type: "bar",
+      type: "area",
       toolbar: {
         show: false,
       },
     },
-    plotOptions: {
-      bar: {
-        horizontal: false,
-        columnWidth: "40%",
-        borderRadius: 4,
-        borderRadiusApplication: "end",
-      },
-    },
+    plotOptions: {},
     dataLabels: {
       enabled: false,
     },
     stroke: {
       show: true,
-      width: 4,
-      colors: ["transparent"],
+      curve: "straight",
+      width: [2, 2],
+      colors: ["#465FFF", "#9CB9FF"],
+    },
+    fill: {
+      type: "gradient",
+      gradient: {
+        opacityFrom: 0.55,
+        opacityTo: 0,
+      },
     },
     xaxis: {
       categories: [
@@ -68,7 +73,7 @@ export const UsersRevenueStatistics = () => {
           fontSize: "12px",
           colors: ["#6B7280"],
         },
-        formatter: (val) => `${val / 1000}k`,
+        formatter: formatYAxis,
       },
     },
     grid: {
@@ -78,9 +83,7 @@ export const UsersRevenueStatistics = () => {
         },
       },
     },
-    fill: {
-      opacity: 1,
-    },
+
     tooltip: {
       y: {
         formatter: (val) => `${val}`,
@@ -129,7 +132,7 @@ export const UsersRevenueStatistics = () => {
 
       <div className="custom-scrollbar max-w-full overflow-x-auto">
         <div className="-ml-4 min-w-0 flex-shrink-0 pl-2 xl:min-w-full">
-          <Chart options={options} series={series} type="bar" height={450} />
+          <Chart options={options} series={series} type="area" height={450} />
         </div>
       </div>
     </div>
