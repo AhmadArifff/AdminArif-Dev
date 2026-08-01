@@ -31,7 +31,7 @@ export const ApiTokenUsages = () => {
       position: "bottom",
       horizontalAlign: "center",
       markers: {
-        radius: 12,
+        shape: "circle",
       },
     },
     plotOptions: {
