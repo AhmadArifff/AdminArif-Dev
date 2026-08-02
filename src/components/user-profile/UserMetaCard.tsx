@@ -22,10 +22,11 @@ export default function UserMetaCard() {
           <div className="flex flex-col items-center w-full gap-6 xl:flex-row">
             <div className="w-20 h-20 overflow-hidden border border-gray-200 rounded-full dark:border-gray-800">
               <Image
-                width={80}
-                height={80}
+                width={160}
+                height={160}
                 src="/images/logo/90535516.jpg"
                 alt="user"
+                className="h-full w-full object-cover rounded-full"
               />
             </div>
             <div className="order-3 xl:order-2">
