@@ -204,7 +204,7 @@ export const InvoicesTable = () => {
           </svg>
          </button>
         </div>
-        <div className="z-10" data-popper-placement="bottom-end" style={{}}>
+        <div className="z-10 hidden absolute right-0 top-full mt-2" data-popper-placement="bottom-end" style={{}}>
          <div className="p-2 bg-white border border-gray-200 rounded-2xl shadow-lg dark:border-gray-800 dark:bg-gray-900 w-40" style={{}}>
           <div aria-labelledby="options-menu" aria-orientation="vertical" className="space-y-1" role="menu">
            <button className="text-xs flex w-full rounded-lg px-3 py-2 text-left font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300">
@@ -277,7 +277,7 @@ export const InvoicesTable = () => {
           </svg>
          </button>
         </div>
-        <div className="z-10" data-popper-placement="bottom-end" style={{}}>
+        <div className="z-10 hidden absolute right-0 top-full mt-2" data-popper-placement="bottom-end" style={{}}>
          <div className="p-2 bg-white border border-gray-200 rounded-2xl shadow-lg dark:border-gray-800 dark:bg-gray-900 w-40" style={{}}>
           <div aria-labelledby="options-menu" aria-orientation="vertical" className="space-y-1" role="menu">
            <button className="text-xs flex w-full rounded-lg px-3 py-2 text-left font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300">
