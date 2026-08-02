@@ -1,6 +1,14 @@
+"use client";
+import { useState } from "react";
 import React from "react";
 
 export const InvoicesTable = () => {
+  const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+
+  const toggleDropdown = (index: number) => {
+    setOpenDropdown(openDropdown === index ? null : index);
+  };
+
   return (
     <>
 <div className="overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03]">
@@ -194,17 +202,17 @@ export const InvoicesTable = () => {
       </span>
      </td>
      <td className="p-4 whitespace-nowrap">
-      <div className="relative flex justify-center dropdown">
+      <div className={`relative flex justify-center dropdown ${openDropdown === 0 ? 'z-50' : ''}`}>
        <div>
         <div>
-         <button className="text-gray-500 dark:text-gray-400">
+         <button onClick={() => toggleDropdown(0)} className="text-gray-500 dark:text-gray-400">
           <svg className="fill-current" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
            <path clipRule="evenodd" d="M5.99902 10.245C6.96552 10.245 7.74902 11.0285 7.74902 11.995V12.005C7.74902 12.9715 6.96552 13.755 5.99902 13.755C5.03253 13.755 4.24902 12.9715 4.24902 12.005V11.995C4.24902 11.0285 5.03253 10.245 5.99902 10.245ZM17.999 10.245C18.9655 10.245 19.749 11.0285 19.749 11.995V12.005C19.749 12.9715 18.9655 13.755 17.999 13.755C17.0325 13.755 16.249 12.9715 16.249 12.005V11.995C16.249 11.0285 17.0325 10.245 17.999 10.245ZM13.749 11.995C13.749 11.0285 12.9655 10.245 11.999 10.245C11.0325 10.245 10.249 11.0285 10.249 11.995V12.005C10.249 12.9715 11.0325 13.755 11.999 13.755C12.9655 13.755 13.749 12.9715 13.749 12.005V11.995Z" fill="" fillRule="evenodd">
            </path>
           </svg>
          </button>
         </div>
-        <div className="z-10 hidden absolute right-0 top-full mt-2" data-popper-placement="bottom-end" style={{}}>
+        <div className={`z-10 absolute right-4 top-full mt-2 ${openDropdown === 0 ? 'block' : 'hidden'}`} data-popper-placement="bottom-end" style={{}}>
          <div className="p-2 bg-white border border-gray-200 rounded-2xl shadow-lg dark:border-gray-800 dark:bg-gray-900 w-40" style={{}}>
           <div aria-labelledby="options-menu" aria-orientation="vertical" className="space-y-1" role="menu">
            <button className="text-xs flex w-full rounded-lg px-3 py-2 text-left font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300">
@@ -267,17 +275,17 @@ export const InvoicesTable = () => {
       </span>
      </td>
      <td className="p-4 whitespace-nowrap">
-      <div className="relative flex justify-center dropdown">
+      <div className={`relative flex justify-center dropdown ${openDropdown === 1 ? 'z-50' : ''}`}>
        <div>
         <div>
-         <button className="text-gray-500 dark:text-gray-400">
+         <button onClick={() => toggleDropdown(1)} className="text-gray-500 dark:text-gray-400">
           <svg className="fill-current" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
            <path clipRule="evenodd" d="M5.99902 10.245C6.96552 10.245 7.74902 11.0285 7.74902 11.995V12.005C7.74902 12.9715 6.96552 13.755 5.99902 13.755C5.03253 13.755 4.24902 12.9715 4.24902 12.005V11.995C4.24902 11.0285 5.03253 10.245 5.99902 10.245ZM17.999 10.245C18.9655 10.245 19.749 11.0285 19.749 11.995V12.005C19.749 12.9715 18.9655 13.755 17.999 13.755C17.0325 13.755 16.249 12.9715 16.249 12.005V11.995C16.249 11.0285 17.0325 10.245 17.999 10.245ZM13.749 11.995C13.749 11.0285 12.9655 10.245 11.999 10.245C11.0325 10.245 10.249 11.0285 10.249 11.995V12.005C10.249 12.9715 11.0325 13.755 11.999 13.755C12.9655 13.755 13.749 12.9715 13.749 12.005V11.995Z" fill="" fillRule="evenodd">
            </path>
           </svg>
          </button>
         </div>
-        <div className="z-10 hidden absolute right-0 top-full mt-2" data-popper-placement="bottom-end" style={{}}>
+        <div className={`z-10 absolute right-4 top-full mt-2 ${openDropdown === 1 ? 'block' : 'hidden'}`} data-popper-placement="bottom-end" style={{}}>
          <div className="p-2 bg-white border border-gray-200 rounded-2xl shadow-lg dark:border-gray-800 dark:bg-gray-900 w-40" style={{}}>
           <div aria-labelledby="options-menu" aria-orientation="vertical" className="space-y-1" role="menu">
            <button className="text-xs flex w-full rounded-lg px-3 py-2 text-left font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300">
@@ -340,10 +348,10 @@ export const InvoicesTable = () => {
       </span>
      </td>
      <td className="p-4 whitespace-nowrap">
-      <div className="relative flex justify-center dropdown">
+      <div className={`relative flex justify-center dropdown ${openDropdown === 2 ? 'z-50' : ''}`}>
        <div>
         <div>
-         <button className="text-gray-500 dark:text-gray-400">
+         <button onClick={() => toggleDropdown(2)} className="text-gray-500 dark:text-gray-400">
           <svg className="fill-current" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
            <path clipRule="evenodd" d="M5.99902 10.245C6.96552 10.245 7.74902 11.0285 7.74902 11.995V12.005C7.74902 12.9715 6.96552 13.755 5.99902 13.755C5.03253 13.755 4.24902 12.9715 4.24902 12.005V11.995C4.24902 11.0285 5.03253 10.245 5.99902 10.245ZM17.999 10.245C18.9655 10.245 19.749 11.0285 19.749 11.995V12.005C19.749 12.9715 18.9655 13.755 17.999 13.755C17.0325 13.755 16.249 12.9715 16.249 12.005V11.995C16.249 11.0285 17.0325 10.245 17.999 10.245ZM13.749 11.995C13.749 11.0285 12.9655 10.245 11.999 10.245C11.0325 10.245 10.249 11.0285 10.249 11.995V12.005C10.249 12.9715 11.0325 13.755 11.999 13.755C12.9655 13.755 13.749 12.9715 13.749 12.005V11.995Z" fill="" fillRule="evenodd">
            </path>
@@ -413,10 +421,10 @@ export const InvoicesTable = () => {
       </span>
      </td>
      <td className="p-4 whitespace-nowrap">
-      <div className="relative flex justify-center dropdown">
+      <div className={`relative flex justify-center dropdown ${openDropdown === 3 ? 'z-50' : ''}`}>
        <div>
         <div>
-         <button className="text-gray-500 dark:text-gray-400">
+         <button onClick={() => toggleDropdown(3)} className="text-gray-500 dark:text-gray-400">
           <svg className="fill-current" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
            <path clipRule="evenodd" d="M5.99902 10.245C6.96552 10.245 7.74902 11.0285 7.74902 11.995V12.005C7.74902 12.9715 6.96552 13.755 5.99902 13.755C5.03253 13.755 4.24902 12.9715 4.24902 12.005V11.995C4.24902 11.0285 5.03253 10.245 5.99902 10.245ZM17.999 10.245C18.9655 10.245 19.749 11.0285 19.749 11.995V12.005C19.749 12.9715 18.9655 13.755 17.999 13.755C17.0325 13.755 16.249 12.9715 16.249 12.005V11.995C16.249 11.0285 17.0325 10.245 17.999 10.245ZM13.749 11.995C13.749 11.0285 12.9655 10.245 11.999 10.245C11.0325 10.245 10.249 11.0285 10.249 11.995V12.005C10.249 12.9715 11.0325 13.755 11.999 13.755C12.9655 13.755 13.749 12.9715 13.749 12.005V11.995Z" fill="" fillRule="evenodd">
            </path>
@@ -486,10 +494,10 @@ export const InvoicesTable = () => {
       </span>
      </td>
      <td className="p-4 whitespace-nowrap">
-      <div className="relative flex justify-center dropdown">
+      <div className={`relative flex justify-center dropdown ${openDropdown === 4 ? 'z-50' : ''}`}>
        <div>
         <div>
-         <button className="text-gray-500 dark:text-gray-400">
+         <button onClick={() => toggleDropdown(4)} className="text-gray-500 dark:text-gray-400">
           <svg className="fill-current" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
            <path clipRule="evenodd" d="M5.99902 10.245C6.96552 10.245 7.74902 11.0285 7.74902 11.995V12.005C7.74902 12.9715 6.96552 13.755 5.99902 13.755C5.03253 13.755 4.24902 12.9715 4.24902 12.005V11.995C4.24902 11.0285 5.03253 10.245 5.99902 10.245ZM17.999 10.245C18.9655 10.245 19.749 11.0285 19.749 11.995V12.005C19.749 12.9715 18.9655 13.755 17.999 13.755C17.0325 13.755 16.249 12.9715 16.249 12.005V11.995C16.249 11.0285 17.0325 10.245 17.999 10.245ZM13.749 11.995C13.749 11.0285 12.9655 10.245 11.999 10.245C11.0325 10.245 10.249 11.0285 10.249 11.995V12.005C10.249 12.9715 11.0325 13.755 11.999 13.755C12.9655 13.755 13.749 12.9715 13.749 12.005V11.995Z" fill="" fillRule="evenodd">
            </path>
@@ -559,10 +567,10 @@ export const InvoicesTable = () => {
       </span>
      </td>
      <td className="p-4 whitespace-nowrap">
-      <div className="relative flex justify-center dropdown">
+      <div className={`relative flex justify-center dropdown ${openDropdown === 5 ? 'z-50' : ''}`}>
        <div>
         <div>
-         <button className="text-gray-500 dark:text-gray-400">
+         <button onClick={() => toggleDropdown(5)} className="text-gray-500 dark:text-gray-400">
           <svg className="fill-current" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
            <path clipRule="evenodd" d="M5.99902 10.245C6.96552 10.245 7.74902 11.0285 7.74902 11.995V12.005C7.74902 12.9715 6.96552 13.755 5.99902 13.755C5.03253 13.755 4.24902 12.9715 4.24902 12.005V11.995C4.24902 11.0285 5.03253 10.245 5.99902 10.245ZM17.999 10.245C18.9655 10.245 19.749 11.0285 19.749 11.995V12.005C19.749 12.9715 18.9655 13.755 17.999 13.755C17.0325 13.755 16.249 12.9715 16.249 12.005V11.995C16.249 11.0285 17.0325 10.245 17.999 10.245ZM13.749 11.995C13.749 11.0285 12.9655 10.245 11.999 10.245C11.0325 10.245 10.249 11.0285 10.249 11.995V12.005C10.249 12.9715 11.0325 13.755 11.999 13.755C12.9655 13.755 13.749 12.9715 13.749 12.005V11.995Z" fill="" fillRule="evenodd">
            </path>
@@ -632,10 +640,10 @@ export const InvoicesTable = () => {
       </span>
      </td>
      <td className="p-4 whitespace-nowrap">
-      <div className="relative flex justify-center dropdown">
+      <div className={`relative flex justify-center dropdown ${openDropdown === 6 ? 'z-50' : ''}`}>
        <div>
         <div>
-         <button className="text-gray-500 dark:text-gray-400">
+         <button onClick={() => toggleDropdown(6)} className="text-gray-500 dark:text-gray-400">
           <svg className="fill-current" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
            <path clipRule="evenodd" d="M5.99902 10.245C6.96552 10.245 7.74902 11.0285 7.74902 11.995V12.005C7.74902 12.9715 6.96552 13.755 5.99902 13.755C5.03253 13.755 4.24902 12.9715 4.24902 12.005V11.995C4.24902 11.0285 5.03253 10.245 5.99902 10.245ZM17.999 10.245C18.9655 10.245 19.749 11.0285 19.749 11.995V12.005C19.749 12.9715 18.9655 13.755 17.999 13.755C17.0325 13.755 16.249 12.9715 16.249 12.005V11.995C16.249 11.0285 17.0325 10.245 17.999 10.245ZM13.749 11.995C13.749 11.0285 12.9655 10.245 11.999 10.245C11.0325 10.245 10.249 11.0285 10.249 11.995V12.005C10.249 12.9715 11.0325 13.755 11.999 13.755C12.9655 13.755 13.749 12.9715 13.749 12.005V11.995Z" fill="" fillRule="evenodd">
            </path>
@@ -705,10 +713,10 @@ export const InvoicesTable = () => {
       </span>
      </td>
      <td className="p-4 whitespace-nowrap">
-      <div className="relative flex justify-center dropdown">
+      <div className={`relative flex justify-center dropdown ${openDropdown === 7 ? 'z-50' : ''}`}>
        <div>
         <div>
-         <button className="text-gray-500 dark:text-gray-400">
+         <button onClick={() => toggleDropdown(7)} className="text-gray-500 dark:text-gray-400">
           <svg className="fill-current" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
            <path clipRule="evenodd" d="M5.99902 10.245C6.96552 10.245 7.74902 11.0285 7.74902 11.995V12.005C7.74902 12.9715 6.96552 13.755 5.99902 13.755C5.03253 13.755 4.24902 12.9715 4.24902 12.005V11.995C4.24902 11.0285 5.03253 10.245 5.99902 10.245ZM17.999 10.245C18.9655 10.245 19.749 11.0285 19.749 11.995V12.005C19.749 12.9715 18.9655 13.755 17.999 13.755C17.0325 13.755 16.249 12.9715 16.249 12.005V11.995C16.249 11.0285 17.0325 10.245 17.999 10.245ZM13.749 11.995C13.749 11.0285 12.9655 10.245 11.999 10.245C11.0325 10.245 10.249 11.0285 10.249 11.995V12.005C10.249 12.9715 11.0325 13.755 11.999 13.755C12.9655 13.755 13.749 12.9715 13.749 12.005V11.995Z" fill="" fillRule="evenodd">
            </path>
@@ -778,10 +786,10 @@ export const InvoicesTable = () => {
       </span>
      </td>
      <td className="p-4 whitespace-nowrap">
-      <div className="relative flex justify-center dropdown">
+      <div className={`relative flex justify-center dropdown ${openDropdown === 8 ? 'z-50' : ''}`}>
        <div>
         <div>
-         <button className="text-gray-500 dark:text-gray-400">
+         <button onClick={() => toggleDropdown(8)} className="text-gray-500 dark:text-gray-400">
           <svg className="fill-current" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
            <path clipRule="evenodd" d="M5.99902 10.245C6.96552 10.245 7.74902 11.0285 7.74902 11.995V12.005C7.74902 12.9715 6.96552 13.755 5.99902 13.755C5.03253 13.755 4.24902 12.9715 4.24902 12.005V11.995C4.24902 11.0285 5.03253 10.245 5.99902 10.245ZM17.999 10.245C18.9655 10.245 19.749 11.0285 19.749 11.995V12.005C19.749 12.9715 18.9655 13.755 17.999 13.755C17.0325 13.755 16.249 12.9715 16.249 12.005V11.995C16.249 11.0285 17.0325 10.245 17.999 10.245ZM13.749 11.995C13.749 11.0285 12.9655 10.245 11.999 10.245C11.0325 10.245 10.249 11.0285 10.249 11.995V12.005C10.249 12.9715 11.0325 13.755 11.999 13.755C12.9655 13.755 13.749 12.9715 13.749 12.005V11.995Z" fill="" fillRule="evenodd">
            </path>
@@ -851,10 +859,10 @@ export const InvoicesTable = () => {
       </span>
      </td>
      <td className="p-4 whitespace-nowrap">
-      <div className="relative flex justify-center dropdown">
+      <div className={`relative flex justify-center dropdown ${openDropdown === 9 ? 'z-50' : ''}`}>
        <div>
         <div>
-         <button className="text-gray-500 dark:text-gray-400">
+         <button onClick={() => toggleDropdown(9)} className="text-gray-500 dark:text-gray-400">
           <svg className="fill-current" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
            <path clipRule="evenodd" d="M5.99902 10.245C6.96552 10.245 7.74902 11.0285 7.74902 11.995V12.005C7.74902 12.9715 6.96552 13.755 5.99902 13.755C5.03253 13.755 4.24902 12.9715 4.24902 12.005V11.995C4.24902 11.0285 5.03253 10.245 5.99902 10.245ZM17.999 10.245C18.9655 10.245 19.749 11.0285 19.749 11.995V12.005C19.749 12.9715 18.9655 13.755 17.999 13.755C17.0325 13.755 16.249 12.9715 16.249 12.005V11.995C16.249 11.0285 17.0325 10.245 17.999 10.245ZM13.749 11.995C13.749 11.0285 12.9655 10.245 11.999 10.245C11.0325 10.245 10.249 11.0285 10.249 11.995V12.005C10.249 12.9715 11.0325 13.755 11.999 13.755C12.9655 13.755 13.749 12.9715 13.749 12.005V11.995Z" fill="" fillRule="evenodd">
            </path>
