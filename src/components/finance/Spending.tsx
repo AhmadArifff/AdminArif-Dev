@@ -1,5 +1,7 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import { Dropdown } from "@/components/ui/dropdown/Dropdown";
+import { DropdownItem } from "@/components/ui/dropdown/DropdownItem";
 import dynamic from "next/dynamic";
 import { ApexOptions } from "apexcharts";
 
@@ -9,6 +11,11 @@ const ReactApexChart = dynamic(() => import("react-apexcharts"), {
 });
 
 export default function Spending() {
+
+  const [periodOpen, setPeriodOpen] = useState(false);
+  const [selectedPeriod, setSelectedPeriod] = useState('Yearly');
+  const periods = ['Yearly', 'Monthly', 'Weekly'];
+
   const options: ApexOptions = {
     chart: {
       type: "bar",
