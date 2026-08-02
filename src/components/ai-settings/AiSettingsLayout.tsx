@@ -3,17 +3,14 @@
 import React from "react";
 import { SettingsSidebar } from "./SettingsSidebar";
 import { AccountSettings } from "./AccountSettings";
+import { MobileHeader } from "./MobileHeader";
 
-export const AiSettingsLayout = () => {
+export const AISettingsLayout = () => {
   return (
-    <div className="flex h-[calc(100vh-theme(spacing.header))] flex-col sm:flex-row">
-      {/* Sidebar for settings */}
+    <div className="relative overflow-hidden bg-white p-5 xl:flex xl:h-[calc(100vh-76px)] xl:p-0 dark:border-gray-800 dark:bg-gray-900">
+      <MobileHeader />
       <SettingsSidebar />
-
-      {/* Main content area */}
-      <main className="h-full flex-1 overflow-y-auto no-scrollbar">
-        <AccountSettings />
-      </main>
+      <AccountSettings />
     </div>
   );
 };
