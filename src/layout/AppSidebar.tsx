@@ -47,6 +47,20 @@ const navItems: NavItem[] = [
   },
   {
     icon: (
+      <svg height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="1em" className="fill-current"><path d="M18.75 2.42969V7.70424M9.42261 13.673C10.0259 14.4307 10.9562 14.9164 12 14.9164C13.0438 14.9164 13.9742 14.4307 14.5775 13.673M20 12V18.5C20 19.3284 19.3284 20 18.5 20H5.5C4.67157 20 4 19.3284 4 18.5V12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path><path d="M18.75 2.42969V2.43969M9.50391 9.875L9.50391 9.885M14.4961 9.875V9.885" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
+    ),
+    name: "AI Assistant",
+    new: true,
+    subItems: [
+      { name: "Text Generator", path: "/text-generator", pro: false },
+      { name: "Image Generator", path: "/image-generator", pro: false },
+      { name: "Code Generator", path: "/code-generator", pro: false },
+      { name: "Video Generator", path: "/video-generator", pro: false },
+      { name: "AI Settings", path: "/ai-settings", pro: false },
+    ],
+  },
+  {
+    icon: (
       <svg
         className="fill-current"
         width="24"
@@ -71,20 +85,6 @@ const navItems: NavItem[] = [
       { name: "Create Invoice", path: "/ecommerce/create-invoice", pro: false },
       { name: "Transactions", path: "/ecommerce/transactions", pro: false },
       { name: "Single Transaction", path: "/ecommerce/single-transaction", pro: false },
-    ],
-  },
-  {
-    icon: (
-      <svg height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="1em" className="fill-current"><path d="M18.75 2.42969V7.70424M9.42261 13.673C10.0259 14.4307 10.9562 14.9164 12 14.9164C13.0438 14.9164 13.9742 14.4307 14.5775 13.673M20 12V18.5C20 19.3284 19.3284 20 18.5 20H5.5C4.67157 20 4 19.3284 4 18.5V12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path><path d="M18.75 2.42969V2.43969M9.50391 9.875L9.50391 9.885M14.4961 9.875V9.885" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
-    ),
-    name: "AI Assistant",
-    new: true,
-    subItems: [
-      { name: "Text Generator", path: "/text-generator", pro: false },
-      { name: "Image Generator", path: "/image-generator", pro: false },
-      { name: "Code Generator", path: "/code-generator", pro: false },
-      { name: "Video Generator", path: "/video-generator", pro: false },
-      { name: "AI Settings", path: "/ai-settings", pro: false },
     ],
   },
   {
