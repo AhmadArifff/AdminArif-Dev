@@ -39,6 +39,7 @@ const navItems: NavItem[] = [
       { name: "SaaS", path: "/saas", pro: false },
       { name: "Logistics", path: "/logistics", pro: false },
       { name: "AI", path: "/ai", new: true, pro: false },
+      { name: "Text Generator", path: "/text-generator", new: true, pro: false },
       { name: "Sales", path: "/sales", pro: false },
       { name: "Finance", path: "/finance", new: true, pro: false },
     ],
