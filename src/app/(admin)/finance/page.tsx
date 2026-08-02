@@ -21,24 +21,18 @@ export default function FinancePage() {
         <FinanceMetrics />
       </div>
 
-      {/* Cashflow & MyCards Row */}
-      <div className="col-span-12 grid grid-cols-12 gap-4 md:gap-6 2xl:gap-7.5">
-        <div className="col-span-12 xl:col-span-8">
-          <CashflowOverview />
-        </div>
-        <div className="col-span-12 xl:col-span-4">
-          <MyCards />
+      {/* Main Content Area */}
+      <div className="col-span-12 xl:col-span-8 flex flex-col gap-4 md:gap-6 2xl:gap-7.5">
+        <CashflowOverview />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 2xl:gap-7.5">
+          <Spending />
+          <QuickSend />
         </div>
       </div>
 
-      {/* Spending & QuickSend Row */}
-      <div className="col-span-12 grid grid-cols-12 gap-4 md:gap-6 2xl:gap-7.5">
-        <div className="col-span-12 xl:col-span-6">
-          <Spending />
-        </div>
-        <div className="col-span-12 xl:col-span-6">
-          <QuickSend />
-        </div>
+      {/* Right Sidebar: My Cards */}
+      <div className="col-span-12 xl:col-span-4">
+        <MyCards />
       </div>
 
       {/* Bottom Table: Recent Transactions */}

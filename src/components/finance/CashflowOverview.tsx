@@ -20,7 +20,7 @@ export default function CashflowOverview() {
     plotOptions: {
       bar: {
         horizontal: false,
-        columnWidth: "12px",
+        columnWidth: "30%",
         borderRadius: 2,
         borderRadiusApplication: "end",
         borderRadiusWhenStacked: "all",

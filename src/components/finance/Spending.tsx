@@ -19,7 +19,7 @@ export default function Spending() {
     plotOptions: {
       bar: {
         horizontal: true,
-        barHeight: "50%",
+        barHeight: "100%",
         borderRadius: 2,
       },
     },
