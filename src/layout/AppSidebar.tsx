@@ -23,6 +23,8 @@ type NavItem = {
   name: string;
   icon: React.ReactNode;
   path?: string;
+  new?: boolean;
+  pro?: boolean;
   subItems?: { name: string; path: string; pro?: boolean; new?: boolean }[];
 };
 
@@ -40,6 +42,49 @@ const navItems: NavItem[] = [
       { name: "Logistics", path: "/logistics", pro: false },
       { name: "AI", path: "/ai", new: true, pro: false },
       { name: "Sales", path: "/sales", pro: false },
+      { name: "Finance", path: "/finance", new: true, pro: false },
+    ],
+  },
+  {
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.75 2.42969V7.70424M9.42261 13.673C10.0259 14.4307 10.9562 14.9164 12 14.9164C13.0438 14.9164 13.9742 14.4307 14.5775 13.673M20 12V18.5C20 19.3284 19.3284 20 18.5 20H5.5C4.67157 20 4 19.3284 4 18.5V12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path><path d="M18.75 2.42969V2.43969M9.50391 9.875L9.50391 9.885M14.4961 9.875V9.885" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
+    ),
+    name: "AI Assistant",
+    new: true,
+    subItems: [
+      { name: "Text Generator", path: "/text-generator", pro: false },
+      { name: "Image Generator", path: "/image-generator", pro: false },
+      { name: "Code Generator", path: "/code-generator", pro: false },
+      { name: "Video Generator", path: "/video-generator", pro: false },
+      { name: "AI Settings", path: "/ai-settings", pro: false },
+    ],
+  },
+  {
+    icon: (
+      <svg
+        className="fill-current"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7 18C5.9 18 5.01 18.9 5.01 20C5.01 21.1 5.9 22 7 22C8.1 22 9 21.1 9 20C9 18.9 8.1 18 7 18ZM1 2V4H3L6.6 11.59L5.24 14.04C5.09 14.32 5 14.65 5 15C5 16.1 5.9 17 7 17H19V15H7.42C7.28 15 7.17 14.89 7.17 14.75L7.2 14.63L8.1 13H15.55C16.3 13 16.96 12.59 17.3 11.97L20.88 5.48C20.96 5.34 21 5.17 21 5C21 4.45 20.55 4 20 4H5.21L4.27 2H1ZM17 18C15.9 18 15.01 18.9 15.01 20C15.01 21.1 15.9 22 17 22C18.1 22 19 21.1 19 20C19 18.9 18.1 18 17 18Z"
+          fill="currentColor"
+        />
+      </svg>
+    ),
+    name: "E-commerce",
+    subItems: [
+      { name: "Products", path: "/ecommerce/products", pro: false },
+      { name: "Add Product", path: "/ecommerce/add-product", pro: false },
+      { name: "Billing", path: "/ecommerce/billing", pro: false },
+      { name: "Invoices", path: "/ecommerce/invoices", pro: false },
+      { name: "Single Invoice", path: "/ecommerce/single-invoice", pro: false },
+      { name: "Create Invoice", path: "/ecommerce/create-invoice", pro: false },
+      { name: "Transactions", path: "/ecommerce/transactions", pro: false },
+      { name: "Single Transaction", path: "/ecommerce/single-transaction", pro: false },
     ],
   },
   {
@@ -138,17 +183,33 @@ const AppSidebar: React.FC = () => {
                 {nav.icon}
               </span>
               {(isExpanded || isHovered || isMobileOpen) && (
-                <span className={`menu-item-text`}>{nav.name}</span>
-              )}
-              {(isExpanded || isHovered || isMobileOpen) && (
-                <ChevronDownIcon
-                  className={`ml-auto w-5 h-5 transition-transform duration-200  ${
-                    openSubmenu?.type === menuType &&
-                    openSubmenu?.index === index
-                      ? "rotate-180 text-brand-500"
-                      : ""
-                  }`}
-                />
+                <>
+                  <span className={`menu-item-text`}>{nav.name}</span>
+                  <div className="ml-auto flex items-center gap-2">
+                    {(nav.new || nav.pro) && (
+                      <span className="flex items-center gap-1">
+                        {nav.new && (
+                          <span className={`menu-dropdown-badge-active menu-dropdown-badge `}>
+                            NEW
+                          </span>
+                        )}
+                        {nav.pro && (
+                          <span className={`menu-dropdown-badge-active menu-dropdown-badge `}>
+                            PRO
+                          </span>
+                        )}
+                      </span>
+                    )}
+                    <ChevronDownIcon
+                      className={`w-5 h-5 transition-transform duration-200  ${
+                        openSubmenu?.type === menuType &&
+                        openSubmenu?.index === index
+                          ? "rotate-180 text-brand-500"
+                          : ""
+                      }`}
+                    />
+                  </div>
+                </>
               )}
             </button>
           ) : (
@@ -160,7 +221,7 @@ const AppSidebar: React.FC = () => {
                 }`}
               >
                 <span
-                  className={`${
+                  className={`menu-item-icon-size ${
                     isActive(nav.path)
                       ? "menu-item-icon-active"
                       : "menu-item-icon-inactive"
