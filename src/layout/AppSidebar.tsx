@@ -23,6 +23,8 @@ type NavItem = {
   name: string;
   icon: React.ReactNode;
   path?: string;
+  new?: boolean;
+  pro?: boolean;
   subItems?: { name: string; path: string; pro?: boolean; new?: boolean }[];
 };
 
@@ -39,9 +41,34 @@ const navItems: NavItem[] = [
       { name: "SaaS", path: "/saas", pro: false },
       { name: "Logistics", path: "/logistics", pro: false },
       { name: "AI", path: "/ai", new: true, pro: false },
-      { name: "Text Generator", path: "/text-generator", new: true, pro: false },
       { name: "Sales", path: "/sales", pro: false },
       { name: "Finance", path: "/finance", new: true, pro: false },
+    ],
+  },
+  {
+    icon: (
+      <svg
+        className="fill-current"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM15 13H9V11H15V13Z"
+          fill="currentColor"
+        />
+      </svg>
+    ),
+    name: "AI Assistant",
+    new: true,
+    subItems: [
+      { name: "Text Generator", path: "/text-generator", pro: false },
+      { name: "Image Generator", path: "/image-generator", pro: false },
+      { name: "Code Generator", path: "/code-generator", pro: false },
+      { name: "Video Generator", path: "/video-generator", pro: false },
+      { name: "AI Settings", path: "/ai-settings", pro: false },
     ],
   },
   {
@@ -140,7 +167,23 @@ const AppSidebar: React.FC = () => {
                 {nav.icon}
               </span>
               {(isExpanded || isHovered || isMobileOpen) && (
-                <span className={`menu-item-text`}>{nav.name}</span>
+                <>
+                  <span className={`menu-item-text`}>{nav.name}</span>
+                  {(nav.new || nav.pro) && (
+                    <span className="flex items-center gap-1 ml-auto">
+                      {nav.new && (
+                        <span className={`menu-dropdown-badge-active menu-dropdown-badge `}>
+                          NEW
+                        </span>
+                      )}
+                      {nav.pro && (
+                        <span className={`menu-dropdown-badge-active menu-dropdown-badge `}>
+                          PRO
+                        </span>
+                      )}
+                    </span>
+                  )}
+                </>
               )}
               {(isExpanded || isHovered || isMobileOpen) && (
                 <ChevronDownIcon
