@@ -35,7 +35,10 @@ export default function CodeChatSidebar() {
 
   return (
     <aside className="z-50 w-[280px] flex-col h-full border-l border-gray-200 bg-white p-6 ease-in-out dark:border-gray-800 dark:bg-gray-900 hidden xl:flex relative">
-      <button className="bg-brand-500 hover:bg-brand-600 flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium text-white transition">
+      <button 
+        onClick={() => alert("Mock: New Chat started!")}
+        className="bg-brand-500 hover:bg-brand-600 flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium text-white transition"
+      >
         <Plus className="size-5" />
         New Chat
       </button>
@@ -85,17 +88,26 @@ export default function CodeChatSidebar() {
                   <div className="absolute right-0 top-full z-10 mt-1 w-40 rounded-lg bg-white p-1.5 shadow-theme-md dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
                     <ul className="space-y-1">
                       <li>
-                        <button className="flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-900">
+                        <button 
+                          onClick={() => { alert("Mock: Starred chat"); setActiveDropdown(null); }}
+                          className="flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-900"
+                        >
                           <Star className="size-4" /> Add Starred
                         </button>
                       </li>
                       <li>
-                        <button className="flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-900">
+                        <button 
+                          onClick={() => { alert("Mock: Rename chat"); setActiveDropdown(null); }}
+                          className="flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-900"
+                        >
                           <Edit2 className="size-4" /> Rename
                         </button>
                       </li>
                       <li>
-                        <button className="flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-900">
+                        <button 
+                          onClick={() => { alert("Mock: Delete chat"); setActiveDropdown(null); }}
+                          className="flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-sm text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10"
+                        >
                           <Trash2 className="size-4" /> Delete
                         </button>
                       </li>
@@ -136,17 +148,26 @@ export default function CodeChatSidebar() {
                   <div className="absolute right-0 top-full z-10 mt-1 w-40 rounded-lg bg-white p-1.5 shadow-theme-md dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
                     <ul className="space-y-1">
                       <li>
-                        <button className="flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-900">
+                        <button 
+                          onClick={() => { alert("Mock: Starred chat"); setActiveDropdown(null); }}
+                          className="flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-900"
+                        >
                           <Star className="size-4" /> Add Starred
                         </button>
                       </li>
                       <li>
-                        <button className="flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-900">
+                        <button 
+                          onClick={() => { alert("Mock: Rename chat"); setActiveDropdown(null); }}
+                          className="flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-900"
+                        >
                           <Edit2 className="size-4" /> Rename
                         </button>
                       </li>
                       <li>
-                        <button className="flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-900">
+                        <button 
+                          onClick={() => { alert("Mock: Delete chat"); setActiveDropdown(null); }}
+                          className="flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-sm text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10"
+                        >
                           <Trash2 className="size-4" /> Delete
                         </button>
                       </li>

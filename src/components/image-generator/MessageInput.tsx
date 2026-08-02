@@ -1,19 +1,47 @@
-import React from "react";
+"use client";
+
+import React, { useState, useRef } from "react";
+import { Check } from "lucide-react";
 
 export const MessageInput = () => {
+  const [message, setMessage] = useState("");
+  const [isRecording, setIsRecording] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [selectedModel, setSelectedModel] = useState("Nano Banana Pro");
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      if (message.trim()) {
+        alert("Mock: Prompt submitted: " + message);
+        setMessage("");
+      }
+    }
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      alert("Mock: File attached - " + e.target.files[0].name);
+    }
+  };
+
   return (
     <>
       <div className="fixed bottom-5 lg:bottom-10 left-1/2 z-20 w-full -translate-x-1/2 transform px-4 sm:px-6 lg:px-8">
         <div className="mx-auto w-full max-w-[720px] rounded-2xl border border-gray-200 bg-white p-3 shadow-xs dark:border-gray-700 dark:bg-white/5">
           <textarea
-            placeholder="Type your prompt here..."
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder="Type your prompt here... (Press Enter to submit)"
             className="h-20 w-full resize-none border-none bg-transparent p-2 font-normal text-gray-800 outline-none placeholder:text-gray-400 focus:ring-0 dark:text-white"
           ></textarea>
           <div className="flex items-center justify-between pt-2">
             <div className="flex items-center gap-2">
               <span className="inline-flex">
                 <label className="flex size-9 cursor-pointer items-center justify-center gap-1.5 rounded-lg border border-gray-200 text-sm text-gray-500 dark:hover:bg-gray-900 hover:text-gray-700 dark:border-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
-                  <input className="sr-only" type="file" />
+                  <input ref={fileInputRef} onChange={handleFileChange} className="sr-only" type="file" />
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="1em"

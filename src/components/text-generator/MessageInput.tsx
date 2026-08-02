@@ -1,18 +1,39 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 
 export const MessageInput = () => {
+  const [message, setMessage] = useState("");
+  const [isRecording, setIsRecording] = useState(false);
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      if (message.trim()) {
+        alert("Mock: Prompt submitted: " + message);
+        setMessage("");
+      }
+    }
+  };
+
   return (
     <div className="fixed bottom-5 lg:bottom-10 left-1/2 z-20 w-full -translate-x-1/2 transform px-4 sm:px-6 lg:px-8">
       <div className="mx-auto w-full max-w-[720px] rounded-2xl border border-gray-200 bg-white p-3 shadow-xs dark:border-gray-700 dark:bg-white/5">
         <textarea
-          placeholder="Type your prompt here..."
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          onKeyDown={handleKeyDown}
+          placeholder="Type your prompt here... (Press Enter to submit)"
           className="h-20 w-full resize-none border-none bg-transparent p-2 font-normal text-gray-800 outline-none placeholder:text-gray-400 focus:ring-0 dark:text-white"
         ></textarea>
         <div className="flex items-center justify-between pt-2">
           <div className="flex items-center gap-1">
             <div className="relative">
-              <button className="flex size-9 items-center justify-center gap-1.5 rounded-lg border border-gray-100 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-gray-300">
+              <button 
+                onClick={() => alert("Mock: Open file picker")}
+                className="flex size-9 items-center justify-center gap-1.5 rounded-lg border border-gray-100 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-gray-300"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1em"
@@ -64,7 +85,10 @@ export const MessageInput = () => {
                 </svg>
               </button>
             </div>
-            <button className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gray-900 text-white transition hover:bg-gray-800 dark:bg-white/90 dark:text-gray-800 dark:hover:bg-gray-900 dark:hover:text-white/90">
+            <button 
+              onClick={() => setIsRecording(!isRecording)}
+              className={`inline-flex h-9 w-9 items-center justify-center rounded-lg transition ${isRecording ? "bg-red-500 text-white" : "bg-gray-900 text-white hover:bg-gray-800 dark:bg-white/90 dark:text-gray-800 dark:hover:bg-gray-900 dark:hover:text-white/90"}`}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="1em"

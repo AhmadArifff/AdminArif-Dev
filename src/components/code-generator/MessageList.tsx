@@ -5,7 +5,11 @@ import Image from "next/image";
 import { Copy, Code2, Check } from "lucide-react";
 
 export default function MessageList() {
-  const [copied, setCopied] = React.useState(false);
+  const [copiedCode, setCopiedCode] = React.useState(false);
+  const [copiedUser, setCopiedUser] = React.useState(false);
+  const [isEditing, setIsEditing] = React.useState(false);
+
+  const userMessage = "Create a login form in HTML with Google and GitHub authentication.";
 
   const codeSnippet = `<!DOCTYPE html>
 <html lang="en">
@@ -27,10 +31,16 @@ export default function MessageList() {
 </body>
 </html>`;
 
-  const copyToClipboard = () => {
+  const copyCode = () => {
     navigator.clipboard.writeText(codeSnippet);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setCopiedCode(true);
+    setTimeout(() => setCopiedCode(false), 2000);
+  };
+
+  const copyUserText = () => {
+    navigator.clipboard.writeText(userMessage);
+    setCopiedUser(true);
+    setTimeout(() => setCopiedUser(false), 2000);
   };
 
   return (
@@ -41,13 +51,20 @@ export default function MessageList() {
           <div className="max-w-[480px] w-full">
             <div className="ml-auto w-full max-w-[480px]">
               <div className="shadow-theme-xs bg-gray-100 dark:bg-gray-800 rounded-xl rounded-tr-xs px-4 py-3">
-                <p className="text-left text-base leading-6 font-normal text-gray-800 dark:text-white/90">
-                  Create a login form in HTML with Google and GitHub authentication.
-                </p>
+                {isEditing ? (
+                  <textarea className="w-full bg-transparent outline-none text-gray-800 dark:text-white/90 border border-gray-300 dark:border-gray-600 rounded p-1" defaultValue={userMessage} />
+                ) : (
+                  <p className="text-left text-base leading-6 font-normal text-gray-800 dark:text-white/90">
+                    {userMessage}
+                  </p>
+                )}
               </div>
               <div className="mt-2 flex justify-end">
                 <span className="inline-flex">
-                  <button className="group flex size-8 items-center justify-center rounded-lg p-2 text-sm font-medium text-gray-800 hover:bg-gray-100 hover:text-gray-900 dark:border-white/5 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white/90">
+                  <button 
+                    onClick={() => setIsEditing(!isEditing)}
+                    className={`group flex size-8 items-center justify-center rounded-lg p-2 text-sm font-medium hover:bg-gray-100 dark:border-white/5 dark:hover:bg-gray-800 transition-colors ${isEditing ? "bg-gray-200 text-brand-500 dark:bg-gray-700" : "text-gray-800 dark:text-gray-400 dark:bg-gray-900 hover:text-gray-900 dark:hover:text-white/90"}`}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="1em"
@@ -67,23 +84,28 @@ export default function MessageList() {
                   </button>
                 </span>
                 <span className="inline-flex">
-                  <button className="group flex size-8 items-center justify-center rounded-lg p-2 text-sm font-medium text-gray-800 hover:bg-gray-100 hover:text-gray-900 dark:border-white/5 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white/90">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="1em"
-                      height="1em"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      className="size-4"
-                    >
-                      <path
-                        d="M11.3253 11.3301H5.67033C5.11804 11.3301 4.67033 10.8824 4.67033 10.3301V4.67513M11.3253 11.3301L11.3253 12.3327C11.3253 12.885 10.8776 13.3327 10.3253 13.3327H3.66772C3.11544 13.3327 2.66772 12.885 2.66772 12.3327V5.67513C2.66772 5.12285 3.11544 4.67513 3.66772 4.67513H4.67033M11.3253 11.3301H12.3321C12.8844 11.3301 13.3321 10.8824 13.3321 10.3301L13.3321 3.66699C13.3321 3.11471 12.8844 2.66699 12.3321 2.66699H5.67033C5.11804 2.66699 4.67033 3.11471 4.67033 3.66699V4.67513"
-                        stroke="currentColor"
-                        strokeWidth="1.2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      ></path>
-                    </svg>
+                  <button 
+                    onClick={copyUserText}
+                    className="group flex size-8 items-center justify-center rounded-lg p-2 text-sm font-medium text-gray-800 hover:bg-gray-100 hover:text-gray-900 dark:border-white/5 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white/90"
+                  >
+                    {copiedUser ? <Check className="size-4 text-green-500" /> : (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        className="size-4"
+                      >
+                        <path
+                          d="M11.3253 11.3301H5.67033C5.11804 11.3301 4.67033 10.8824 4.67033 10.3301V4.67513M11.3253 11.3301L11.3253 12.3327C11.3253 12.885 10.8776 13.3327 10.3253 13.3327H3.66772C3.11544 13.3327 2.66772 12.885 2.66772 12.3327V5.67513C2.66772 5.12285 3.11544 4.67513 3.66772 4.67513H4.67033M11.3253 11.3301H12.3321C12.8844 11.3301 13.3321 10.8824 13.3321 10.3301L13.3321 3.66699C13.3321 3.11471 12.8844 2.66699 12.3321 2.66699H5.67033C5.11804 2.66699 4.67033 3.11471 4.67033 3.66699V4.67513"
+                          stroke="currentColor"
+                          strokeWidth="1.2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        ></path>
+                      </svg>
+                    )}
                   </button>
                 </span>
               </div>
@@ -124,11 +146,11 @@ export default function MessageList() {
                       <div className="flex gap-2">
                         <span className="inline-flex">
                           <button
-                            onClick={copyToClipboard}
+                            onClick={copyCode}
                             className="inline-flex size-8 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 transition-colors"
                             title="Copy code"
                           >
-                            {copied ? (
+                            {copiedCode ? (
                               <Check className="size-4 text-green-500" />
                             ) : (
                               <Copy className="size-4" />

@@ -1,10 +1,15 @@
+"use client";
+
 import React from "react";
 
 export const ChatHeader = () => {
   return (
     <div className="mb-4 flex items-center justify-between xl:p-4">
       <div className="relative">
-        <button className="flex items-center gap-3 rounded-lg bg-transparent px-2 py-1 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800">
+        <button 
+          onClick={() => alert("Mock: Open chat options")}
+          className="flex items-center gap-3 rounded-lg bg-transparent px-2 py-1 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800"
+        >
           Generate responsive login
           <svg
             width="1em"
@@ -24,7 +29,10 @@ export const ChatHeader = () => {
           </svg>
         </button>
       </div>
-      <button className="flex items-center gap-1.5 rounded-[10px] border border-gray-200 bg-white px-3 py-2 text-sm text-gray-700 transition-all hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-900">
+      <button 
+        onClick={() => alert("Mock: Share chat")}
+        className="flex items-center gap-1.5 rounded-[10px] border border-gray-200 bg-white px-3 py-2 text-sm text-gray-700 transition-all hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-900"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1em"

@@ -1,10 +1,15 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 
 export const ChatSidebar = () => {
   return (
     <aside className="z-50 w-[280px] flex-col h-full border-l border-gray-200 bg-white p-6 ease-in-out dark:border-gray-800 dark:bg-gray-900 hidden xl:flex relative">
-      <button className="bg-brand-500 hover:bg-brand-600 flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium text-white transition">
+      <button 
+        onClick={() => alert("Mock: New Chat started!")}
+        className="bg-brand-500 hover:bg-brand-600 flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium text-white transition"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1em"
@@ -66,7 +71,10 @@ export const ChatSidebar = () => {
                 >
                   Write a follow-up email to a client
                 </Link>
-                <button className="dropdown-toggle invisible ml-2 rounded-full p-1 text-gray-700 group-hover:visible hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400">
+                <button 
+                  onClick={() => alert("Mock: Open chat options")}
+                  className="dropdown-toggle invisible ml-2 rounded-full p-1 text-gray-700 group-hover:visible hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -93,7 +101,10 @@ export const ChatSidebar = () => {
                 >
                   Generate responsive login form layout
                 </Link>
-                <button className="dropdown-toggle invisible ml-2 rounded-full p-1 text-gray-700 group-hover:visible hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400">
+                <button 
+                  onClick={() => alert("Mock: Open chat options")}
+                  className="dropdown-toggle invisible ml-2 rounded-full p-1 text-gray-700 group-hover:visible hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -120,7 +131,10 @@ export const ChatSidebar = () => {
                 >
                   Create a warning state modal
                 </Link>
-                <button className="dropdown-toggle invisible ml-2 rounded-full p-1 text-gray-700 group-hover:visible hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400">
+                <button 
+                  onClick={() => alert("Mock: Open chat options")}
+                  className="dropdown-toggle invisible ml-2 rounded-full p-1 text-gray-700 group-hover:visible hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -147,7 +161,10 @@ export const ChatSidebar = () => {
                 >
                   Suggest color palette for dark theme
                 </Link>
-                <button className="dropdown-toggle invisible ml-2 rounded-full p-1 text-gray-700 group-hover:visible hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400">
+                <button 
+                  onClick={() => alert("Mock: Open chat options")}
+                  className="dropdown-toggle invisible ml-2 rounded-full p-1 text-gray-700 group-hover:visible hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -180,7 +197,10 @@ export const ChatSidebar = () => {
                 >
                   Improve login page accessibility
                 </Link>
-                <button className="dropdown-toggle invisible ml-2 rounded-full p-1 text-gray-700 group-hover:visible hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400">
+                <button 
+                  onClick={() => alert("Mock: Open chat options")}
+                  className="dropdown-toggle invisible ml-2 rounded-full p-1 text-gray-700 group-hover:visible hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -207,7 +227,10 @@ export const ChatSidebar = () => {
                 >
                   Create a warning state modal with animation
                 </Link>
-                <button className="dropdown-toggle invisible ml-2 rounded-full p-1 text-gray-700 group-hover:visible hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400">
+                <button 
+                  onClick={() => alert("Mock: Open chat options")}
+                  className="dropdown-toggle invisible ml-2 rounded-full p-1 text-gray-700 group-hover:visible hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -234,7 +257,10 @@ export const ChatSidebar = () => {
                 >
                   Add password visibility toggle
                 </Link>
-                <button className="dropdown-toggle invisible ml-2 rounded-full p-1 text-gray-700 group-hover:visible hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400">
+                <button 
+                  onClick={() => alert("Mock: Open chat options")}
+                  className="dropdown-toggle invisible ml-2 rounded-full p-1 text-gray-700 group-hover:visible hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -261,7 +287,10 @@ export const ChatSidebar = () => {
                 >
                   Write validation logic for login form...
                 </Link>
-                <button className="dropdown-toggle invisible ml-2 rounded-full p-1 text-gray-700 group-hover:visible hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400">
+                <button 
+                  onClick={() => alert("Mock: Open chat options")}
+                  className="dropdown-toggle invisible ml-2 rounded-full p-1 text-gray-700 group-hover:visible hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -288,7 +317,10 @@ export const ChatSidebar = () => {
                 >
                   Fix mobile responsiveness of login UI...
                 </Link>
-                <button className="dropdown-toggle invisible ml-2 rounded-full p-1 text-gray-700 group-hover:visible hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400">
+                <button 
+                  onClick={() => alert("Mock: Open chat options")}
+                  className="dropdown-toggle invisible ml-2 rounded-full p-1 text-gray-700 group-hover:visible hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
