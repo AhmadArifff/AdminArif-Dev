@@ -154,7 +154,7 @@ export const MessageInput = () => {
                     width="18"
                     height="18"
                     alt="Nano Banana"
-                    src="./React.js AI Image Generator _ TailAdmin - React.js Admin Dashboard Template_files/nanobanana.svg"
+                    src="/images/brand/brand-01.svg"
                   />
                   <span>Nano Banana Pro</span>
                   <svg

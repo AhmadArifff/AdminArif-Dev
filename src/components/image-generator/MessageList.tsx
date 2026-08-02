@@ -66,7 +66,7 @@ export const MessageList = () => {
                 <p className="mb-2 flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400">
                   <img
                     alt="model"
-                    src="./React.js AI Image Generator _ TailAdmin - React.js Admin Dashboard Template_files/nanobanana.svg"
+                    src="/images/brand/brand-01.svg"
                   />
                   Nano Banana 2.0
                 </p>
@@ -79,7 +79,7 @@ export const MessageList = () => {
                   <img
                     className="w-full rounded-xl border border-gray-100 object-cover dark:border-gray-700"
                     alt=""
-                    src="./React.js AI Image Generator _ TailAdmin - React.js Admin Dashboard Template_files/img-1.png"
+                    src="/images/cards/card-01.png"
                   />
                   <div className="absolute right-0 bottom-0 left-0 flex translate-y-full items-center justify-between px-3 py-3 opacity-0 transition-all duration-300 ease-in-out group-hover:translate-y-0 group-hover:opacity-100">
                     <div className="flex items-center gap-2">

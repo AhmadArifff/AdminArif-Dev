@@ -100,7 +100,7 @@ export default function MessageList() {
                   width={18}
                   height={18}
                   alt="model"
-                  src="/images/logo/claude.svg"
+                  src="/images/brand/claude.svg"
                 />
                 Claude Sonnet 4.6
               </p>

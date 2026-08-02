@@ -29,7 +29,7 @@ export default function MessageInput() {
                   width={18}
                   height={18}
                   alt="claude"
-                  src="/images/logo/claude.svg"
+                  src="/images/brand/claude.svg"
                 />
                 <span>Claude Sonnet 4.6</span>
                 <ChevronDown className="size-4 transition-transform duration-150" />
