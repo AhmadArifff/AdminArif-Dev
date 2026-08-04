@@ -43,6 +43,15 @@ const initialItems: InvoiceItem[] = [
 export const CreateInvoiceTable: React.FC = () => {
   const [items, setItems] = useState<InvoiceItem[]>(initialItems);
 
+  // Add Product Form State
+  const [newProductName, setNewProductName] = useState("");
+  const [newProductPrice, setNewProductPrice] = useState<string | number>("");
+  const [newProductQty, setNewProductQty] = useState(1);
+  const [newProductDiscount, setNewProductDiscount] = useState(0);
+
+  // Preview Modal State
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+
   const handleItemChange = (
     id: string,
     field: keyof InvoiceItem,
@@ -58,19 +67,30 @@ export const CreateInvoiceTable: React.FC = () => {
     );
   };
 
-  const handleAddItem = () => {
-    const newItem: InvoiceItem = {
-      id: Date.now().toString(),
-      productName: "",
-      quantity: 1,
-      unitCost: 0,
-      discount: 0,
-    };
-    setItems([...items, newItem]);
-  };
-
   const handleRemoveItem = (id: string) => {
     setItems(items.filter((item) => item.id !== id));
+  };
+
+  const handleSaveProduct = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    if (!newProductName.trim()) return;
+
+    const priceNum = Number(newProductPrice) || 0;
+    const newItem: InvoiceItem = {
+      id: Date.now().toString(),
+      productName: newProductName.trim(),
+      quantity: newProductQty > 0 ? newProductQty : 1,
+      unitCost: priceNum,
+      discount: newProductDiscount,
+    };
+
+    setItems((prev) => [...prev, newItem]);
+
+    // Reset Form
+    setNewProductName("");
+    setNewProductPrice("");
+    setNewProductQty(1);
+    setNewProductDiscount(0);
   };
 
   const calculateRowTotal = (item: InvoiceItem) => {
@@ -80,9 +100,13 @@ export const CreateInvoiceTable: React.FC = () => {
   };
 
   const subtotal = items.reduce((acc, item) => acc + calculateRowTotal(item), 0);
+  const vatRate = 0.1; // 10%
+  const vatAmount = subtotal * vatRate;
+  const grandTotal = subtotal + vatAmount;
 
   return (
     <div className="p-5 lg:p-6">
+      {/* Table Section */}
       <div className="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-800">
         <table className="min-w-full divide-y divide-gray-200 text-left dark:divide-gray-800">
           <thead className="bg-gray-50 dark:bg-gray-900/50">
@@ -190,50 +214,243 @@ export const CreateInvoiceTable: React.FC = () => {
         </table>
       </div>
 
-      <div className="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <button
-          type="button"
-          onClick={handleAddItem}
-          className="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-white/[0.03]"
-        >
-          <svg
-            className="w-5 h-5 fill-current"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M10 4.25C10.4142 4.25 10.75 4.58579 10.75 5V9.25H15C15.4142 9.25 15.75 9.58579 15.75 10C15.75 10.4142 15.4142 10.75 15 10.75H10.75V15C10.75 15.4142 10.4142 15.75 10 15.75C9.58579 15.75 9.25 15.4142 9.25 15V10.75H5C4.58579 10.75 4.25 10.4142 4.25 10C4.25 9.58579 4.58579 9.25 5 9.25H9.25V5C9.25 4.58579 9.58579 4.25 10 4.25Z"
+      {/* Add Product Form Section */}
+      <form onSubmit={handleSaveProduct} className="mt-6 rounded-2xl border border-gray-200 bg-gray-50/50 p-5 lg:p-6 dark:border-gray-800 dark:bg-white/[0.02]">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-12 lg:items-end">
+          {/* Product Name */}
+          <div className="lg:col-span-4">
+            <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-300">
+              Product Name
+            </label>
+            <input
+              type="text"
+              placeholder="Enter product name"
+              value={newProductName}
+              onChange={(e) => setNewProductName(e.target.value)}
+              className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-500 focus:outline-none dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-gray-500"
             />
-          </svg>
-          Add Item
-        </button>
+          </div>
 
-        <div className="flex flex-col gap-2 text-right sm:min-w-[240px]">
+          {/* Price */}
+          <div className="lg:col-span-3">
+            <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-300">
+              Price
+            </label>
+            <input
+              type="text"
+              placeholder="Enter product price"
+              value={newProductPrice}
+              onChange={(e) => setNewProductPrice(e.target.value)}
+              className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-500 focus:outline-none dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-gray-500"
+            />
+          </div>
+
+          {/* Quantity Stepper */}
+          <div className="lg:col-span-2">
+            <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-300">
+              Quantity
+            </label>
+            <div className="flex items-center rounded-xl border border-gray-200 bg-white shadow-theme-xs dark:border-gray-700 dark:bg-gray-900">
+              <button
+                type="button"
+                onClick={() => setNewProductQty((q) => Math.max(1, q - 1))}
+                className="flex h-11 w-11 items-center justify-center text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white"
+              >
+                &minus;
+              </button>
+              <input
+                type="number"
+                min="1"
+                value={newProductQty}
+                onChange={(e) => setNewProductQty(Math.max(1, Number(e.target.value)))}
+                className="w-full text-center text-sm font-medium text-gray-800 focus:outline-none dark:bg-transparent dark:text-white"
+              />
+              <button
+                type="button"
+                onClick={() => setNewProductQty((q) => q + 1)}
+                className="flex h-11 w-11 items-center justify-center text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white"
+              >
+                &#43;
+              </button>
+            </div>
+          </div>
+
+          {/* Discount Dropdown */}
+          <div className="lg:col-span-2">
+            <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-300">
+              Discount
+            </label>
+            <select
+              value={newProductDiscount}
+              onChange={(e) => setNewProductDiscount(Number(e.target.value))}
+              className="w-full appearance-none rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-800 shadow-theme-xs focus:border-brand-500 focus:outline-none dark:border-gray-700 dark:bg-gray-900 dark:text-white/90"
+            >
+              <option value={0}>0%</option>
+              <option value={5}>5%</option>
+              <option value={10}>10%</option>
+              <option value={15}>15%</option>
+              <option value={20}>20%</option>
+              <option value={25}>25%</option>
+              <option value={50}>50%</option>
+            </select>
+          </div>
+
+          {/* Save Product Button */}
+          <div className="lg:col-span-1">
+            <button
+              type="submit"
+              className="w-full rounded-xl bg-brand-500 px-4 py-3 text-sm font-medium text-white shadow-theme-xs hover:bg-brand-600 transition dark:bg-brand-500 dark:hover:bg-brand-600"
+            >
+              Save Product
+            </button>
+          </div>
+        </div>
+
+        {/* Info Helper Text */}
+        <p className="mt-4 flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400">
+          <svg className="w-4 h-4 fill-current shrink-0 text-gray-400" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fillRule="evenodd" clipRule="evenodd" d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM9 9C9 8.44772 9.44772 8 10 8C10.5523 8 11 8.44772 11 9V13C11 13.5523 10.5523 14 10 14C9.44772 14 9 13.5523 9 13V9ZM10 7C10.5523 7 11 6.55228 11 6C11 5.44772 10.5523 5 10 5C9.44772 5 9 5.44772 9 6C9 6.55228 9.44772 7 10 7Z"/>
+          </svg>
+          After filling in the product details, press Enter/Return or click 'Save Product' to add it to the list.
+        </p>
+      </form>
+
+      {/* Order Summary Section */}
+      <div className="mt-8 flex justify-end">
+        <div className="w-full max-w-[280px] space-y-3">
+          <h4 className="text-base font-semibold text-gray-800 dark:text-white">
+            Order summary
+          </h4>
           <div className="flex justify-between text-sm text-gray-600 dark:text-gray-400">
-            <span>Subtotal:</span>
+            <span>Sub Total</span>
             <span className="font-semibold text-gray-800 dark:text-white">
               ${subtotal.toFixed(2)}
+            </span>
+          </div>
+          <div className="flex justify-between text-sm text-gray-600 dark:text-gray-400">
+            <span>Vat (10%):</span>
+            <span className="font-semibold text-gray-800 dark:text-white">
+              ${vatAmount.toFixed(2)}
+            </span>
+          </div>
+          <div className="flex justify-between pt-2 text-base font-bold text-gray-900 dark:text-white border-t border-gray-200 dark:border-gray-800">
+            <span>Total</span>
+            <span className="text-gray-900 dark:text-white">
+              ${grandTotal.toFixed(2)}
             </span>
           </div>
         </div>
       </div>
 
+      {/* Bottom Actions Bar */}
       <div className="mt-8 flex justify-end gap-3 border-t border-gray-200 pt-6 dark:border-gray-800">
         <button
           type="button"
-          className="rounded-lg border border-gray-300 bg-white px-5 py-3 text-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-white/[0.03]"
+          onClick={() => setIsPreviewOpen(true)}
+          className="inline-flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-5 py-3 text-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-white/[0.03]"
         >
-          Save as Draft
+          <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fillRule="evenodd" clipRule="evenodd" d="M10 3.75C5.41421 3.75 1.67882 6.78652 0.416992 10C1.67882 13.2135 5.41421 16.25 10 16.25C14.5858 16.25 18.3212 13.2135 19.583 10C18.3212 6.78652 14.5858 3.75 10 3.75ZM10 14.75C6.26522 14.75 3.0905 12.338 1.95671 10C3.0905 7.66202 6.26522 5.25 10 5.25C13.7348 5.25 16.9095 7.66202 18.0433 10C16.9095 12.338 13.7348 14.75 10 14.75ZM10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5Z" />
+          </svg>
+          Preview Invoice
         </button>
+
         <button
           type="button"
-          className="rounded-lg bg-brand-500 px-5 py-3 text-sm font-medium text-white shadow-theme-xs hover:bg-brand-600 dark:bg-brand-500 dark:hover:bg-brand-600"
+          onClick={() => alert("Invoice saved successfully!")}
+          className="inline-flex items-center gap-2 rounded-xl bg-brand-500 px-5 py-3 text-sm font-medium text-white shadow-theme-xs hover:bg-brand-600 transition dark:bg-brand-500 dark:hover:bg-brand-600"
         >
-          Send Invoice
+          <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fillRule="evenodd" clipRule="evenodd" d="M3.75 3C3.33579 3 3 3.33579 3 3.75V16.25C3 16.6642 3.33579 17 3.75 17H16.25C16.6642 17 17 16.6642 17 16.25V6.31066C17 6.11175 16.921 5.92098 16.7803 5.78033L14.2197 3.21967C14.079 3.07902 13.8883 3 13.6893 3H3.75ZM4.5 4.5H12.75V7.5H4.5V4.5ZM4.5 15.5V9H15.5V15.5H4.5Z" />
+          </svg>
+          Save Invoice
         </button>
       </div>
+
+      {/* Invoice Preview Modal */}
+      {isPreviewOpen && (
+        <div className="fixed inset-0 z-99999 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+          <div className="w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl dark:bg-gray-900 dark:border dark:border-gray-800">
+            <div className="flex items-center justify-between border-b border-gray-200 pb-4 dark:border-gray-800">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                Invoice Preview
+              </h3>
+              <button
+                type="button"
+                onClick={() => setIsPreviewOpen(false)}
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
+              >
+                &times;
+              </button>
+            </div>
+
+            <div className="py-6 space-y-6">
+              <div className="flex justify-between">
+                <div>
+                  <h2 className="text-2xl font-extrabold text-brand-500">INVOICE</h2>
+                  <p className="text-sm text-gray-500">Invoice #: WP-3434434</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-sm font-semibold text-gray-800 dark:text-white">Customer Details:</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">John Deniyal</p>
+                </div>
+              </div>
+
+              <table className="w-full border-collapse text-left text-sm">
+                <thead>
+                  <tr className="border-b border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-800/50">
+                    <th className="p-3 font-semibold text-gray-700 dark:text-gray-300">Product</th>
+                    <th className="p-3 font-semibold text-gray-700 dark:text-gray-300">Qty</th>
+                    <th className="p-3 font-semibold text-gray-700 dark:text-gray-300">Unit Cost</th>
+                    <th className="p-3 font-semibold text-gray-700 dark:text-gray-300">Discount</th>
+                    <th className="p-3 font-semibold text-gray-700 dark:text-gray-300 text-right">Total</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200 dark:divide-gray-800">
+                  {items.map((item) => (
+                    <tr key={item.id}>
+                      <td className="p-3 text-gray-800 dark:text-gray-200">{item.productName || "—"}</td>
+                      <td className="p-3 text-gray-800 dark:text-gray-200">{item.quantity}</td>
+                      <td className="p-3 text-gray-800 dark:text-gray-200">${item.unitCost.toFixed(2)}</td>
+                      <td className="p-3 text-gray-800 dark:text-gray-200">{item.discount}%</td>
+                      <td className="p-3 text-gray-800 dark:text-gray-200 text-right">
+                        ${calculateRowTotal(item).toFixed(2)}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+
+              <div className="flex justify-end pt-4 border-t border-gray-200 dark:border-gray-800">
+                <div className="w-64 space-y-2">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-gray-600 dark:text-gray-400">Sub Total:</span>
+                    <span className="font-semibold text-gray-800 dark:text-white">${subtotal.toFixed(2)}</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-gray-600 dark:text-gray-400">Vat (10%):</span>
+                    <span className="font-semibold text-gray-800 dark:text-white">${vatAmount.toFixed(2)}</span>
+                  </div>
+                  <div className="flex justify-between text-base font-bold text-gray-900 dark:text-white border-t pt-2">
+                    <span>Total:</span>
+                    <span>${grandTotal.toFixed(2)}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex justify-end border-t border-gray-200 pt-4 dark:border-gray-800">
+              <button
+                type="button"
+                onClick={() => setIsPreviewOpen(false)}
+                className="rounded-xl bg-brand-500 px-5 py-2.5 text-sm font-medium text-white hover:bg-brand-600"
+              >
+                Close Preview
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
