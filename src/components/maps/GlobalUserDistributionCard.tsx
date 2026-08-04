@@ -1,5 +1,29 @@
 "use client";
 import React from "react";
+import dynamic from "next/dynamic";
+import { worldMill } from "@react-jvectormap/world";
+
+const VectorMap = dynamic(
+  () => import("@react-jvectormap/core").then((mod) => mod.VectorMap),
+  { ssr: false }
+);
+
+type MarkerStyle = {
+  initial: {
+    fill: string;
+    r: number;
+  };
+};
+
+type Marker = {
+  latLng: [number, number];
+  name: string;
+  style?: {
+    fill: string;
+    borderWidth?: number;
+    borderColor?: string;
+  };
+};
 
 export const GlobalUserDistributionCard: React.FC = () => {
   return (
@@ -13,41 +37,60 @@ export const GlobalUserDistributionCard: React.FC = () => {
         </p>
       </div>
 
-      <div className="relative overflow-hidden rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50/60 dark:bg-gray-900/60 min-h-[300px] flex items-center justify-center p-4">
-        {/* World Map Vector SVG */}
-        <svg
-          viewBox="0 0 1000 500"
-          className="w-full h-auto max-h-[280px] fill-gray-200 dark:fill-gray-700/60"
-        >
-          {/* North America */}
-          <path d="M150,120 Q180,90 280,100 Q320,140 290,190 Q220,230 180,190 Z" />
-          <path d="M220,240 Q250,220 280,260 Q260,320 220,380 Q190,320 220,240 Z" />
-          {/* Europe */}
-          <path d="M460,110 Q520,90 560,130 Q540,170 480,160 Z" />
-          {/* Africa */}
-          <path d="M470,180 Q560,170 580,240 Q550,330 490,320 Q460,240 470,180 Z" />
-          {/* Asia */}
-          <path d="M570,90 Q750,70 850,130 Q820,240 680,220 Q600,180 570,90 Z" />
-          {/* Australia */}
-          <path d="M750,280 Q840,270 860,330 Q800,380 740,340 Z" />
-
-          {/* Active Location Pin Dots */}
-          {/* US Pin */}
-          <circle cx="230" cy="150" r="7" className="fill-brand-500 animate-pulse" />
-          <circle cx="230" cy="150" r="14" className="fill-brand-500/30" />
-
-          {/* Europe Pin */}
-          <circle cx="510" cy="130" r="7" className="fill-brand-500 animate-pulse" />
-          <circle cx="510" cy="130" r="14" className="fill-brand-500/30" />
-
-          {/* India Pin */}
-          <circle cx="680" cy="180" r="7" className="fill-brand-500 animate-pulse" />
-          <circle cx="680" cy="180" r="14" className="fill-brand-500/30" />
-
-          {/* Australia Pin */}
-          <circle cx="800" cy="320" r="7" className="fill-brand-500 animate-pulse" />
-          <circle cx="800" cy="320" r="14" className="fill-brand-500/30" />
-        </svg>
+      <div className="relative overflow-hidden rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50/60 dark:bg-gray-900/60 h-[300px] flex items-center justify-center p-2">
+        <div className="w-full h-full">
+          <VectorMap
+            map={worldMill}
+            backgroundColor="transparent"
+            zoomOnScroll={false}
+            markerStyle={
+              {
+                initial: {
+                  fill: "#465FFF",
+                  r: 5,
+                },
+              } as MarkerStyle
+            }
+            markersSelectable={true}
+            markers={
+              [
+                {
+                  latLng: [37.0902, -95.7129],
+                  name: "United States",
+                  style: { fill: "#465FFF", borderWidth: 2, borderColor: "#ffffff" },
+                },
+                {
+                  latLng: [55.3781, -3.436],
+                  name: "United Kingdom",
+                  style: { fill: "#465FFF", borderWidth: 2, borderColor: "#ffffff" },
+                },
+                {
+                  latLng: [20.5937, 78.9629],
+                  name: "India",
+                  style: { fill: "#465FFF", borderWidth: 2, borderColor: "#ffffff" },
+                },
+                {
+                  latLng: [-25.2744, 133.7751],
+                  name: "Australia",
+                  style: { fill: "#465FFF", borderWidth: 2, borderColor: "#ffffff" },
+                },
+              ] as Marker[]
+            }
+            regionStyle={{
+              initial: {
+                fill: "#D0D5DD",
+                fillOpacity: 1,
+                stroke: "none",
+                strokeWidth: 0,
+              },
+              hover: {
+                fill: "#465FFF",
+                fillOpacity: 0.8,
+                cursor: "pointer",
+              },
+            }}
+          />
+        </div>
       </div>
     </div>
   );
