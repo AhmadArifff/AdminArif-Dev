@@ -132,6 +132,7 @@ const navItems: NavItem[] = [
       { name: "Faq", path: "/faq", pro: true },
       { name: "API Keys", path: "/api-keys", pro: true },
       { name: "Integrations", path: "/integrations", pro: true },
+      { name: "Coming Soon", path: "/coming-soon", pro: true },
       { name: "Blank Page", path: "/blank", pro: false },
       { name: "404 Error", path: "/error-404", pro: false },
     ],
