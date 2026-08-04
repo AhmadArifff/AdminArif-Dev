@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)https://react-demo.tailadmin.com/inbox -->
+<html lang="en" data-scribe-recorder-ready="true"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="icon" type="image/svg+xml" href="https://react-demo.tailadmin.com/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style data-fullcalendar=""></style><script defer="" referrerpolicy="origin" src="./React.js detail Dashboard _ TailAdmin - React.js Admin Dashboard Template_files/s.js.download"></script><script type="module" crossorigin="" src="./React.js detail Dashboard _ TailAdmin - React.js Admin Dashboard Template_files/index-VDcqKfqz.js.download"></script>
+    <link rel="stylesheet" crossorigin="" href="./React.js detail Dashboard _ TailAdmin - React.js Admin Dashboard Template_files/index-HY7lezWt.css">
+  <script data-cfasync="false" nonce="e4993e62-81b9-4815-baca-2c4501fe1948">try{(function(w,d){!function(mJ,mK,mL,mM){if(mJ.zaraz)console.error("zaraz is loaded twice");else{mJ[mL]=mJ[mL]||{};mJ[mL].executed=[];mJ.zaraz={deferred:[],listeners:[]};mJ.zaraz._v="20";mJ.zaraz._n="e4993e62-81b9-4815-baca-2c4501fe1948";mJ.zaraz.q=[];mJ.zaraz._f=function(mN){return async function(){var mO=Array.prototype.slice.call(arguments);mJ.zaraz.q.push({m:mN,a:mO})}};for(const mP of["track","set","debug"])mJ.zaraz[mP]=mJ.zaraz._f(mP);mJ.zaraz.init=()=>{var mQ=mK.getElementsByTagName(mM)[0],mR=mK.createElement(mM),mS=mK.getElementsByTagName("title")[0];mS&&(mJ[mL].t=mK.getElementsByTagName("title")[0].text);mJ[mL].x=Math.random();mJ[mL].w=mJ.screen.width;mJ[mL].h=mJ.screen.height;mJ[mL].j=mJ.innerHeight;mJ[mL].e=mJ.innerWidth;mJ[mL].l=mJ.location.href;mJ[mL].r=mK.referrer;mJ[mL].k=mJ.screen.colorDepth;mJ[mL].n=mK.characterSet;mJ[mL].o=(new Date).getTimezoneOffset();if(mJ.dataLayer)for(const mT of Object.entries(Object.entries(dataLayer).reduce((mU,mV)=>({...mU[1],...mV[1]}),{})))zaraz.set(mT[0],mT[1],{scope:"page"});mJ[mL].q=[];for(;mJ.zaraz.q.length;){const mW=mJ.zaraz.q.shift();mJ[mL].q.push(mW)}mR.defer=!0;for(const mX of[localStorage,sessionStorage])Object.keys(mX||{}).filter(mZ=>mZ.startsWith("_zaraz_")).forEach(mY=>{try{mJ[mL]["z_"+mY.slice(7)]=JSON.parse(mX.getItem(mY))}catch{mJ[mL]["z_"+mY.slice(7)]=mX.getItem(mY)}});mR.referrerPolicy="origin";mR.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(mJ[mL])));mQ.parentNode.insertBefore(mR,mQ)};["complete","interactive"].includes(mK.readyState)?zaraz.init():mJ.addEventListener("DOMContentLoaded",zaraz.init)}}(w,d,"zarazData","script");window.zaraz._p=async nv=>new Promise(nw=>{if(nv){nv.e&&nv.e.forEach(nx=>{try{const ny=d.querySelector("script[nonce]"),nz=ny?.nonce||ny?.getAttribute("nonce"),nA=d.createElement("script");nz&&(nA.nonce=nz);nA.innerHTML=nx;nA.onload=()=>{d.head.removeChild(nA)};d.head.appendChild(nA)}catch(nB){console.error(`Error executing script: ${nx}\n`,nB)}});Promise.allSettled((nv.f||[]).map(nC=>fetch(nC[0],nC[1])))}nw()});zaraz._p({"e":["(function(w,d){})(window,document)"]});})(window,document)}catch(e){throw fetch("/cdn-cgi/zaraz/t"),e;};</script><script>(function(w,d){})(window,document)</script><style>.jvectormap-tip {
+  position: absolute;
+  display: none;
+  border: solid 1px #cdcdcd;
+  border-radius: 3px;
+  background: #292929;
+  color: white;
+  font-family: sans-serif, Verdana;
+  font-size: smaller;
+  padding: 3px;
+}
+
+._u5cITtZnGk9D_6uoElx {
+  height: 100%;
+  width: 100%;
+}
+._u5cITtZnGk9D_6uoElx svg {
+  touch-action: none;
+}
+._u5cITtZnGk9D_6uoElx .jvectormap-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  touch-action: none;
+}
+._u5cITtZnGk9D_6uoElx .jvectormap-zoomin {
+  position: absolute;
+  left: 10px;
+  border-radius: 3px;
+  background: #292929;
+  padding: 3px;
+  color: white;
+  cursor: pointer;
+  line-height: 10px;
+  text-align: center;
+  box-sizing: content-box;
+  width: 10px;
+  height: 10px;
+  top: 10px;
+}
+._u5cITtZnGk9D_6uoElx .jvectormap-zoomout {
+  position: absolute;
+  left: 10px;
+  border-radius: 3px;
+  background: #292929;
+  padding: 3px;
+  color: white;
+  cursor: pointer;
+  line-height: 10px;
+  text-align: center;
+  box-sizing: content-box;
+  width: 10px;
+  height: 10px;
+  top: 30px;
+}
+._u5cITtZnGk9D_6uoElx .jvectormap-goback {
+  position: absolute;
+  left: 10px;
+  border-radius: 3px;
+  background: #292929;
+  color: white;
+  cursor: pointer;
+  line-height: 10px;
+  text-align: center;
+  box-sizing: content-box;
+  bottom: 10px;
+  z-index: 1000;
+  padding: 6px;
+}
+._u5cITtZnGk9D_6uoElx .jvectormap-spinner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: center no-repeat url(data:image/gif;base64,R0lGODlhIAAgAPMAAP///wAAAMbGxoSEhLa2tpqamjY2NlZWVtjY2OTk5Ly8vB4eHgQEBAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAIAAgAAAE5xDISWlhperN52JLhSSdRgwVo1ICQZRUsiwHpTJT4iowNS8vyW2icCF6k8HMMBkCEDskxTBDAZwuAkkqIfxIQyhBQBFvAQSDITM5VDW6XNE4KagNh6Bgwe60smQUB3d4Rz1ZBApnFASDd0hihh12BkE9kjAJVlycXIg7CQIFA6SlnJ87paqbSKiKoqusnbMdmDC2tXQlkUhziYtyWTxIfy6BE8WJt5YJvpJivxNaGmLHT0VnOgSYf0dZXS7APdpB309RnHOG5gDqXGLDaC457D1zZ/V/nmOM82XiHRLYKhKP1oZmADdEAAAh+QQJCgAAACwAAAAAIAAgAAAE6hDISWlZpOrNp1lGNRSdRpDUolIGw5RUYhhHukqFu8DsrEyqnWThGvAmhVlteBvojpTDDBUEIFwMFBRAmBkSgOrBFZogCASwBDEY/CZSg7GSE0gSCjQBMVG023xWBhklAnoEdhQEfyNqMIcKjhRsjEdnezB+A4k8gTwJhFuiW4dokXiloUepBAp5qaKpp6+Ho7aWW54wl7obvEe0kRuoplCGepwSx2jJvqHEmGt6whJpGpfJCHmOoNHKaHx61WiSR92E4lbFoq+B6QDtuetcaBPnW6+O7wDHpIiK9SaVK5GgV543tzjgGcghAgAh+QQJCgAAACwAAAAAIAAgAAAE7hDISSkxpOrN5zFHNWRdhSiVoVLHspRUMoyUakyEe8PTPCATW9A14E0UvuAKMNAZKYUZCiBMuBakSQKG8G2FzUWox2AUtAQFcBKlVQoLgQReZhQlCIJesQXI5B0CBnUMOxMCenoCfTCEWBsJColTMANldx15BGs8B5wlCZ9Po6OJkwmRpnqkqnuSrayqfKmqpLajoiW5HJq7FL1Gr2mMMcKUMIiJgIemy7xZtJsTmsM4xHiKv5KMCXqfyUCJEonXPN2rAOIAmsfB3uPoAK++G+w48edZPK+M6hLJpQg484enXIdQFSS1u6UhksENEQAAIfkECQoAAAAsAAAAACAAIAAABOcQyEmpGKLqzWcZRVUQnZYg1aBSh2GUVEIQ2aQOE+G+cD4ntpWkZQj1JIiZIogDFFyHI0UxQwFugMSOFIPJftfVAEoZLBbcLEFhlQiqGp1Vd140AUklUN3eCA51C1EWMzMCezCBBmkxVIVHBWd3HHl9JQOIJSdSnJ0TDKChCwUJjoWMPaGqDKannasMo6WnM562R5YluZRwur0wpgqZE7NKUm+FNRPIhjBJxKZteWuIBMN4zRMIVIhffcgojwCF117i4nlLnY5ztRLsnOk+aV+oJY7V7m76PdkS4trKcdg0Zc0tTcKkRAAAIfkECQoAAAAsAAAAACAAIAAABO4QyEkpKqjqzScpRaVkXZWQEximw1BSCUEIlDohrft6cpKCk5xid5MNJTaAIkekKGQkWyKHkvhKsR7ARmitkAYDYRIbUQRQjWBwJRzChi9CRlBcY1UN4g0/VNB0AlcvcAYHRyZPdEQFYV8ccwR5HWxEJ02YmRMLnJ1xCYp0Y5idpQuhopmmC2KgojKasUQDk5BNAwwMOh2RtRq5uQuPZKGIJQIGwAwGf6I0JXMpC8C7kXWDBINFMxS4DKMAWVWAGYsAdNqW5uaRxkSKJOZKaU3tPOBZ4DuK2LATgJhkPJMgTwKCdFjyPHEnKxFCDhEAACH5BAkKAAAALAAAAAAgACAAAATzEMhJaVKp6s2nIkolIJ2WkBShpkVRWqqQrhLSEu9MZJKK9y1ZrqYK9WiClmvoUaF8gIQSNeF1Er4MNFn4SRSDARWroAIETg1iVwuHjYB1kYc1mwruwXKC9gmsJXliGxc+XiUCby9ydh1sOSdMkpMTBpaXBzsfhoc5l58Gm5yToAaZhaOUqjkDgCWNHAULCwOLaTmzswadEqggQwgHuQsHIoZCHQMMQgQGubVEcxOPFAcMDAYUA85eWARmfSRQCdcMe0zeP1AAygwLlJtPNAAL19DARdPzBOWSm1brJBi45soRAWQAAkrQIykShQ9wVhHCwCQCACH5BAkKAAAALAAAAAAgACAAAATrEMhJaVKp6s2nIkqFZF2VIBWhUsJaTokqUCoBq+E71SRQeyqUToLA7VxF0JDyIQh/MVVPMt1ECZlfcjZJ9mIKoaTl1MRIl5o4CUKXOwmyrCInCKqcWtvadL2SYhyASyNDJ0uIiRMDjI0Fd30/iI2UA5GSS5UDj2l6NoqgOgN4gksEBgYFf0FDqKgHnyZ9OX8HrgYHdHpcHQULXAS2qKpENRg7eAMLC7kTBaixUYFkKAzWAAnLC7FLVxLWDBLKCwaKTULgEwbLA4hJtOkSBNqITT3xEgfLpBtzE/jiuL04RGEBgwWhShRgQExHBAAh+QQJCgAAACwAAAAAIAAgAAAE7xDISWlSqerNpyJKhWRdlSAVoVLCWk6JKlAqAavhO9UkUHsqlE6CwO1cRdCQ8iEIfzFVTzLdRAmZX3I2SfZiCqGk5dTESJeaOAlClzsJsqwiJwiqnFrb2nS9kmIcgEsjQydLiIlHehhpejaIjzh9eomSjZR+ipslWIRLAgMDOR2DOqKogTB9pCUJBagDBXR6XB0EBkIIsaRsGGMMAxoDBgYHTKJiUYEGDAzHC9EACcUGkIgFzgwZ0QsSBcXHiQvOwgDdEwfFs0sDzt4S6BK4xYjkDOzn0unFeBzOBijIm1Dgmg5YFQwsCMjp1oJ8LyIAACH5BAkKAAAALAAAAAAgACAAAATwEMhJaVKp6s2nIkqFZF2VIBWhUsJaTokqUCoBq+E71SRQeyqUToLA7VxF0JDyIQh/MVVPMt1ECZlfcjZJ9mIKoaTl1MRIl5o4CUKXOwmyrCInCKqcWtvadL2SYhyASyNDJ0uIiUd6GGl6NoiPOH16iZKNlH6KmyWFOggHhEEvAwwMA0N9GBsEC6amhnVcEwavDAazGwIDaH1ipaYLBUTCGgQDA8NdHz0FpqgTBwsLqAbWAAnIA4FWKdMLGdYGEgraigbT0OITBcg5QwPT4xLrROZL6AuQAPUS7bxLpoWidY0JtxLHKhwwMJBTHgPKdEQAACH5BAkKAAAALAAAAAAgACAAAATrEMhJaVKp6s2nIkqFZF2VIBWhUsJaTokqUCoBq+E71SRQeyqUToLA7VxF0JDyIQh/MVVPMt1ECZlfcjZJ9mIKoaTl1MRIl5o4CUKXOwmyrCInCKqcWtvadL2SYhyASyNDJ0uIiUd6GAULDJCRiXo1CpGXDJOUjY+Yip9DhToJA4RBLwMLCwVDfRgbBAaqqoZ1XBMHswsHtxtFaH1iqaoGNgAIxRpbFAgfPQSqpbgGBqUD1wBXeCYp1AYZ19JJOYgH1KwA4UBvQwXUBxPqVD9L3sbp2BNk2xvvFPJd+MFCN6HAAIKgNggY0KtEBAAh+QQJCgAAACwAAAAAIAAgAAAE6BDISWlSqerNpyJKhWRdlSAVoVLCWk6JKlAqAavhO9UkUHsqlE6CwO1cRdCQ8iEIfzFVTzLdRAmZX3I2SfYIDMaAFdTESJeaEDAIMxYFqrOUaNW4E4ObYcCXaiBVEgULe0NJaxxtYksjh2NLkZISgDgJhHthkpU4mW6blRiYmZOlh4JWkDqILwUGBnE6TYEbCgevr0N1gH4At7gHiRpFaLNrrq8HNgAJA70AWxQIH1+vsYMDAzZQPC9VCNkDWUhGkuE5PxJNwiUK4UfLzOlD4WvzAHaoG9nxPi5d+jYUqfAhhykOFwJWiAAAIfkECQoAAAAsAAAAACAAIAAABPAQyElpUqnqzaciSoVkXVUMFaFSwlpOCcMYlErAavhOMnNLNo8KsZsMZItJEIDIFSkLGQoQTNhIsFehRww2CQLKF0tYGKYSg+ygsZIuNqJksKgbfgIGepNo2cIUB3V1B3IvNiBYNQaDSTtfhhx0CwVPI0UJe0+bm4g5VgcGoqOcnjmjqDSdnhgEoamcsZuXO1aWQy8KAwOAuTYYGwi7w5h+Kr0SJ8MFihpNbx+4Erq7BYBuzsdiH1jCAzoSfl0rVirNbRXlBBlLX+BP0XJLAPGzTkAuAOqb0WT5AH7OcdCm5B8TgRwSRKIHQtaLCwg1RAAAOwAAAAAAAAAAAA==);
+}
+._u5cITtZnGk9D_6uoElx .jvectormap-legend-title {
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+}
+._u5cITtZnGk9D_6uoElx .jvectormap-legend-cnt {
+  position: absolute;
+}
+._u5cITtZnGk9D_6uoElx .jvectormap-legend-cnt-h {
+  bottom: 0;
+  right: 0;
+}
+._u5cITtZnGk9D_6uoElx .jvectormap-legend-cnt-h .jvectormap-legend {
+  float: left;
+  margin: 0 10px 10px 0;
+  padding: 3px 3px 1px 3px;
+}
+._u5cITtZnGk9D_6uoElx .jvectormap-legend-cnt-h .jvectormap-legend .jvectormap-legend-tick {
+  float: left;
+}
+._u5cITtZnGk9D_6uoElx .jvectormap-legend-cnt-h .jvectormap-legend-tick {
+  width: 40px;
+}
+._u5cITtZnGk9D_6uoElx .jvectormap-legend-cnt-h .jvectormap-legend-tick-sample {
+  height: 15px;
+}
+._u5cITtZnGk9D_6uoElx .jvectormap-legend-cnt-h .jvectormap-legend-tick-text {
+  text-align: center;
+}
+._u5cITtZnGk9D_6uoElx .jvectormap-legend-cnt-v {
+  top: 0;
+  right: 0;
+}
+._u5cITtZnGk9D_6uoElx .jvectormap-legend-cnt-v .jvectormap-legend {
+  margin: 10px 10px 0 0;
+  padding: 3px;
+}
+._u5cITtZnGk9D_6uoElx .jvectormap-legend-cnt-v .jvectormap-legend-tick-sample {
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+._u5cITtZnGk9D_6uoElx .jvectormap-legend-cnt-v .jvectormap-legend-tick-text {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 20px;
+  padding-left: 3px;
+}
+._u5cITtZnGk9D_6uoElx .jvectormap-legend {
+  background: black;
+  color: white;
+  border-radius: 3px;
+}
+._u5cITtZnGk9D_6uoElx .jvectormap-legend-tick-text {
+  font-size: 12px;
+}</style><title>React.js Inbox Dashboard | TailAdmin - React.js Admin Dashboard Template</title><link rel="preconnect" href="https://fonts.googleapis.com/"><link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""><link href="./React.js detail Dashboard _ TailAdmin - React.js Admin Dashboard Template_files/css2" rel="stylesheet"><style id="apexcharts-css">@keyframes opaque {
+  0% {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes resizeanim {
+
+  0%,
+  to {
+    opacity: 0
+  }
+}
+
+.apexcharts-canvas {
+  position: relative;
+  direction: ltr !important;
+  user-select: none
+}
+
+.apexcharts-canvas ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 6px
+}
+
+.apexcharts-canvas ::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5)
+}
+
+.apexcharts-inner {
+  position: relative
+}
+
+.apexcharts-text tspan {
+  font-family: inherit
+}
+
+rect.legend-mouseover-inactive,
+.legend-mouseover-inactive rect,
+.legend-mouseover-inactive path,
+.legend-mouseover-inactive circle,
+.legend-mouseover-inactive line,
+.legend-mouseover-inactive text.apexcharts-yaxis-title-text,
+.legend-mouseover-inactive text.apexcharts-yaxis-label {
+  transition: .15s ease all;
+  opacity: .2
+}
+
+.apexcharts-legend-text {
+  padding-left: 15px;
+  margin-left: -15px;
+}
+
+.apexcharts-series-collapsed {
+  opacity: 0
+}
+
+.apexcharts-tooltip {
+  border-radius: 5px;
+  box-shadow: 2px 2px 6px -4px #999;
+  cursor: default;
+  font-size: 14px;
+  left: 62px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 12;
+  transition: .15s ease all
+}
+
+.apexcharts-tooltip.apexcharts-active {
+  opacity: 1;
+  transition: .15s ease all
+}
+
+.apexcharts-tooltip.apexcharts-theme-light {
+  border: 1px solid #e3e3e3;
+  background: rgba(255, 255, 255, .96)
+}
+
+.apexcharts-tooltip.apexcharts-theme-dark {
+  color: #fff;
+  background: rgba(30, 30, 30, .8)
+}
+
+.apexcharts-tooltip * {
+  font-family: inherit
+}
+
+.apexcharts-tooltip-title {
+  padding: 6px;
+  font-size: 15px;
+  margin-bottom: 4px
+}
+
+.apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {
+  background: #eceff1;
+  border-bottom: 1px solid #ddd
+}
+
+.apexcharts-tooltip.apexcharts-theme-dark .apexcharts-tooltip-title {
+  background: rgba(0, 0, 0, .7);
+  border-bottom: 1px solid #333
+}
+
+.apexcharts-tooltip-text-goals-value,
+.apexcharts-tooltip-text-y-value,
+.apexcharts-tooltip-text-z-value {
+  display: inline-block;
+  margin-left: 5px;
+  font-weight: 600
+}
+
+.apexcharts-tooltip-text-goals-label:empty,
+.apexcharts-tooltip-text-goals-value:empty,
+.apexcharts-tooltip-text-y-label:empty,
+.apexcharts-tooltip-text-y-value:empty,
+.apexcharts-tooltip-text-z-value:empty,
+.apexcharts-tooltip-title:empty {
+  display: none
+}
+
+.apexcharts-tooltip-text-goals-label,
+.apexcharts-tooltip-text-goals-value {
+  padding: 6px 0 5px
+}
+
+.apexcharts-tooltip-goals-group,
+.apexcharts-tooltip-text-goals-label,
+.apexcharts-tooltip-text-goals-value {
+  display: flex
+}
+
+.apexcharts-tooltip-text-goals-label:not(:empty),
+.apexcharts-tooltip-text-goals-value:not(:empty) {
+  margin-top: -6px
+}
+
+.apexcharts-tooltip-marker {
+  display: inline-block;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+  line-height: 16px;
+  margin-right: 4px;
+  text-align: center;
+  vertical-align: middle;
+  color: inherit;
+}
+
+.apexcharts-tooltip-marker::before {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  color: currentcolor;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-size: 26px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 14px;
+  font-weight: 900;
+}
+
+.apexcharts-tooltip-marker[shape="circle"]::before {
+  content: "\25CF";
+}
+
+.apexcharts-tooltip-marker[shape="square"]::before,
+.apexcharts-tooltip-marker[shape="rect"]::before {
+  content: "\25A0";
+  transform: translate(-1px, -2px);
+}
+
+.apexcharts-tooltip-marker[shape="line"]::before {
+  content: "\2500";
+}
+
+.apexcharts-tooltip-marker[shape="diamond"]::before {
+  content: "\25C6";
+  font-size: 28px;
+}
+
+.apexcharts-tooltip-marker[shape="triangle"]::before {
+  content: "\25B2";
+  font-size: 22px;
+}
+
+.apexcharts-tooltip-marker[shape="cross"]::before {
+  content: "\2715";
+  font-size: 18px;
+}
+
+.apexcharts-tooltip-marker[shape="plus"]::before {
+  content: "\2715";
+  transform: rotate(45deg) translate(-1px, -1px);
+  font-size: 18px;
+}
+
+.apexcharts-tooltip-marker[shape="star"]::before {
+  content: "\2605";
+  font-size: 18px;
+}
+
+.apexcharts-tooltip-marker[shape="sparkle"]::before {
+  content: "\2726";
+  font-size: 20px;
+}
+
+.apexcharts-tooltip-series-group {
+  padding: 0 10px;
+  display: none;
+  text-align: left;
+  justify-content: left;
+  align-items: center
+}
+
+.apexcharts-tooltip-series-group.apexcharts-active .apexcharts-tooltip-marker {
+  opacity: 1
+}
+
+.apexcharts-tooltip-series-group.apexcharts-active,
+.apexcharts-tooltip-series-group:last-child {
+  padding-bottom: 4px
+}
+
+.apexcharts-tooltip-y-group {
+  padding: 6px 0 5px
+}
+
+.apexcharts-custom-tooltip,
+.apexcharts-tooltip-box {
+  padding: 4px 8px
+}
+
+.apexcharts-tooltip-boxPlot {
+  display: flex;
+  flex-direction: column-reverse
+}
+
+.apexcharts-tooltip-box>div {
+  margin: 4px 0
+}
+
+.apexcharts-tooltip-box span.value {
+  font-weight: 700
+}
+
+.apexcharts-tooltip-rangebar {
+  padding: 5px 8px
+}
+
+.apexcharts-tooltip-rangebar .category {
+  font-weight: 600;
+  color: #777
+}
+
+.apexcharts-tooltip-rangebar .series-name {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 5px
+}
+
+.apexcharts-xaxistooltip,
+.apexcharts-yaxistooltip {
+  opacity: 0;
+  pointer-events: none;
+  color: #373d3f;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 2px;
+  position: absolute;
+  z-index: 10;
+  background: #eceff1;
+  border: 1px solid #90a4ae
+}
+
+.apexcharts-xaxistooltip {
+  padding: 9px 10px;
+  transition: .15s ease all
+}
+
+.apexcharts-xaxistooltip.apexcharts-theme-dark {
+  background: rgba(0, 0, 0, .7);
+  border: 1px solid rgba(0, 0, 0, .5);
+  color: #fff
+}
+
+.apexcharts-xaxistooltip:after,
+.apexcharts-xaxistooltip:before {
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none
+}
+
+.apexcharts-xaxistooltip:after {
+  border-color: transparent;
+  border-width: 6px;
+  margin-left: -6px
+}
+
+.apexcharts-xaxistooltip:before {
+  border-color: transparent;
+  border-width: 7px;
+  margin-left: -7px
+}
+
+.apexcharts-xaxistooltip-bottom:after,
+.apexcharts-xaxistooltip-bottom:before {
+  bottom: 100%
+}
+
+.apexcharts-xaxistooltip-top:after,
+.apexcharts-xaxistooltip-top:before {
+  top: 100%
+}
+
+.apexcharts-xaxistooltip-bottom:after {
+  border-bottom-color: #eceff1
+}
+
+.apexcharts-xaxistooltip-bottom:before {
+  border-bottom-color: #90a4ae
+}
+
+.apexcharts-xaxistooltip-bottom.apexcharts-theme-dark:after,
+.apexcharts-xaxistooltip-bottom.apexcharts-theme-dark:before {
+  border-bottom-color: rgba(0, 0, 0, .5)
+}
+
+.apexcharts-xaxistooltip-top:after {
+  border-top-color: #eceff1
+}
+
+.apexcharts-xaxistooltip-top:before {
+  border-top-color: #90a4ae
+}
+
+.apexcharts-xaxistooltip-top.apexcharts-theme-dark:after,
+.apexcharts-xaxistooltip-top.apexcharts-theme-dark:before {
+  border-top-color: rgba(0, 0, 0, .5)
+}
+
+.apexcharts-xaxistooltip.apexcharts-active {
+  opacity: 1;
+  transition: .15s ease all
+}
+
+.apexcharts-yaxistooltip {
+  padding: 4px 10px
+}
+
+.apexcharts-yaxistooltip.apexcharts-theme-dark {
+  background: rgba(0, 0, 0, .7);
+  border: 1px solid rgba(0, 0, 0, .5);
+  color: #fff
+}
+
+.apexcharts-yaxistooltip:after,
+.apexcharts-yaxistooltip:before {
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none
+}
+
+.apexcharts-yaxistooltip:after {
+  border-color: transparent;
+  border-width: 6px;
+  margin-top: -6px
+}
+
+.apexcharts-yaxistooltip:before {
+  border-color: transparent;
+  border-width: 7px;
+  margin-top: -7px
+}
+
+.apexcharts-yaxistooltip-left:after,
+.apexcharts-yaxistooltip-left:before {
+  left: 100%
+}
+
+.apexcharts-yaxistooltip-right:after,
+.apexcharts-yaxistooltip-right:before {
+  right: 100%
+}
+
+.apexcharts-yaxistooltip-left:after {
+  border-left-color: #eceff1
+}
+
+.apexcharts-yaxistooltip-left:before {
+  border-left-color: #90a4ae
+}
+
+.apexcharts-yaxistooltip-left.apexcharts-theme-dark:after,
+.apexcharts-yaxistooltip-left.apexcharts-theme-dark:before {
+  border-left-color: rgba(0, 0, 0, .5)
+}
+
+.apexcharts-yaxistooltip-right:after {
+  border-right-color: #eceff1
+}
+
+.apexcharts-yaxistooltip-right:before {
+  border-right-color: #90a4ae
+}
+
+.apexcharts-yaxistooltip-right.apexcharts-theme-dark:after,
+.apexcharts-yaxistooltip-right.apexcharts-theme-dark:before {
+  border-right-color: rgba(0, 0, 0, .5)
+}
+
+.apexcharts-yaxistooltip.apexcharts-active {
+  opacity: 1
+}
+
+.apexcharts-yaxistooltip-hidden {
+  display: none
+}
+
+.apexcharts-xcrosshairs,
+.apexcharts-ycrosshairs {
+  pointer-events: none;
+  opacity: 0;
+  transition: .15s ease all
+}
+
+.apexcharts-xcrosshairs.apexcharts-active,
+.apexcharts-ycrosshairs.apexcharts-active {
+  opacity: 1;
+  transition: .15s ease all
+}
+
+.apexcharts-ycrosshairs-hidden {
+  opacity: 0
+}
+
+.apexcharts-selection-rect {
+  cursor: move
+}
+
+.svg_select_shape {
+  stroke-width: 1;
+  stroke-dasharray: 10 10;
+  stroke: black;
+  stroke-opacity: 0.1;
+  pointer-events: none;
+  fill: none;
+}
+
+.svg_select_handle {
+  stroke-width: 3;
+  stroke: black;
+  fill: none;
+}
+
+.svg_select_handle_r {
+  cursor: e-resize;
+}
+
+.svg_select_handle_l {
+  cursor: w-resize;
+}
+
+.apexcharts-svg.apexcharts-zoomable.hovering-zoom {
+  cursor: crosshair
+}
+
+.apexcharts-svg.apexcharts-zoomable.hovering-pan {
+  cursor: move
+}
+
+.apexcharts-menu-icon,
+.apexcharts-pan-icon,
+.apexcharts-reset-icon,
+.apexcharts-selection-icon,
+.apexcharts-toolbar-custom-icon,
+.apexcharts-zoom-icon,
+.apexcharts-zoomin-icon,
+.apexcharts-zoomout-icon {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  line-height: 24px;
+  color: #6e8192;
+  text-align: center
+}
+
+.apexcharts-menu-icon svg,
+.apexcharts-reset-icon svg,
+.apexcharts-zoom-icon svg,
+.apexcharts-zoomin-icon svg,
+.apexcharts-zoomout-icon svg {
+  fill: #6e8192
+}
+
+.apexcharts-selection-icon svg {
+  fill: #444;
+  transform: scale(.76)
+}
+
+.apexcharts-theme-dark .apexcharts-menu-icon svg,
+.apexcharts-theme-dark .apexcharts-pan-icon svg,
+.apexcharts-theme-dark .apexcharts-reset-icon svg,
+.apexcharts-theme-dark .apexcharts-selection-icon svg,
+.apexcharts-theme-dark .apexcharts-toolbar-custom-icon svg,
+.apexcharts-theme-dark .apexcharts-zoom-icon svg,
+.apexcharts-theme-dark .apexcharts-zoomin-icon svg,
+.apexcharts-theme-dark .apexcharts-zoomout-icon svg {
+  fill: #f3f4f5
+}
+
+.apexcharts-canvas .apexcharts-reset-zoom-icon.apexcharts-selected svg,
+.apexcharts-canvas .apexcharts-selection-icon.apexcharts-selected svg,
+.apexcharts-canvas .apexcharts-zoom-icon.apexcharts-selected svg {
+  fill: #008ffb
+}
+
+.apexcharts-theme-light .apexcharts-menu-icon:hover svg,
+.apexcharts-theme-light .apexcharts-reset-icon:hover svg,
+.apexcharts-theme-light .apexcharts-selection-icon:not(.apexcharts-selected):hover svg,
+.apexcharts-theme-light .apexcharts-zoom-icon:not(.apexcharts-selected):hover svg,
+.apexcharts-theme-light .apexcharts-zoomin-icon:hover svg,
+.apexcharts-theme-light .apexcharts-zoomout-icon:hover svg {
+  fill: #333
+}
+
+.apexcharts-menu-icon,
+.apexcharts-selection-icon {
+  position: relative
+}
+
+.apexcharts-reset-icon {
+  margin-left: 5px
+}
+
+.apexcharts-menu-icon,
+.apexcharts-reset-icon,
+.apexcharts-zoom-icon {
+  transform: scale(.85)
+}
+
+.apexcharts-zoomin-icon,
+.apexcharts-zoomout-icon {
+  transform: scale(.7)
+}
+
+.apexcharts-zoomout-icon {
+  margin-right: 3px
+}
+
+.apexcharts-pan-icon {
+  transform: scale(.62);
+  position: relative;
+  left: 1px;
+  top: 0
+}
+
+.apexcharts-pan-icon svg {
+  fill: #fff;
+  stroke: #6e8192;
+  stroke-width: 2
+}
+
+.apexcharts-pan-icon.apexcharts-selected svg {
+  stroke: #008ffb
+}
+
+.apexcharts-pan-icon:not(.apexcharts-selected):hover svg {
+  stroke: #333
+}
+
+.apexcharts-toolbar {
+  position: absolute;
+  z-index: 11;
+  max-width: 176px;
+  text-align: right;
+  border-radius: 3px;
+  padding: 0 6px 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+.apexcharts-menu {
+  background: #fff;
+  position: absolute;
+  top: 100%;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 3px;
+  right: 10px;
+  opacity: 0;
+  min-width: 110px;
+  transition: .15s ease all;
+  pointer-events: none
+}
+
+.apexcharts-menu.apexcharts-menu-open {
+  opacity: 1;
+  pointer-events: all;
+  transition: .15s ease all
+}
+
+.apexcharts-menu-item {
+  padding: 6px 7px;
+  font-size: 12px;
+  cursor: pointer
+}
+
+.apexcharts-theme-light .apexcharts-menu-item:hover {
+  background: #eee
+}
+
+.apexcharts-theme-dark .apexcharts-menu {
+  background: rgba(0, 0, 0, .7);
+  color: #fff
+}
+
+@media screen and (min-width:768px) {
+  .apexcharts-canvas:hover .apexcharts-toolbar {
+    opacity: 1
+  }
+}
+
+.apexcharts-canvas .apexcharts-element-hidden,
+.apexcharts-datalabel.apexcharts-element-hidden,
+.apexcharts-hide .apexcharts-series-points {
+  opacity: 0;
+}
+
+.apexcharts-hidden-element-shown {
+  opacity: 1;
+  transition: 0.25s ease all;
+}
+
+.apexcharts-datalabel,
+.apexcharts-datalabel-label,
+.apexcharts-datalabel-value,
+.apexcharts-datalabels,
+.apexcharts-pie-label {
+  cursor: default;
+  pointer-events: none
+}
+
+.apexcharts-pie-label-delay {
+  opacity: 0;
+  animation-name: opaque;
+  animation-duration: .3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease
+}
+
+.apexcharts-radialbar-label {
+  cursor: pointer;
+}
+
+.apexcharts-annotation-rect,
+.apexcharts-area-series .apexcharts-area,
+.apexcharts-gridline,
+.apexcharts-line,
+.apexcharts-point-annotation-label,
+.apexcharts-radar-series path:not(.apexcharts-marker),
+.apexcharts-radar-series polygon,
+.apexcharts-toolbar svg,
+.apexcharts-tooltip .apexcharts-marker,
+.apexcharts-xaxis-annotation-label,
+.apexcharts-yaxis-annotation-label,
+.apexcharts-zoom-rect,
+.no-pointer-events {
+  pointer-events: none
+}
+
+.apexcharts-tooltip-active .apexcharts-marker {
+  transition: .15s ease all
+}
+
+.apexcharts-radar-series .apexcharts-yaxis {
+  pointer-events: none;
+}
+
+.resize-triggers {
+  animation: 1ms resizeanim;
+  visibility: hidden;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden
+}
+
+.contract-trigger:before,
+.resize-triggers,
+.resize-triggers>div {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0
+}
+
+.resize-triggers>div {
+  height: 100%;
+  width: 100%;
+  background: #eee;
+  overflow: auto
+}
+
+.contract-trigger:before {
+  overflow: hidden;
+  width: 200%;
+  height: 200%
+}
+
+.apexcharts-bar-goals-markers {
+  pointer-events: none
+}
+
+.apexcharts-bar-shadows {
+  pointer-events: none
+}
+
+.apexcharts-rangebar-goals-markers {
+  pointer-events: none
+}</style><meta name="description" content="This is React.js Inbox Dashboard page for TailAdmin - React.js Tailwind CSS Admin Dashboard Template" data-rh="true"></head>
+  <body class="dark:bg-gray-900" style="overflow: unset;">
+    <div id="root"><div class="min-h-screen xl:flex"><aside class="fixed top-0 left-0 z-50 flex h-screen flex-col border-r border-gray-200 bg-white px-5 text-gray-900 transition-all duration-300 ease-in-out xl:translate-x-0 dark:border-gray-800 dark:bg-gray-900 w-[290px] -translate-x-full"><div class="flex py-8 justify-start"><a href="https://react-demo.tailadmin.com/" data-discover="true"><img class="dark:hidden" alt="Logo" width="150" height="40" src="./React.js detail Dashboard _ TailAdmin - React.js Admin Dashboard Template_files/logo.svg"><img class="hidden dark:block" alt="Logo" width="150" height="40" src="./React.js detail Dashboard _ TailAdmin - React.js Admin Dashboard Template_files/logo-dark.svg"></a></div><div class="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear"><nav class="mb-6"><div class="flex flex-col gap-4"><div><h2 class="mb-4 flex text-xs leading-[20px] text-gray-400 uppercase justify-start">Menu</h2><ul class="flex flex-col gap-1"><li><button class="group menu-item menu-item-inactive cursor-pointer xl:justify-start"><span class="menu-item-icon-size menu-item-icon-inactive"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 3.25C4.25736 3.25 3.25 4.25736 3.25 5.5V8.99998C3.25 10.2426 4.25736 11.25 5.5 11.25H9C10.2426 11.25 11.25 10.2426 11.25 8.99998V5.5C11.25 4.25736 10.2426 3.25 9 3.25H5.5ZM4.75 5.5C4.75 5.08579 5.08579 4.75 5.5 4.75H9C9.41421 4.75 9.75 5.08579 9.75 5.5V8.99998C9.75 9.41419 9.41421 9.74998 9 9.74998H5.5C5.08579 9.74998 4.75 9.41419 4.75 8.99998V5.5ZM5.5 12.75C4.25736 12.75 3.25 13.7574 3.25 15V18.5C3.25 19.7426 4.25736 20.75 5.5 20.75H9C10.2426 20.75 11.25 19.7427 11.25 18.5V15C11.25 13.7574 10.2426 12.75 9 12.75H5.5ZM4.75 15C4.75 14.5858 5.08579 14.25 5.5 14.25H9C9.41421 14.25 9.75 14.5858 9.75 15V18.5C9.75 18.9142 9.41421 19.25 9 19.25H5.5C5.08579 19.25 4.75 18.9142 4.75 18.5V15ZM12.75 5.5C12.75 4.25736 13.7574 3.25 15 3.25H18.5C19.7426 3.25 20.75 4.25736 20.75 5.5V8.99998C20.75 10.2426 19.7426 11.25 18.5 11.25H15C13.7574 11.25 12.75 10.2426 12.75 8.99998V5.5ZM15 4.75C14.5858 4.75 14.25 5.08579 14.25 5.5V8.99998C14.25 9.41419 14.5858 9.74998 15 9.74998H18.5C18.9142 9.74998 19.25 9.41419 19.25 8.99998V5.5C19.25 5.08579 18.9142 4.75 18.5 4.75H15ZM15 12.75C13.7574 12.75 12.75 13.7574 12.75 15V18.5C12.75 19.7426 13.7574 20.75 15 20.75H18.5C19.7426 20.75 20.75 19.7427 20.75 18.5V15C20.75 13.7574 19.7426 12.75 18.5 12.75H15ZM14.25 15C14.25 14.5858 14.5858 14.25 15 14.25H18.5C18.9142 14.25 19.25 14.5858 19.25 15V18.5C19.25 18.9142 18.9142 19.25 18.5 19.25H15C14.5858 19.25 14.25 18.9142 14.25 18.5V15Z" fill="currentColor"></path></svg></span><span class="menu-item-text">Dashboard</span><svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-auto h-5 w-5 transition-transform duration-200 "><path d="M4.79175 7.396L10.0001 12.6043L15.2084 7.396" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="overflow-hidden transition-all duration-300" style="height: 0px;"><ul class="mt-2 ml-9 space-y-1"><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/" data-discover="true">Ecommerce<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/analytics" data-discover="true">Analytics<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/marketing" data-discover="true">Marketing<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/crm" data-discover="true">CRM<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/stocks" data-discover="true">Stocks<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/saas" data-discover="true">SaaS<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/logistics" data-discover="true">Logistics<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/ai" data-discover="true">AI<span class="ml-auto flex items-center gap-1"><span class="ml-auto menu-dropdown-badge-inactive menu-dropdown-badge">new</span></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/sales" data-discover="true">Sales<span class="ml-auto flex items-center gap-1"><span class="ml-auto menu-dropdown-badge-inactive menu-dropdown-badge">new</span></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/finance" data-discover="true">Finance<span class="ml-auto flex items-center gap-1"><span class="ml-auto menu-dropdown-badge-inactive menu-dropdown-badge">new</span></span></a></li></ul></div></li><li><button class="group menu-item menu-item-inactive cursor-pointer xl:justify-start"><span class="menu-item-icon-size menu-item-icon-inactive"><svg height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="1em"><path d="M18.75 2.42969V7.70424M9.42261 13.673C10.0259 14.4307 10.9562 14.9164 12 14.9164C13.0438 14.9164 13.9742 14.4307 14.5775 13.673M20 12V18.5C20 19.3284 19.3284 20 18.5 20H5.5C4.67157 20 4 19.3284 4 18.5V12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M18.75 2.42969V2.43969M9.50391 9.875L9.50391 9.885M14.4961 9.875V9.885" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="menu-item-text">AI Assistant</span><span class="absolute right-10 ml-auto menu-dropdown-badge-inactive menu-dropdown-badge">new</span><svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-auto h-5 w-5 transition-transform duration-200 "><path d="M4.79175 7.396L10.0001 12.6043L15.2084 7.396" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="overflow-hidden transition-all duration-300" style="height: 0px;"><ul class="mt-2 ml-9 space-y-1"><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/text-generator" data-discover="true">Text Generator<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/image-generator" data-discover="true">Image Generator<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/code-generator" data-discover="true">Code Generator<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/video-generator" data-discover="true">Video Generator<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/ai-settings" data-discover="true">AI Settings<span class="ml-auto flex items-center gap-1"></span></a></li></ul></div></li><li><button class="group menu-item menu-item-inactive cursor-pointer xl:justify-start"><span class="menu-item-icon-size menu-item-icon-inactive"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.31641 4H3.49696C4.24468 4 4.87822 4.55068 4.98234 5.29112L5.13429 6.37161M5.13429 6.37161L6.23641 14.2089C6.34053 14.9493 6.97407 15.5 7.72179 15.5L17.0833 15.5C17.6803 15.5 18.2205 15.146 18.4587 14.5986L21.126 8.47023C21.5572 7.4795 20.8312 6.37161 19.7507 6.37161H5.13429Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7.7832 19.5H7.7932M16.3203 19.5H16.3303" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="menu-item-text">E-commerce</span><svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-auto h-5 w-5 transition-transform duration-200 "><path d="M4.79175 7.396L10.0001 12.6043L15.2084 7.396" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="overflow-hidden transition-all duration-300" style="height: 0px;"><ul class="mt-2 ml-9 space-y-1"><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/products-list" data-discover="true">Products<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/add-product" data-discover="true">Add Product<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/billing" data-discover="true">Billing<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/invoices" data-discover="true">Invoices<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/single-invoice" data-discover="true">Single Invoice<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/create-invoice" data-discover="true">Create Invoice<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/transactions" data-discover="true">Transactions<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/single-transaction" data-discover="true">Single Transaction<span class="ml-auto flex items-center gap-1"></span></a></li></ul></div></li><li><a class="group menu-item menu-item-inactive" href="https://react-demo.tailadmin.com/calendar" data-discover="true"><span class="menu-item-icon-size menu-item-icon-inactive"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 2C8.41421 2 8.75 2.33579 8.75 2.75V3.75H15.25V2.75C15.25 2.33579 15.5858 2 16 2C16.4142 2 16.75 2.33579 16.75 2.75V3.75H18.5C19.7426 3.75 20.75 4.75736 20.75 6V9V19C20.75 20.2426 19.7426 21.25 18.5 21.25H5.5C4.25736 21.25 3.25 20.2426 3.25 19V9V6C3.25 4.75736 4.25736 3.75 5.5 3.75H7.25V2.75C7.25 2.33579 7.58579 2 8 2ZM8 5.25H5.5C5.08579 5.25 4.75 5.58579 4.75 6V8.25H19.25V6C19.25 5.58579 18.9142 5.25 18.5 5.25H16H8ZM19.25 9.75H4.75V19C4.75 19.4142 5.08579 19.75 5.5 19.75H18.5C18.9142 19.75 19.25 19.4142 19.25 19V9.75Z" fill="currentColor"></path></svg></span><span class="menu-item-text">Calendar</span></a></li><li><a class="group menu-item menu-item-inactive" href="https://react-demo.tailadmin.com/profile" data-discover="true"><span class="menu-item-icon-size menu-item-icon-inactive"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.5C7.30558 3.5 3.5 7.30558 3.5 12C3.5 14.1526 4.3002 16.1184 5.61936 17.616C6.17279 15.3096 8.24852 13.5955 10.7246 13.5955H13.2746C15.7509 13.5955 17.8268 15.31 18.38 17.6167C19.6996 16.119 20.5 14.153 20.5 12C20.5 7.30558 16.6944 3.5 12 3.5ZM17.0246 18.8566V18.8455C17.0246 16.7744 15.3457 15.0955 13.2746 15.0955H10.7246C8.65354 15.0955 6.97461 16.7744 6.97461 18.8455V18.856C8.38223 19.8895 10.1198 20.5 12 20.5C13.8798 20.5 15.6171 19.8898 17.0246 18.8566ZM2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM11.9991 7.25C10.8847 7.25 9.98126 8.15342 9.98126 9.26784C9.98126 10.3823 10.8847 11.2857 11.9991 11.2857C13.1135 11.2857 14.0169 10.3823 14.0169 9.26784C14.0169 8.15342 13.1135 7.25 11.9991 7.25ZM8.48126 9.26784C8.48126 7.32499 10.0563 5.75 11.9991 5.75C13.9419 5.75 15.5169 7.32499 15.5169 9.26784C15.5169 11.2107 13.9419 12.7857 11.9991 12.7857C10.0563 12.7857 8.48126 11.2107 8.48126 9.26784Z" fill="currentColor"></path></svg></span><span class="menu-item-text">User Profile</span></a></li><li><button class="group menu-item menu-item-inactive cursor-pointer xl:justify-start"><span class="menu-item-icon-size menu-item-icon-inactive"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.75586 5.50098C7.75586 5.08676 8.09165 4.75098 8.50586 4.75098H18.4985C18.9127 4.75098 19.2485 5.08676 19.2485 5.50098L19.2485 15.4956C19.2485 15.9098 18.9127 16.2456 18.4985 16.2456H8.50586C8.09165 16.2456 7.75586 15.9098 7.75586 15.4956V5.50098ZM8.50586 3.25098C7.26322 3.25098 6.25586 4.25834 6.25586 5.50098V6.26318H5.50195C4.25931 6.26318 3.25195 7.27054 3.25195 8.51318V18.4995C3.25195 19.7422 4.25931 20.7495 5.50195 20.7495H15.4883C16.7309 20.7495 17.7383 19.7421 17.7383 18.4995L17.7383 17.7456H18.4985C19.7411 17.7456 20.7485 16.7382 20.7485 15.4956L20.7485 5.50097C20.7485 4.25833 19.7411 3.25098 18.4985 3.25098H8.50586ZM16.2383 17.7456H8.50586C7.26322 17.7456 6.25586 16.7382 6.25586 15.4956V7.76318H5.50195C5.08774 7.76318 4.75195 8.09897 4.75195 8.51318V18.4995C4.75195 18.9137 5.08774 19.2495 5.50195 19.2495H15.4883C15.9025 19.2495 16.2383 18.9137 16.2383 18.4995L16.2383 17.7456Z" fill="currentColor"></path></svg></span><span class="menu-item-text">Task</span><svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-auto h-5 w-5 transition-transform duration-200 "><path d="M4.79175 7.396L10.0001 12.6043L15.2084 7.396" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="overflow-hidden transition-all duration-300" style="height: 0px;"><ul class="mt-2 ml-9 space-y-1"><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/task-list" data-discover="true">List<span class="ml-auto flex items-center gap-1"><span class="ml-auto menu-dropdown-badge-pro-inactive menu-dropdown-badge-pro">pro</span></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/task-kanban" data-discover="true">Kanban<span class="ml-auto flex items-center gap-1"><span class="ml-auto menu-dropdown-badge-pro-inactive menu-dropdown-badge-pro">pro</span></span></a></li></ul></div></li><li><button class="group menu-item menu-item-inactive cursor-pointer xl:justify-start"><span class="menu-item-icon-size menu-item-icon-inactive"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 3.25C4.25736 3.25 3.25 4.25736 3.25 5.5V18.5C3.25 19.7426 4.25736 20.75 5.5 20.75H18.5001C19.7427 20.75 20.7501 19.7426 20.7501 18.5V5.5C20.7501 4.25736 19.7427 3.25 18.5001 3.25H5.5ZM4.75 5.5C4.75 5.08579 5.08579 4.75 5.5 4.75H18.5001C18.9143 4.75 19.2501 5.08579 19.2501 5.5V18.5C19.2501 18.9142 18.9143 19.25 18.5001 19.25H5.5C5.08579 19.25 4.75 18.9142 4.75 18.5V5.5ZM6.25005 9.7143C6.25005 9.30008 6.58583 8.9643 7.00005 8.9643L17 8.96429C17.4143 8.96429 17.75 9.30008 17.75 9.71429C17.75 10.1285 17.4143 10.4643 17 10.4643L7.00005 10.4643C6.58583 10.4643 6.25005 10.1285 6.25005 9.7143ZM6.25005 14.2857C6.25005 13.8715 6.58583 13.5357 7.00005 13.5357H17C17.4143 13.5357 17.75 13.8715 17.75 14.2857C17.75 14.6999 17.4143 15.0357 17 15.0357H7.00005C6.58583 15.0357 6.25005 14.6999 6.25005 14.2857Z" fill="currentColor"></path></svg></span><span class="menu-item-text">Forms</span><svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-auto h-5 w-5 transition-transform duration-200 "><path d="M4.79175 7.396L10.0001 12.6043L15.2084 7.396" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="overflow-hidden transition-all duration-300" style="height: 0px;"><ul class="mt-2 ml-9 space-y-1"><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/form-elements" data-discover="true">Form Elements<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/form-layout" data-discover="true">Form Layout<span class="ml-auto flex items-center gap-1"><span class="ml-auto menu-dropdown-badge-pro-inactive menu-dropdown-badge-pro">pro</span></span></a></li></ul></div></li><li><button class="group menu-item menu-item-inactive cursor-pointer xl:justify-start"><span class="menu-item-icon-size menu-item-icon-inactive"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.25 5.5C3.25 4.25736 4.25736 3.25 5.5 3.25H18.5C19.7426 3.25 20.75 4.25736 20.75 5.5V18.5C20.75 19.7426 19.7426 20.75 18.5 20.75H5.5C4.25736 20.75 3.25 19.7426 3.25 18.5V5.5ZM5.5 4.75C5.08579 4.75 4.75 5.08579 4.75 5.5V8.58325L19.25 8.58325V5.5C19.25 5.08579 18.9142 4.75 18.5 4.75H5.5ZM19.25 10.0833H15.416V13.9165H19.25V10.0833ZM13.916 10.0833L10.083 10.0833V13.9165L13.916 13.9165V10.0833ZM8.58301 10.0833H4.75V13.9165H8.58301V10.0833ZM4.75 18.5V15.4165H8.58301V19.25H5.5C5.08579 19.25 4.75 18.9142 4.75 18.5ZM10.083 19.25V15.4165L13.916 15.4165V19.25H10.083ZM15.416 19.25V15.4165H19.25V18.5C19.25 18.9142 18.9142 19.25 18.5 19.25H15.416Z" fill="currentColor"></path></svg></span><span class="menu-item-text">Tables</span><svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-auto h-5 w-5 transition-transform duration-200 "><path d="M4.79175 7.396L10.0001 12.6043L15.2084 7.396" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="overflow-hidden transition-all duration-300" style="height: 0px;"><ul class="mt-2 ml-9 space-y-1"><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/basic-tables" data-discover="true">Basic Tables<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/data-tables" data-discover="true">Data Tables<span class="ml-auto flex items-center gap-1"><span class="ml-auto menu-dropdown-badge-pro-inactive menu-dropdown-badge-pro">pro</span></span></a></li></ul></div></li><li><button class="group menu-item menu-item-inactive cursor-pointer xl:justify-start"><span class="menu-item-icon-size menu-item-icon-inactive"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.50391 4.25C8.50391 3.83579 8.83969 3.5 9.25391 3.5H15.2777C15.4766 3.5 15.6674 3.57902 15.8081 3.71967L18.2807 6.19234C18.4214 6.333 18.5004 6.52376 18.5004 6.72268V16.75C18.5004 17.1642 18.1646 17.5 17.7504 17.5H16.248V17.4993H14.748V17.5H9.25391C8.83969 17.5 8.50391 17.1642 8.50391 16.75V4.25ZM14.748 19H9.25391C8.01126 19 7.00391 17.9926 7.00391 16.75V6.49854H6.24805C5.83383 6.49854 5.49805 6.83432 5.49805 7.24854V19.75C5.49805 20.1642 5.83383 20.5 6.24805 20.5H13.998C14.4123 20.5 14.748 20.1642 14.748 19.75L14.748 19ZM7.00391 4.99854V4.25C7.00391 3.00736 8.01127 2 9.25391 2H15.2777C15.8745 2 16.4468 2.23705 16.8687 2.659L19.3414 5.13168C19.7634 5.55364 20.0004 6.12594 20.0004 6.72268V16.75C20.0004 17.9926 18.9931 19 17.7504 19H16.248L16.248 19.75C16.248 20.9926 15.2407 22 13.998 22H6.24805C5.00541 22 3.99805 20.9926 3.99805 19.75V7.24854C3.99805 6.00589 5.00541 4.99854 6.24805 4.99854H7.00391Z" fill="currentColor"></path></svg></span><span class="menu-item-text">Pages</span><svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-auto h-5 w-5 transition-transform duration-200 "><path d="M4.79175 7.396L10.0001 12.6043L15.2084 7.396" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="overflow-hidden transition-all duration-300" style="height: 0px;"><ul class="mt-2 ml-9 space-y-1"><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/file-manager" data-discover="true">File Manager<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/pricing-tables" data-discover="true">Pricing Tables<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/faq" data-discover="true">FAQ<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/api-keys" data-discover="true">API Keys<span class="ml-auto flex items-center gap-1"><span class="ml-auto menu-dropdown-badge-inactive menu-dropdown-badge">new</span></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/integrations" data-discover="true">Integrations<span class="ml-auto flex items-center gap-1"><span class="ml-auto menu-dropdown-badge-inactive menu-dropdown-badge">new</span></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/blank" data-discover="true">Blank Page<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/error-404" data-discover="true">404 Error<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/error-500" data-discover="true">500 Error<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/error-503" data-discover="true">503 Error<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/coming-soon" data-discover="true">Coming Soon<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/maintenance" data-discover="true">Maintenance<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/success" data-discover="true">Success<span class="ml-auto flex items-center gap-1"></span></a></li></ul></div></li><li><button class="group menu-item menu-item-inactive cursor-pointer xl:justify-start"><span class="menu-item-icon-size menu-item-icon-inactive"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.33301 9.33301V19.9998M20 9.33301H4M5.5 20H18.5C19.3284 20 20 19.3284 20 18.5V5.5C20 4.67157 19.3284 4 18.5 4H5.5C4.67157 4 4 4.67157 4 5.5V18.5C4 19.3284 4.67157 20 5.5 20Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="menu-item-text">Layouts</span><span class="absolute right-10 ml-auto menu-dropdown-badge-inactive menu-dropdown-badge">new</span><svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-auto h-5 w-5 transition-transform duration-200 "><path d="M4.79175 7.396L10.0001 12.6043L15.2084 7.396" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="overflow-hidden transition-all duration-300" style="height: 0px;"><ul class="mt-2 ml-9 space-y-1"><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/layout-one" target="_blank" data-discover="true">Layout One<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/layout-two" target="_blank" data-discover="true">Layout Two<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/layout-three" target="_blank" data-discover="true">Layout Three<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/layout-four" target="_blank" data-discover="true">Layout Four<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/layout-five" target="_blank" data-discover="true">Layout Five<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/layout-six" target="_blank" data-discover="true">Layout Six<span class="ml-auto flex items-center gap-1"></span></a></li></ul></div></li></ul></div><div><h2 class="mb-4 flex text-xs leading-[20px] text-gray-400 uppercase justify-start">Support</h2><ul class="flex flex-col gap-1"><li><a class="group menu-item menu-item-inactive" href="https://react-demo.tailadmin.com/chat" data-discover="true"><span class="menu-item-icon-size menu-item-icon-inactive"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.00002 12.0957C4.00002 7.67742 7.58174 4.0957 12 4.0957C16.4183 4.0957 20 7.67742 20 12.0957C20 16.514 16.4183 20.0957 12 20.0957H5.06068L6.34317 18.8132C6.48382 18.6726 6.56284 18.4818 6.56284 18.2829C6.56284 18.084 6.48382 17.8932 6.34317 17.7526C4.89463 16.304 4.00002 14.305 4.00002 12.0957ZM12 2.5957C6.75332 2.5957 2.50002 6.849 2.50002 12.0957C2.50002 14.4488 3.35633 16.603 4.77303 18.262L2.71969 20.3154C2.50519 20.5299 2.44103 20.8525 2.55711 21.1327C2.6732 21.413 2.94668 21.5957 3.25002 21.5957H12C17.2467 21.5957 21.5 17.3424 21.5 12.0957C21.5 6.849 17.2467 2.5957 12 2.5957ZM7.62502 10.8467C6.93467 10.8467 6.37502 11.4063 6.37502 12.0967C6.37502 12.787 6.93467 13.3467 7.62502 13.3467H7.62512C8.31548 13.3467 8.87512 12.787 8.87512 12.0967C8.87512 11.4063 8.31548 10.8467 7.62512 10.8467H7.62502ZM10.75 12.0967C10.75 11.4063 11.3097 10.8467 12 10.8467H12.0001C12.6905 10.8467 13.2501 11.4063 13.2501 12.0967C13.2501 12.787 12.6905 13.3467 12.0001 13.3467H12C11.3097 13.3467 10.75 12.787 10.75 12.0967ZM16.375 10.8467C15.6847 10.8467 15.125 11.4063 15.125 12.0967C15.125 12.787 15.6847 13.3467 16.375 13.3467H16.3751C17.0655 13.3467 17.6251 12.787 17.6251 12.0967C17.6251 11.4063 17.0655 10.8467 16.3751 10.8467H16.375Z" fill="currentColor"></path></svg></span><span class="menu-item-text">Chat</span></a></li><li><button class="group menu-item menu-item-inactive cursor-pointer xl:justify-start"><span class="menu-item-icon-size menu-item-icon-inactive"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 17.0518V12C20 7.58174 16.4183 4 12 4C7.58168 4 3.99994 7.58174 3.99994 12V17.0518M19.9998 14.041V19.75C19.9998 20.5784 19.3282 21.25 18.4998 21.25H13.9998M6.5 18.75H5.5C4.67157 18.75 4 18.0784 4 17.25V13.75C4 12.9216 4.67157 12.25 5.5 12.25H6.5C7.32843 12.25 8 12.9216 8 13.75V17.25C8 18.0784 7.32843 18.75 6.5 18.75ZM17.4999 18.75H18.4999C19.3284 18.75 19.9999 18.0784 19.9999 17.25V13.75C19.9999 12.9216 19.3284 12.25 18.4999 12.25H17.4999C16.6715 12.25 15.9999 12.9216 15.9999 13.75V17.25C15.9999 18.0784 16.6715 18.75 17.4999 18.75Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="menu-item-text">Support Ticket</span><span class="absolute right-10 ml-auto menu-dropdown-badge-inactive menu-dropdown-badge">new</span><svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-auto h-5 w-5 transition-transform duration-200 "><path d="M4.79175 7.396L10.0001 12.6043L15.2084 7.396" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="overflow-hidden transition-all duration-300" style="height: 0px;"><ul class="mt-2 ml-9 space-y-1"><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/support-tickets" data-discover="true">Ticket List<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/support-ticket-reply" data-discover="true">Ticket Reply<span class="ml-auto flex items-center gap-1"></span></a></li></ul></div></li><li><button class="group menu-item menu-item-active cursor-pointer xl:justify-start"><span class="menu-item-icon-size menu-item-icon-active"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 8.187V17.25C3.5 17.6642 3.83579 18 4.25 18H19.75C20.1642 18 20.5 17.6642 20.5 17.25V8.18747L13.2873 13.2171C12.5141 13.7563 11.4866 13.7563 10.7134 13.2171L3.5 8.187ZM20.5 6.2286C20.5 6.23039 20.5 6.23218 20.5 6.23398V6.24336C20.4976 6.31753 20.4604 6.38643 20.3992 6.42905L12.4293 11.9867C12.1716 12.1664 11.8291 12.1664 11.5713 11.9867L3.60116 6.42885C3.538 6.38481 3.50035 6.31268 3.50032 6.23568C3.50028 6.10553 3.60577 6 3.73592 6H20.2644C20.3922 6 20.4963 6.10171 20.5 6.2286ZM22 6.25648V17.25C22 18.4926 20.9926 19.5 19.75 19.5H4.25C3.00736 19.5 2 18.4926 2 17.25V6.23398C2 6.22371 2.00021 6.2135 2.00061 6.20333C2.01781 5.25971 2.78812 4.5 3.73592 4.5H20.2644C21.2229 4.5 22 5.27697 22.0001 6.23549C22.0001 6.24249 22.0001 6.24949 22 6.25648Z" fill="currentColor"></path></svg></span><span class="menu-item-text">Email</span><svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-auto h-5 w-5 transition-transform duration-200 rotate-180 text-brand-500"><path d="M4.79175 7.396L10.0001 12.6043L15.2084 7.396" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="overflow-hidden transition-all duration-300" style="height: 92px;"><ul class="mt-2 ml-9 space-y-1"><li><a class="menu-dropdown-item menu-dropdown-item-active" href="https://react-demo.tailadmin.com/inbox" data-discover="true">Inbox<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/inbox-details" data-discover="true">Details<span class="ml-auto flex items-center gap-1"></span></a></li></ul></div></li></ul></div><div><h2 class="mb-4 flex text-xs leading-[20px] text-gray-400 uppercase justify-start">Others</h2><ul class="flex flex-col gap-1"><li><button class="group menu-item menu-item-inactive cursor-pointer xl:justify-start"><span class="menu-item-icon-size menu-item-icon-inactive"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C11.5858 2 11.25 2.33579 11.25 2.75V12C11.25 12.4142 11.5858 12.75 12 12.75H21.25C21.6642 12.75 22 12.4142 22 12C22 6.47715 17.5228 2 12 2ZM12.75 11.25V3.53263C13.2645 3.57761 13.7659 3.66843 14.25 3.80098V3.80099C15.6929 4.19606 16.9827 4.96184 18.0104 5.98959C19.0382 7.01734 19.8039 8.30707 20.199 9.75C20.3316 10.2341 20.4224 10.7355 20.4674 11.25H12.75ZM2 12C2 7.25083 5.31065 3.27489 9.75 2.25415V3.80099C6.14748 4.78734 3.5 8.0845 3.5 12C3.5 16.6944 7.30558 20.5 12 20.5C15.9155 20.5 19.2127 17.8525 20.199 14.25H21.7459C20.7251 18.6894 16.7492 22 12 22C6.47715 22 2 17.5229 2 12Z" fill="currentColor"></path></svg></span><span class="menu-item-text">Charts</span><span class="absolute right-10 ml-auto menu-dropdown-badge-inactive menu-dropdown-badge">new</span><svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-auto h-5 w-5 transition-transform duration-200 "><path d="M4.79175 7.396L10.0001 12.6043L15.2084 7.396" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="overflow-hidden transition-all duration-300" style="height: 0px;"><ul class="mt-2 ml-9 space-y-1"><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/line-chart" data-discover="true">Line Chart<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/bar-chart" data-discover="true">Bar Chart<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/pie-chart" data-discover="true">Pie Chart<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/radar-chart" data-discover="true">Radar Chart<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/radial-chart" data-discover="true">Radial Chart<span class="ml-auto flex items-center gap-1"></span></a></li></ul></div></li><li><button class="group menu-item menu-item-inactive cursor-pointer xl:justify-start"><span class="menu-item-icon-size menu-item-icon-inactive"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none"><path d="M8.87646 19.4561C8.99463 19.4563 9.11281 19.4425 9.22852 19.4147L14.771 18.0845C14.889 18.0561 15.0095 18.0423 15.13 18.0431C15.2468 18.0438 15.3636 18.0581 15.4779 18.0861L19.3927 19.0448C20.3377 19.2763 21.2495 18.5608 21.2495 17.5879V7.17656C21.2495 6.48557 20.7775 5.88398 20.1063 5.71961L18.2299 5.26008M15.13 18.0431V13.158M8.87646 19.4561C8.75732 19.456 8.63819 19.4416 8.52164 19.4131L3.89319 18.2796C3.22203 18.1152 2.75 17.5136 2.75 16.8226V6.41127C2.75 5.43838 3.66185 4.7229 4.60681 4.95432L5.76839 5.2388M8.87646 19.4561V13.1446M15.2819 6.03146C15.2819 9.34375 12.0091 11.9984 12.0091 11.9984C12.0091 11.9984 8.71896 9.34375 8.71896 6.03146C8.71896 4.21916 10.1881 2.75 12.0004 2.75C13.8127 2.75 15.2819 4.21916 15.2819 6.03146Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 6.03125H12.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="menu-item-text">Maps</span><span class="absolute right-10 ml-auto menu-dropdown-badge-inactive menu-dropdown-badge">new</span><svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-auto h-5 w-5 transition-transform duration-200 "><path d="M4.79175 7.396L10.0001 12.6043L15.2084 7.396" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="overflow-hidden transition-all duration-300" style="height: 0px;"><ul class="mt-2 ml-9 space-y-1"><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/maps" data-discover="true">Maps<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/vector-map" data-discover="true">Vector Map<span class="ml-auto flex items-center gap-1"></span></a></li></ul></div></li><li><button class="group menu-item menu-item-inactive cursor-pointer xl:justify-start"><span class="menu-item-icon-size menu-item-icon-inactive"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.665 3.75618C11.8762 3.65061 12.1247 3.65061 12.3358 3.75618L18.7807 6.97853L12.3358 10.2009C12.1247 10.3064 11.8762 10.3064 11.665 10.2009L5.22014 6.97853L11.665 3.75618ZM4.29297 8.19199V16.0946C4.29297 16.3787 4.45347 16.6384 4.70757 16.7654L11.25 20.0365V11.6512C11.1631 11.6205 11.0777 11.5843 10.9942 11.5425L4.29297 8.19199ZM12.75 20.037L19.2933 16.7654C19.5474 16.6384 19.7079 16.3787 19.7079 16.0946V8.19199L13.0066 11.5425C12.9229 11.5844 12.8372 11.6207 12.75 11.6515V20.037ZM13.0066 2.41453C12.3732 2.09783 11.6277 2.09783 10.9942 2.41453L4.03676 5.89316C3.27449 6.27429 2.79297 7.05339 2.79297 7.90563V16.0946C2.79297 16.9468 3.27448 17.7259 4.03676 18.1071L10.9942 21.5857L11.3296 20.9149L10.9942 21.5857C11.6277 21.9024 12.3732 21.9024 13.0066 21.5857L19.9641 18.1071C20.7264 17.7259 21.2079 16.9468 21.2079 16.0946V7.90563C21.2079 7.05339 20.7264 6.27429 19.9641 5.89316L13.0066 2.41453Z" fill="currentColor"></path></svg></span><span class="menu-item-text">UI Elements</span><svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-auto h-5 w-5 transition-transform duration-200 "><path d="M4.79175 7.396L10.0001 12.6043L15.2084 7.396" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="overflow-hidden transition-all duration-300" style="height: 0px;"><ul class="mt-2 ml-9 space-y-1"><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/alerts" data-discover="true">Alerts<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/avatars" data-discover="true">Avatar<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/badge" data-discover="true">Badge<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/breadcrumb" data-discover="true">Breadcrumb<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/buttons" data-discover="true">Buttons<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/buttons-group" data-discover="true">Buttons Group<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/cards" data-discover="true">Cards<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/carousel" data-discover="true">Carousel<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/dropdowns" data-discover="true">Dropdowns<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/images" data-discover="true">Images<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/links" data-discover="true">Links<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/list" data-discover="true">List<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/modals" data-discover="true">Modals<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/notifications" data-discover="true">Notification<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/pagination" data-discover="true">Pagination<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/popovers" data-discover="true">Popovers<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/progress-bar" data-discover="true">Progressbar<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/ribbons" data-discover="true">Ribbons<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/spinners" data-discover="true">Spinners<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/tabs" data-discover="true">Tabs<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/tooltips" data-discover="true">Tooltips<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/videos" data-discover="true">Videos<span class="ml-auto flex items-center gap-1"></span></a></li></ul></div></li><li><button class="group menu-item menu-item-inactive cursor-pointer xl:justify-start"><span class="menu-item-icon-size menu-item-icon-inactive"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M14 2.75C14 2.33579 14.3358 2 14.75 2C15.1642 2 15.5 2.33579 15.5 2.75V5.73291L17.75 5.73291H19C19.4142 5.73291 19.75 6.0687 19.75 6.48291C19.75 6.89712 19.4142 7.23291 19 7.23291H18.5L18.5 12.2329C18.5 15.5691 15.9866 18.3183 12.75 18.6901V21.25C12.75 21.6642 12.4142 22 12 22C11.5858 22 11.25 21.6642 11.25 21.25V18.6901C8.01342 18.3183 5.5 15.5691 5.5 12.2329L5.5 7.23291H5C4.58579 7.23291 4.25 6.89712 4.25 6.48291C4.25 6.0687 4.58579 5.73291 5 5.73291L6.25 5.73291L8.5 5.73291L8.5 2.75C8.5 2.33579 8.83579 2 9.25 2C9.66421 2 10 2.33579 10 2.75L10 5.73291L14 5.73291V2.75ZM7 7.23291L7 12.2329C7 14.9943 9.23858 17.2329 12 17.2329C14.7614 17.2329 17 14.9943 17 12.2329L17 7.23291L7 7.23291Z" fill="currentColor"></path></svg></span><span class="menu-item-text">Authentication</span><svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-auto h-5 w-5 transition-transform duration-200 "><path d="M4.79175 7.396L10.0001 12.6043L15.2084 7.396" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="overflow-hidden transition-all duration-300" style="height: 0px;"><ul class="mt-2 ml-9 space-y-1"><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/signin" data-discover="true">Sign In<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/signup" data-discover="true">Sign Up<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/reset-password" data-discover="true">Reset Password<span class="ml-auto flex items-center gap-1"></span></a></li><li><a class="menu-dropdown-item menu-dropdown-item-inactive" href="https://react-demo.tailadmin.com/two-step-verification" data-discover="true">Two Step Verification<span class="ml-auto flex items-center gap-1"></span></a></li></ul></div></li></ul></div></div></nav><div class="pb-20"><div class="
+        mx-auto  w-full max-w-60 rounded-2xl bg-gray-50 px-4 py-5 text-center dark:bg-white/[0.03]"><h3 class="mb-2 font-semibold text-gray-900 dark:text-white">#1 Tailwind CSS Dashboard</h3><p class="mb-4 text-gray-500 text-theme-sm dark:text-gray-400">Leading Tailwind CSS Admin Template with 500+ UI Component and Pages.</p><a href="https://tailadmin.com/pricing" target="_blank" rel="nofollow" class="flex items-center justify-center p-3 font-medium text-white rounded-lg bg-brand-500 text-theme-sm hover:bg-brand-600">Purchase Plan</a></div></div></div></aside><div class="flex-1 transition-[margin] duration-300 ease-in-out xl:ml-[290px]"><header class="sticky top-0 flex w-full bg-white border-gray-200 z-99999 dark:border-gray-800 dark:bg-gray-900 xl:border-b"><div class="flex flex-col items-center justify-between grow xl:flex-row xl:px-6"><div class="flex items-center justify-between w-full gap-2 px-3 py-3 border-b border-gray-200 dark:border-gray-800 sm:gap-4 xl:justify-normal xl:border-b-0 xl:px-0 lg:py-4"><button class="items-center justify-center  w-10 h-10 text-gray-500 border-gray-200 rounded-lg z-99999 dark:border-gray-800 flex dark:text-gray-400 lg:h-11 lg:w-11 xl:border " aria-label="Toggle Sidebar"><svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.583252 1C0.583252 0.585788 0.919038 0.25 1.33325 0.25H14.6666C15.0808 0.25 15.4166 0.585786 15.4166 1C15.4166 1.41421 15.0808 1.75 14.6666 1.75L1.33325 1.75C0.919038 1.75 0.583252 1.41422 0.583252 1ZM0.583252 11C0.583252 10.5858 0.919038 10.25 1.33325 10.25L14.6666 10.25C15.0808 10.25 15.4166 10.5858 15.4166 11C15.4166 11.4142 15.0808 11.75 14.6666 11.75L1.33325 11.75C0.919038 11.75 0.583252 11.4142 0.583252 11ZM1.33325 5.25C0.919038 5.25 0.583252 5.58579 0.583252 6C0.583252 6.41421 0.919038 6.75 1.33325 6.75L7.99992 6.75C8.41413 6.75 8.74992 6.41421 8.74992 6C8.74992 5.58579 8.41413 5.25 7.99992 5.25L1.33325 5.25Z" fill="currentColor"></path></svg></button><a class="xl:hidden" href="https://react-demo.tailadmin.com/" data-discover="true"><img class="dark:hidden" alt="Logo" src="./React.js detail Dashboard _ TailAdmin - React.js Admin Dashboard Template_files/logo.svg"><img class="hidden dark:block" alt="Logo" src="./React.js detail Dashboard _ TailAdmin - React.js Admin Dashboard Template_files/logo-dark.svg"></a><button class="flex items-center justify-center w-10 h-10 text-gray-700 rounded-lg z-99999 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800 xl:hidden"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99902 10.4951C6.82745 10.4951 7.49902 11.1667 7.49902 11.9951V12.0051C7.49902 12.8335 6.82745 13.5051 5.99902 13.5051C5.1706 13.5051 4.49902 12.8335 4.49902 12.0051V11.9951C4.49902 11.1667 5.1706 10.4951 5.99902 10.4951ZM17.999 10.4951C18.8275 10.4951 19.499 11.1667 19.499 11.9951V12.0051C19.499 12.8335 18.8275 13.5051 17.999 13.5051C17.1706 13.5051 16.499 12.8335 16.499 12.0051V11.9951C16.499 11.1667 17.1706 10.4951 17.999 10.4951ZM13.499 11.9951C13.499 11.1667 12.8275 10.4951 11.999 10.4951C11.1706 10.4951 10.499 11.1667 10.499 11.9951V12.0051C10.499 12.8335 11.1706 13.5051 11.999 13.5051C12.8275 13.5051 13.499 12.8335 13.499 12.0051V11.9951Z" fill="currentColor"></path></svg></button><div class="hidden xl:block"><form><div class="relative"><span class="absolute -translate-y-1/2 pointer-events-none left-4 top-1/2"><svg class="fill-gray-500 dark:fill-gray-400" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.04175 9.37363C3.04175 5.87693 5.87711 3.04199 9.37508 3.04199C12.8731 3.04199 15.7084 5.87693 15.7084 9.37363C15.7084 12.8703 12.8731 15.7053 9.37508 15.7053C5.87711 15.7053 3.04175 12.8703 3.04175 9.37363ZM9.37508 1.54199C5.04902 1.54199 1.54175 5.04817 1.54175 9.37363C1.54175 13.6991 5.04902 17.2053 9.37508 17.2053C11.2674 17.2053 13.003 16.5344 14.357 15.4176L17.177 18.238C17.4699 18.5309 17.9448 18.5309 18.2377 18.238C18.5306 17.9451 18.5306 17.4703 18.2377 17.1774L15.418 14.3573C16.5365 13.0033 17.2084 11.2669 17.2084 9.37363C17.2084 5.04817 13.7011 1.54199 9.37508 1.54199Z" fill=""></path></svg></span><input placeholder="Search or type command..." class="h-11 w-full rounded-lg border border-gray-200 bg-transparent py-2.5 pl-12 pr-14 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-800 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800 xl:w-[430px]" type="text"><button class="absolute right-2.5 top-1/2 inline-flex -translate-y-1/2 items-center gap-0.5 rounded-lg border border-gray-200 bg-gray-50 px-[7px] py-[4.5px] text-xs -tracking-[0.2px] text-gray-500 dark:border-gray-800 dark:bg-white/[0.03] dark:text-gray-400"><span> ⌘ </span><span> K </span></button></div></form></div></div><div class="hidden items-center justify-between w-full gap-4 px-5 py-4 xl:flex shadow-theme-md xl:justify-end xl:px-0 xl:shadow-none"><div class="flex items-center gap-2 2xsm:gap-3"><button class="relative flex items-center justify-center text-gray-500 transition-colors bg-white border border-gray-200 rounded-full hover:text-dark-900 h-11 w-11 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"><svg class="hidden dark:block" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.99998 1.5415C10.4142 1.5415 10.75 1.87729 10.75 2.2915V3.5415C10.75 3.95572 10.4142 4.2915 9.99998 4.2915C9.58577 4.2915 9.24998 3.95572 9.24998 3.5415V2.2915C9.24998 1.87729 9.58577 1.5415 9.99998 1.5415ZM10.0009 6.79327C8.22978 6.79327 6.79402 8.22904 6.79402 10.0001C6.79402 11.7712 8.22978 13.207 10.0009 13.207C11.772 13.207 13.2078 11.7712 13.2078 10.0001C13.2078 8.22904 11.772 6.79327 10.0009 6.79327ZM5.29402 10.0001C5.29402 7.40061 7.40135 5.29327 10.0009 5.29327C12.6004 5.29327 14.7078 7.40061 14.7078 10.0001C14.7078 12.5997 12.6004 14.707 10.0009 14.707C7.40135 14.707 5.29402 12.5997 5.29402 10.0001ZM15.9813 5.08035C16.2742 4.78746 16.2742 4.31258 15.9813 4.01969C15.6884 3.7268 15.2135 3.7268 14.9207 4.01969L14.0368 4.90357C13.7439 5.19647 13.7439 5.67134 14.0368 5.96423C14.3297 6.25713 14.8045 6.25713 15.0974 5.96423L15.9813 5.08035ZM18.4577 10.0001C18.4577 10.4143 18.1219 10.7501 17.7077 10.7501H16.4577C16.0435 10.7501 15.7077 10.4143 15.7077 10.0001C15.7077 9.58592 16.0435 9.25013 16.4577 9.25013H17.7077C18.1219 9.25013 18.4577 9.58592 18.4577 10.0001ZM14.9207 15.9806C15.2135 16.2735 15.6884 16.2735 15.9813 15.9806C16.2742 15.6877 16.2742 15.2128 15.9813 14.9199L15.0974 14.036C14.8045 13.7431 14.3297 13.7431 14.0368 14.036C13.7439 14.3289 13.7439 14.8038 14.0368 15.0967L14.9207 15.9806ZM9.99998 15.7088C10.4142 15.7088 10.75 16.0445 10.75 16.4588V17.7088C10.75 18.123 10.4142 18.4588 9.99998 18.4588C9.58577 18.4588 9.24998 18.123 9.24998 17.7088V16.4588C9.24998 16.0445 9.58577 15.7088 9.99998 15.7088ZM5.96356 15.0972C6.25646 14.8043 6.25646 14.3295 5.96356 14.0366C5.67067 13.7437 5.1958 13.7437 4.9029 14.0366L4.01902 14.9204C3.72613 15.2133 3.72613 15.6882 4.01902 15.9811C4.31191 16.274 4.78679 16.274 5.07968 15.9811L5.96356 15.0972ZM4.29224 10.0001C4.29224 10.4143 3.95645 10.7501 3.54224 10.7501H2.29224C1.87802 10.7501 1.54224 10.4143 1.54224 10.0001C1.54224 9.58592 1.87802 9.25013 2.29224 9.25013H3.54224C3.95645 9.25013 4.29224 9.58592 4.29224 10.0001ZM4.9029 5.9637C5.1958 6.25659 5.67067 6.25659 5.96356 5.9637C6.25646 5.6708 6.25646 5.19593 5.96356 4.90303L5.07968 4.01915C4.78679 3.72626 4.31191 3.72626 4.01902 4.01915C3.72613 4.31204 3.72613 4.78692 4.01902 5.07981L4.9029 5.9637Z" fill="currentColor"></path></svg><svg class="dark:hidden" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.4547 11.97L18.1799 12.1611C18.265 11.8383 18.1265 11.4982 17.8401 11.3266C17.5538 11.1551 17.1885 11.1934 16.944 11.4207L17.4547 11.97ZM8.0306 2.5459L8.57989 3.05657C8.80718 2.81209 8.84554 2.44682 8.67398 2.16046C8.50243 1.8741 8.16227 1.73559 7.83948 1.82066L8.0306 2.5459ZM12.9154 13.0035C9.64678 13.0035 6.99707 10.3538 6.99707 7.08524H5.49707C5.49707 11.1823 8.81835 14.5035 12.9154 14.5035V13.0035ZM16.944 11.4207C15.8869 12.4035 14.4721 13.0035 12.9154 13.0035V14.5035C14.8657 14.5035 16.6418 13.7499 17.9654 12.5193L16.944 11.4207ZM16.7295 11.7789C15.9437 14.7607 13.2277 16.9586 10.0003 16.9586V18.4586C13.9257 18.4586 17.2249 15.7853 18.1799 12.1611L16.7295 11.7789ZM10.0003 16.9586C6.15734 16.9586 3.04199 13.8433 3.04199 10.0003H1.54199C1.54199 14.6717 5.32892 18.4586 10.0003 18.4586V16.9586ZM3.04199 10.0003C3.04199 6.77289 5.23988 4.05695 8.22173 3.27114L7.83948 1.82066C4.21532 2.77574 1.54199 6.07486 1.54199 10.0003H3.04199ZM6.99707 7.08524C6.99707 5.52854 7.5971 4.11366 8.57989 3.05657L7.48132 2.03522C6.25073 3.35885 5.49707 5.13487 5.49707 7.08524H6.99707Z" fill="currentColor"></path></svg></button><div class="relative"><button class="dropdown-toggle relative flex h-11 w-11 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"><span class="absolute top-0.5 right-0 z-10 h-2 w-2 rounded-full bg-orange-400 flex"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange-400 opacity-75"></span></span><svg class="fill-current" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.75 2.29248C10.75 1.87827 10.4143 1.54248 10 1.54248C9.58583 1.54248 9.25004 1.87827 9.25004 2.29248V2.83613C6.08266 3.20733 3.62504 5.9004 3.62504 9.16748V14.4591H3.33337C2.91916 14.4591 2.58337 14.7949 2.58337 15.2091C2.58337 15.6234 2.91916 15.9591 3.33337 15.9591H4.37504H15.625H16.6667C17.0809 15.9591 17.4167 15.6234 17.4167 15.2091C17.4167 14.7949 17.0809 14.4591 16.6667 14.4591H16.375V9.16748C16.375 5.9004 13.9174 3.20733 10.75 2.83613V2.29248ZM14.875 14.4591V9.16748C14.875 6.47509 12.6924 4.29248 10 4.29248C7.30765 4.29248 5.12504 6.47509 5.12504 9.16748V14.4591H14.875ZM8.00004 17.7085C8.00004 18.1228 8.33583 18.4585 8.75004 18.4585H11.25C11.6643 18.4585 12 18.1228 12 17.7085C12 17.2943 11.6643 16.9585 11.25 16.9585H8.75004C8.33583 16.9585 8.00004 17.2943 8.00004 17.7085Z" fill="currentColor"></path></svg></button></div></div><div class="relative"><button class="flex items-center text-gray-700 dropdown-toggle dark:text-gray-400"><span class="mr-3 overflow-hidden rounded-full h-11 w-11"><img alt="User" src="./React.js detail Dashboard _ TailAdmin - React.js Admin Dashboard Template_files/owner.png"></span><span class="block mr-1 font-medium text-theme-sm">Musharof</span><svg class="stroke-gray-500 dark:stroke-gray-400 transition-transform duration-200 " width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.3125 8.65625L9 13.3437L13.6875 8.65625" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div></div></div></header><main class="mx-auto max-w-(--breakpoint-2xl) p-4 pb-20 md:p-6 md:pb-24"><div class="sm:h-[calc(100vh-174px)] h-screen xl:h-[calc(100vh-186px)"><div class="flex flex-col gap-5 xl:grid xl:grid-cols-12 sm:gap-5"><div class="xl:col-span-3 col-span-full"><div class="flex flex-col rounded-2xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]"><div class="pb-5"><button class="flex items-center justify-center w-full gap-2 p-3 text-sm font-medium text-white rounded-lg bg-brand-500 shadow-theme-xs hover:bg-brand-600"><svg class="fill-current" width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.0911 3.03206C16.2124 2.15338 14.7878 2.15338 13.9091 3.03206L5.6074 11.3337C5.29899 11.6421 5.08687 12.0335 4.99684 12.4603L4.26177 15.945C4.20943 16.1931 4.286 16.4508 4.46529 16.6301C4.64458 16.8094 4.90232 16.8859 5.15042 16.8336L8.63507 16.0985C9.06184 16.0085 9.45324 15.7964 9.76165 15.488L18.0633 7.18631C18.942 6.30763 18.942 4.88301 18.0633 4.00433L17.0911 3.03206ZM14.9697 4.09272C15.2626 3.79982 15.7375 3.79982 16.0304 4.09272L17.0027 5.06499C17.2956 5.35788 17.2956 5.83276 17.0027 6.12565L16.1043 7.02402L14.0714 4.99109L14.9697 4.09272ZM13.0107 6.05175L6.66806 12.3944C6.56526 12.4972 6.49455 12.6277 6.46454 12.7699L5.96704 15.1283L8.32547 14.6308C8.46772 14.6008 8.59819 14.5301 8.70099 14.4273L15.0436 8.08468L13.0107 6.05175Z" fill=""></path></svg>Compose</button></div><div data-simplebar="init" class="custom-scrollbar max-h-[550px] 2xl:max-h-[670px] simplebar-scrollable-y"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: auto; overflow: hidden scroll;"><div class="simplebar-content" style="padding: 0px;"><nav class="space-y-5"><div><h3 class="mb-3 text-xs font-medium uppercase leading-[18px] text-gray-700 dark:text-gray-400">MAILBOX</h3><ul class="flex flex-col gap-1"><li><button class="group flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2.5 text-sm font-medium
+              text-brand-500 bg-brand-50 dark:text-brand-400 dark:bg-brand-500/[0.12]
+              hover:bg-brand-50 hover:text-brand-500 dark:hover:bg-brand-500/[0.12] dark:hover:text-brand-400"><span class="flex items-center gap-3"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.2996 1.12891C11.4713 1.12891 10.7998 1.80033 10.7996 2.62867L10.7996 3.1264V3.12659L10.7997 4.87507H6.14591C3.6031 4.87507 1.54175 6.93642 1.54175 9.47923V14.3207C1.54175 15.4553 2.46151 16.3751 3.5961 16.3751H6.14591H10.0001H16.2084C17.4511 16.3751 18.4584 15.3677 18.4584 14.1251V10.1251C18.4584 7.22557 16.1079 4.87507 13.2084 4.87507H12.2997L12.2996 3.87651H13.7511C14.5097 3.87651 15.1248 3.26157 15.1249 2.50293C15.125 1.74411 14.5099 1.12891 13.7511 1.12891H12.2996ZM3.04175 9.47923C3.04175 7.76485 4.43153 6.37507 6.14591 6.37507C7.8603 6.37507 9.25008 7.76485 9.25008 9.47923V14.8751H6.14591H3.5961C3.28994 14.8751 3.04175 14.6269 3.04175 14.3207V9.47923ZM10.7501 9.47923V14.8751H16.2084C16.6226 14.8751 16.9584 14.5393 16.9584 14.1251V10.1251C16.9584 8.054 15.2795 6.37507 13.2084 6.37507H9.54632C10.294 7.19366 10.7501 8.28319 10.7501 9.47923Z" fill="currentColor"></path></svg>Inbox</span><span>3</span></button></li><li><button class="group flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2.5 text-sm font-medium
+              text-gray-500 dark:text-gray-400
+              hover:bg-brand-50 hover:text-brand-500 dark:hover:bg-brand-500/[0.12] dark:hover:text-brand-400"><span class="flex items-center gap-3"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.98481 2.44399C3.11333 1.57147 1.15325 3.46979 1.96543 5.36824L3.82086 9.70527C3.90146 9.89367 3.90146 10.1069 3.82086 10.2953L1.96543 14.6323C1.15326 16.5307 3.11332 18.4291 4.98481 17.5565L16.8184 12.0395C18.5508 11.2319 18.5508 8.76865 16.8184 7.961L4.98481 2.44399ZM3.34453 4.77824C3.0738 4.14543 3.72716 3.51266 4.35099 3.80349L16.1846 9.32051C16.762 9.58973 16.762 10.4108 16.1846 10.68L4.35098 16.197C3.72716 16.4879 3.0738 15.8551 3.34453 15.2223L5.19996 10.8853C5.21944 10.8397 5.23735 10.7937 5.2537 10.7473L9.11784 10.7473C9.53206 10.7473 9.86784 10.4115 9.86784 9.99726C9.86784 9.58304 9.53206 9.24726 9.11784 9.24726L5.25157 9.24726C5.2358 9.20287 5.2186 9.15885 5.19996 9.11528L3.34453 4.77824Z" fill="currentColor"></path></svg>Sent</span></button></li><li><button class="group flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2.5 text-sm font-medium
+              text-gray-500 dark:text-gray-400
+              hover:bg-brand-50 hover:text-brand-500 dark:hover:bg-brand-500/[0.12] dark:hover:text-brand-400"><span class="flex items-center gap-3"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.04175 7.06206V14.375C3.04175 14.6511 3.26561 14.875 3.54175 14.875H16.4584C16.7346 14.875 16.9584 14.6511 16.9584 14.375V7.06245L11.1443 11.1168C10.457 11.5961 9.54373 11.5961 8.85638 11.1168L3.04175 7.06206ZM16.9584 5.19262C16.9584 5.19341 16.9584 5.1942 16.9584 5.19498V5.20026C16.9572 5.22216 16.946 5.24239 16.9279 5.25501L10.2864 9.88638C10.1145 10.0062 9.8862 10.0062 9.71437 9.88638L3.07255 5.25485C3.05342 5.24151 3.04202 5.21967 3.04202 5.19636C3.042 5.15695 3.07394 5.125 3.11335 5.125H16.8871C16.9253 5.125 16.9564 5.15494 16.9584 5.19262ZM18.4584 5.21428V14.375C18.4584 15.4796 17.563 16.375 16.4584 16.375H3.54175C2.43718 16.375 1.54175 15.4796 1.54175 14.375V5.19498C1.54175 5.1852 1.54194 5.17546 1.54231 5.16577C1.55858 4.31209 2.25571 3.625 3.11335 3.625H16.8871C17.7549 3.625 18.4584 4.32843 18.4585 5.19622C18.4585 5.20225 18.4585 5.20826 18.4584 5.21428Z" fill="currentColor"></path></svg>Drafts</span></button></li><li><button class="group flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2.5 text-sm font-medium
+              text-gray-500 dark:text-gray-400
+              hover:bg-brand-50 hover:text-brand-500 dark:hover:bg-brand-500/[0.12] dark:hover:text-brand-400"><span class="flex items-center gap-3"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.2996 1.12891C11.4713 1.12891 10.7998 1.80033 10.7996 2.62867L10.7996 3.1264V3.12659L10.7997 4.87507H6.14591C3.6031 4.87507 1.54175 6.93642 1.54175 9.47923V14.3207C1.54175 15.4553 2.46151 16.3751 3.5961 16.3751H6.14591H10.0001H16.2084C17.4511 16.3751 18.4584 15.3677 18.4584 14.1251V10.1251C18.4584 7.22557 16.1079 4.87507 13.2084 4.87507H12.2997L12.2996 3.87651H13.7511C14.5097 3.87651 15.1248 3.26157 15.1249 2.50293C15.125 1.74411 14.5099 1.12891 13.7511 1.12891H12.2996ZM3.04175 9.47923C3.04175 7.76485 4.43153 6.37507 6.14591 6.37507C7.8603 6.37507 9.25008 7.76485 9.25008 9.47923V14.8751H6.14591H3.5961C3.28994 14.8751 3.04175 14.6269 3.04175 14.3207V9.47923ZM10.7501 9.47923V14.8751H16.2084C16.6226 14.8751 16.9584 14.5393 16.9584 14.1251V10.1251C16.9584 8.054 15.2795 6.37507 13.2084 6.37507H9.54632C10.294 7.19366 10.7501 8.28319 10.7501 9.47923Z" fill="currentColor"></path></svg>Spam</span><span>2</span></button></li><li><button class="group flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2.5 text-sm font-medium
+              text-gray-500 dark:text-gray-400
+              hover:bg-brand-50 hover:text-brand-500 dark:hover:bg-brand-500/[0.12] dark:hover:text-brand-400"><span class="flex items-center gap-3"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.54118 3.7915C6.54118 2.54886 7.54854 1.5415 8.79118 1.5415H11.2078C12.4505 1.5415 13.4578 2.54886 13.4578 3.7915V4.0415H15.6249H16.6658C17.08 4.0415 17.4158 4.37729 17.4158 4.7915C17.4158 5.20572 17.08 5.5415 16.6658 5.5415H16.3749V8.24638V13.2464V16.2082C16.3749 17.4508 15.3676 18.4582 14.1249 18.4582H5.87492C4.63228 18.4582 3.62492 17.4508 3.62492 16.2082V13.2464V8.24638V5.5415H3.33325C2.91904 5.5415 2.58325 5.20572 2.58325 4.7915C2.58325 4.37729 2.91904 4.0415 3.33325 4.0415H4.37492H6.54118V3.7915ZM14.8749 13.2464V8.24638V5.5415H13.4578H12.7078H7.29118H6.54118H5.12492V8.24638V13.2464V16.2082C5.12492 16.6224 5.46071 16.9582 5.87492 16.9582H14.1249C14.5391 16.9582 14.8749 16.6224 14.8749 16.2082V13.2464ZM8.04118 4.0415H11.9578V3.7915C11.9578 3.37729 11.6221 3.0415 11.2078 3.0415H8.79118C8.37696 3.0415 8.04118 3.37729 8.04118 3.7915V4.0415ZM8.33325 7.99984C8.74747 7.99984 9.08325 8.33562 9.08325 8.74984V13.7498C9.08325 14.1641 8.74747 14.4998 8.33325 14.4998C7.91904 14.4998 7.58325 14.1641 7.58325 13.7498V8.74984C7.58325 8.33562 7.91904 7.99984 8.33325 7.99984ZM12.4166 8.74984C12.4166 8.33562 12.0808 7.99984 11.6666 7.99984C11.2524 7.99984 10.9166 8.33562 10.9166 8.74984V13.7498C10.9166 14.1641 11.2524 14.4998 11.6666 14.4998C12.0808 14.4998 12.4166 14.1641 12.4166 13.7498V8.74984Z" fill="currentColor"></path></svg>Trash</span></button></li><li><button class="group flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2.5 text-sm font-medium
+              text-gray-500 dark:text-gray-400
+              hover:bg-brand-50 hover:text-brand-500 dark:hover:bg-brand-500/[0.12] dark:hover:text-brand-400"><span class="flex items-center gap-3"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.54175 4.8335C1.54175 3.59085 2.54911 2.5835 3.79175 2.5835H16.2084C17.4511 2.5835 18.4584 3.59085 18.4584 4.8335V5.16683C18.4584 5.96477 18.0431 6.66569 17.4167 7.06517V15.1668C17.4167 16.4095 16.4094 17.4168 15.1667 17.4168H4.83341C3.59077 17.4168 2.58341 16.4095 2.58341 15.1668V7.06517C1.95711 6.66568 1.54175 5.96476 1.54175 5.16683V4.8335ZM4.08341 7.41683H15.9167V15.1668C15.9167 15.581 15.581 15.9168 15.1667 15.9168H4.83341C4.4192 15.9168 4.08341 15.581 4.08341 15.1668V7.41683ZM16.9584 5.16683C16.9584 5.58104 16.6226 5.91683 16.2084 5.91683H3.79175C3.37753 5.91683 3.04175 5.58104 3.04175 5.16683V4.8335C3.04175 4.41928 3.37753 4.0835 3.79175 4.0835H16.2084C16.6226 4.0835 16.9584 4.41928 16.9584 4.8335V5.16683ZM8.33341 9.04183C7.9192 9.04183 7.58341 9.37762 7.58341 9.79183C7.58341 10.206 7.9192 10.5418 8.33341 10.5418H11.6667C12.081 10.5418 12.4167 10.206 12.4167 9.79183C12.4167 9.37762 12.081 9.04183 11.6667 9.04183H8.33341Z" fill="currentColor"></path></svg>Archive</span></button></li></ul></div><div><h3 class="mb-3 text-xs font-medium uppercase leading-[18px] text-gray-700 dark:text-gray-400">FILTER</h3><ul class="flex flex-col gap-1"><li><button class="group flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2.5 text-sm font-medium
+              text-gray-500 dark:text-gray-400
+              hover:bg-brand-50 hover:text-brand-500 dark:hover:bg-brand-500/[0.12] dark:hover:text-brand-400"><span class="flex items-center gap-3"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.99993 2.375C10.2854 2.375 10.5461 2.53707 10.6725 2.79308L12.7318 6.96563L17.3365 7.63473C17.619 7.67578 17.8537 7.87367 17.9419 8.14517C18.0301 8.41668 17.9565 8.71473 17.7521 8.914L14.4201 12.1619L15.2067 16.748C15.255 17.0293 15.1393 17.3137 14.9083 17.4815C14.6774 17.6493 14.3712 17.6714 14.1185 17.5386L9.99993 15.3733L5.88137 17.5386C5.62869 17.6714 5.32249 17.6493 5.09153 17.4815C4.86057 17.3137 4.7449 17.0293 4.79316 16.748L5.57974 12.1619L2.24775 8.914C2.04332 8.71473 1.96975 8.41668 2.05797 8.14517C2.14619 7.87367 2.3809 7.67578 2.66341 7.63473L7.2681 6.96563L9.32738 2.79308C9.45373 2.53707 9.71445 2.375 9.99993 2.375ZM9.99993 4.81966L8.4387 7.98306C8.32946 8.20442 8.11828 8.35785 7.874 8.39334L4.38298 8.90062L6.90911 11.363C7.08587 11.5353 7.16653 11.7835 7.1248 12.0268L6.52847 15.5037L9.65093 13.8622C9.86942 13.7473 10.1304 13.7473 10.3489 13.8622L13.4714 15.5037L12.8751 12.0268C12.8333 11.7835 12.914 11.5353 13.0908 11.363L15.6169 8.90062L12.1259 8.39334C11.8816 8.35785 11.6704 8.20442 11.5612 7.98306L9.99993 4.81966Z" fill="currentColor"></path></svg>Starred</span></button></li><li><button class="group flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2.5 text-sm font-medium
+              text-gray-500 dark:text-gray-400
+              hover:bg-brand-50 hover:text-brand-500 dark:hover:bg-brand-500/[0.12] dark:hover:text-brand-400"><span class="flex items-center gap-3"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.2996 1.12891C11.4713 1.12891 10.7998 1.80033 10.7996 2.62867L10.7996 3.1264V3.12659L10.7997 4.87507H6.14591C3.6031 4.87507 1.54175 6.93642 1.54175 9.47923V14.3207C1.54175 15.4553 2.46151 16.3751 3.5961 16.3751H6.14591H10.0001H16.2084C17.4511 16.3751 18.4584 15.3677 18.4584 14.1251V10.1251C18.4584 7.22557 16.1079 4.87507 13.2084 4.87507H12.2997L12.2996 3.87651H13.7511C14.5097 3.87651 15.1248 3.26157 15.1249 2.50293C15.125 1.74411 14.5099 1.12891 13.7511 1.12891H12.2996ZM3.04175 9.47923C3.04175 7.76485 4.43153 6.37507 6.14591 6.37507C7.8603 6.37507 9.25008 7.76485 9.25008 9.47923V14.8751H6.14591H3.5961C3.28994 14.8751 3.04175 14.6269 3.04175 14.3207V9.47923ZM10.7501 9.47923V14.8751H16.2084C16.6226 14.8751 16.9584 14.5393 16.9584 14.1251V10.1251C16.9584 8.054 15.2795 6.37507 13.2084 6.37507H9.54632C10.294 7.19366 10.7501 8.28319 10.7501 9.47923Z" fill="currentColor"></path></svg>Important</span></button></li></ul></div><div><h3 class="mb-3 text-xs font-medium uppercase leading-[18px] text-gray-700 dark:text-gray-400">LABEL</h3><ul class="flex flex-col gap-1"><li><button class="group flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2.5 text-sm font-medium
+              text-gray-500 dark:text-gray-400
+              hover:bg-brand-50 hover:text-brand-500 dark:hover:bg-brand-500/[0.12] dark:hover:text-brand-400"><span class="flex items-center gap-3"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.7567 3.89683C11.6331 3.72282 11.4696 3.58089 11.28 3.48289C11.0904 3.3849 10.8801 3.33367 10.6667 3.3335L3.33333 3.34016C2.59667 3.34016 2 3.93016 2 4.66683V11.3335C2 12.0702 2.59667 12.6602 3.33333 12.6602L10.6667 12.6668C11.1167 12.6668 11.5133 12.4435 11.7567 12.1035L14.6667 8.00016L11.7567 3.89683Z" fill="#12B76A"></path></svg>Personal</span></button></li><li><button class="group flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2.5 text-sm font-medium
+              text-gray-500 dark:text-gray-400
+              hover:bg-brand-50 hover:text-brand-500 dark:hover:bg-brand-500/[0.12] dark:hover:text-brand-400"><span class="flex items-center gap-3"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.7567 3.89683C11.6331 3.72282 11.4696 3.58089 11.28 3.48289C11.0904 3.3849 10.8801 3.33367 10.6667 3.3335L3.33333 3.34016C2.59667 3.34016 2 3.93016 2 4.66683V11.3335C2 12.0702 2.59667 12.6602 3.33333 12.6602L10.6667 12.6668C11.1167 12.6668 11.5133 12.4435 11.7567 12.1035L14.6667 8.00016L11.7567 3.89683Z" fill="#F04438"></path></svg>Work</span></button></li><li><button class="group flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2.5 text-sm font-medium
+              text-gray-500 dark:text-gray-400
+              hover:bg-brand-50 hover:text-brand-500 dark:hover:bg-brand-500/[0.12] dark:hover:text-brand-400"><span class="flex items-center gap-3"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.7567 3.89683C11.6331 3.72282 11.4696 3.58089 11.28 3.48289C11.0904 3.3849 10.8801 3.33367 10.6667 3.3335L3.33333 3.34016C2.59667 3.34016 2 3.93016 2 4.66683V11.3335C2 12.0702 2.59667 12.6602 3.33333 12.6602L10.6667 12.6668C11.1167 12.6668 11.5133 12.4435 11.7567 12.1035L14.6667 8.00016L11.7567 3.89683Z" fill="#FD853A"></path></svg>Payments</span></button></li><li><button class="group flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2.5 text-sm font-medium
+              text-gray-500 dark:text-gray-400
+              hover:bg-brand-50 hover:text-brand-500 dark:hover:bg-brand-500/[0.12] dark:hover:text-brand-400"><span class="flex items-center gap-3"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.7567 3.89683C11.6331 3.72282 11.4696 3.58089 11.28 3.48289C11.0904 3.3849 10.8801 3.33367 10.6667 3.3335L3.33333 3.34016C2.59667 3.34016 2 3.93016 2 4.66683V11.3335C2 12.0702 2.59667 12.6602 3.33333 12.6602L10.6667 12.6668C11.1167 12.6668 11.5133 12.4435 11.7567 12.1035L14.6667 8.00016L11.7567 3.89683Z" fill="#36BFFA"></path></svg>Invoices</span></button></li><li><button class="group flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2.5 text-sm font-medium
+              text-gray-500 dark:text-gray-400
+              hover:bg-brand-50 hover:text-brand-500 dark:hover:bg-brand-500/[0.12] dark:hover:text-brand-400"><span class="flex items-center gap-3"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.7567 3.89683C11.6331 3.72282 11.4696 3.58089 11.28 3.48289C11.0904 3.3849 10.8801 3.33367 10.6667 3.3335L3.33333 3.34016C2.59667 3.34016 2 3.93016 2 4.66683V11.3335C2 12.0702 2.59667 12.6602 3.33333 12.6602L10.6667 12.6668C11.1167 12.6668 11.5133 12.4435 11.7567 12.1035L14.6667 8.00016L11.7567 3.89683Z" fill="#6172F3"></path></svg>Blank</span></button></li></ul></div></nav></div></div></div></div><div class="simplebar-placeholder" style="width: 323px; height: 690px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 650px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div></div></div><div class="rounded-2xl xl:col-span-9 w-full border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03]"><div class="flex flex-col justify-between gap-3 p-4 border-b border-gray-200 dark:border-gray-800 sm:flex-row"><div class="flex items-center w-full gap-2"><div class="relative w-full sm:w-auto"><button class="flex items-center justify-between w-full gap-3 p-3 border border-gray-200 rounded-lg dropdown-toggle dark:border-gray-800 sm:justify-center"><label class="flex items-center space-x-3 group cursor-pointer "><div class="relative w-5 h-5"><input class="w-5 h-5 appearance-none cursor-pointer dark:border-gray-700 border border-gray-300 checked:border-transparent rounded-md checked:bg-brand-500 disabled:opacity-60 
+          " type="checkbox"></div></label><span class=" text-gray-500 duration-300 dropdown-toggle ease-linear dark:text-gray-40"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.83325 5.91699L7.99992 10.0837L12.1666 5.91699" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></button></div><button class="flex items-center justify-center w-full h-10 text-gray-500 transition-colors border border-gray-200 rounded-lg max-w-10 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-800 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.72763 4.33443C7.92401 3.6437 9.30836 3.34945 10.6823 3.49385C12.0562 3.63826 13.3491 4.2139 14.3757 5.13828C15.0468 5.74252 15.5815 6.4755 15.9517 7.28815L13.6069 6.49282C13.2147 6.35977 12.7888 6.5699 12.6557 6.96216C12.5227 7.35443 12.7328 7.78028 13.1251 7.91333L16.8227 9.16752C16.8668 9.18743 16.9129 9.20314 16.9605 9.21426L17.0868 9.25712C17.2752 9.32101 17.4813 9.30746 17.6597 9.21943C17.838 9.1314 17.9741 8.97611 18.038 8.78772L19.3816 4.82561C19.5147 4.43334 19.3045 4.0075 18.9122 3.87447C18.52 3.74145 18.0941 3.95161 17.9611 4.34388L17.2335 6.48938C16.783 5.5609 16.1553 4.72223 15.3794 4.02356C14.1174 2.88722 12.528 2.17958 10.839 2.00207C9.15012 1.82455 7.44834 2.18628 5.97763 3.03539C4.50692 3.88451 3.34277 5.17743 2.65203 6.72884C1.9613 8.28025 1.77944 10.0105 2.13252 11.6716C2.4856 13.3328 3.3555 14.8395 4.61753 15.9758C5.87957 17.1121 7.46894 17.8198 9.15788 17.9973C10.8468 18.1748 12.5486 17.8131 14.0193 16.964C14.378 16.7569 14.5009 16.2982 14.2938 15.9395C14.0867 15.5807 13.628 15.4578 13.2693 15.6649C12.0729 16.3557 10.6886 16.6499 9.31467 16.5055C7.94077 16.3611 6.64786 15.7855 5.62123 14.8611C4.5946 13.9367 3.88697 12.711 3.59974 11.3598C3.31252 10.0085 3.46046 8.60098 4.02235 7.33894C4.58424 6.07691 5.53125 5.02516 6.72763 4.33443Z" fill="currentColor"></path></svg></button><button class="flex items-center justify-center w-full h-10 text-gray-500 transition-colors border border-gray-200 rounded-lg max-w-10 hover:bg-gray-100 hover:text-error-500 dark:border-gray-800 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-error-500"><svg class="fill-current" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.54118 3.7915C6.54118 2.54886 7.54854 1.5415 8.79118 1.5415H11.2078C12.4505 1.5415 13.4578 2.54886 13.4578 3.7915V4.0415H15.6249H16.6658C17.08 4.0415 17.4158 4.37729 17.4158 4.7915C17.4158 5.20572 17.08 5.5415 16.6658 5.5415H16.3749V8.24638V13.2464V16.2082C16.3749 17.4508 15.3676 18.4582 14.1249 18.4582H5.87492C4.63228 18.4582 3.62492 17.4508 3.62492 16.2082V13.2464V8.24638V5.5415H3.33325C2.91904 5.5415 2.58325 5.20572 2.58325 4.7915C2.58325 4.37729 2.91904 4.0415 3.33325 4.0415H4.37492H6.54118V3.7915ZM14.8749 13.2464V8.24638V5.5415H13.4578H12.7078H7.29118H6.54118H5.12492V8.24638V13.2464V16.2082C5.12492 16.6224 5.46071 16.9582 5.87492 16.9582H14.1249C14.5391 16.9582 14.8749 16.6224 14.8749 16.2082V13.2464ZM8.04118 4.0415H11.9578V3.7915C11.9578 3.37729 11.6221 3.0415 11.2078 3.0415H8.79118C8.37696 3.0415 8.04118 3.37729 8.04118 3.7915V4.0415ZM8.33325 7.99984C8.74747 7.99984 9.08325 8.33562 9.08325 8.74984V13.7498C9.08325 14.1641 8.74747 14.4998 8.33325 14.4998C7.91904 14.4998 7.58325 14.1641 7.58325 13.7498V8.74984C7.58325 8.33562 7.91904 7.99984 8.33325 7.99984ZM12.4166 8.74984C12.4166 8.33562 12.0808 7.99984 11.6666 7.99984C11.2524 7.99984 10.9166 8.33562 10.9166 8.74984V13.7498C10.9166 14.1641 11.2524 14.4998 11.6666 14.4998C12.0808 14.4998 12.4166 14.1641 12.4166 13.7498V8.74984Z" fill=""></path></svg></button><button class="flex items-center justify-center w-full h-10 text-gray-500 border border-gray-200 rounded-lg max-w-10 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-800 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.54163 4.8335C1.54163 3.59085 2.54899 2.5835 3.79163 2.5835H16.2083C17.4509 2.5835 18.4583 3.59085 18.4583 4.8335V5.16683C18.4583 5.96477 18.0429 6.66569 17.4166 7.06517V15.1668C17.4166 16.4095 16.4093 17.4168 15.1666 17.4168H4.83329C3.59065 17.4168 2.58329 16.4095 2.58329 15.1668V7.06517C1.95699 6.66568 1.54163 5.96476 1.54163 5.16683V4.8335ZM4.08329 7.41683H15.9166V15.1668C15.9166 15.581 15.5808 15.9168 15.1666 15.9168H4.83329C4.41908 15.9168 4.08329 15.581 4.08329 15.1668V7.41683ZM16.9583 5.16683C16.9583 5.58104 16.6225 5.91683 16.2083 5.91683H3.79163C3.37741 5.91683 3.04163 5.58104 3.04163 5.16683V4.8335C3.04163 4.41928 3.37741 4.0835 3.79163 4.0835H16.2083C16.6225 4.0835 16.9583 4.41928 16.9583 4.8335V5.16683ZM8.33329 9.04183C7.91908 9.04183 7.58329 9.37762 7.58329 9.79183C7.58329 10.206 7.91908 10.5418 8.33329 10.5418H11.6666C12.0808 10.5418 12.4166 10.206 12.4166 9.79183C12.4166 9.37762 12.0808 9.04183 11.6666 9.04183H8.33329Z" fill="currentColor"></path></svg></button><div class="relative inline-block"><button class="dropdown-toggle flex items-center w-10 dropdown-toggle text-gray-500 justify-center  h-10 transition-colors border border-gray-200 rounded-lg max-w-10 dark:text-gray-400 hover:bg-gray-100 dark:border-white/[0.05] dark:hover:bg-gray-800"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-gray-400 size-6 hover:text-gray-700 dark:hover:text-gray-300"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.2441 6C10.2441 5.0335 11.0276 4.25 11.9941 4.25H12.0041C12.9706 4.25 13.7541 5.0335 13.7541 6C13.7541 6.9665 12.9706 7.75 12.0041 7.75H11.9941C11.0276 7.75 10.2441 6.9665 10.2441 6ZM10.2441 18C10.2441 17.0335 11.0276 16.25 11.9941 16.25H12.0041C12.9706 16.25 13.7541 17.0335 13.7541 18C13.7541 18.9665 12.9706 19.75 12.0041 19.75H11.9941C11.0276 19.75 10.2441 18.9665 10.2441 18ZM11.9941 10.25C11.0276 10.25 10.2441 11.0335 10.2441 12C10.2441 12.9665 11.0276 13.75 11.9941 13.75H12.0041C12.9706 13.75 13.7541 12.9665 13.7541 12C13.7541 11.0335 12.9706 10.25 12.0041 10.25H11.9941Z" fill="currentColor"></path></svg></button></div></div><div class=" w-full sm:max-w-[236px]"><form><div class="relative"><span class="absolute -translate-y-1/2 pointer-events-none left-4 top-1/2"><svg class="fill-gray-500 dark:fill-gray-400" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.04199 9.37381C3.04199 5.87712 5.87735 3.04218 9.37533 3.04218C12.8733 3.04218 15.7087 5.87712 15.7087 9.37381C15.7087 12.8705 12.8733 15.7055 9.37533 15.7055C5.87735 15.7055 3.04199 12.8705 3.04199 9.37381ZM9.37533 1.54218C5.04926 1.54218 1.54199 5.04835 1.54199 9.37381C1.54199 13.6993 5.04926 17.2055 9.37533 17.2055C11.2676 17.2055 13.0032 16.5346 14.3572 15.4178L17.1773 18.2381C17.4702 18.531 17.945 18.5311 18.2379 18.2382C18.5308 17.9453 18.5309 17.4704 18.238 17.1775L15.4182 14.3575C16.5367 13.0035 17.2087 11.2671 17.2087 9.37381C17.2087 5.04835 13.7014 1.54218 9.37533 1.54218Z" fill=""></path></svg></span><input placeholder="Search..." class="dark:bg-dark-900 h-10 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 pl-[42px] text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800" type="text"></div></form></div></div><div data-simplebar="init" class="max-h-[510px] 2xl:max-h-[630px] simplebar-scrollable-y"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: auto; overflow: hidden scroll;"><div class="simplebar-content" style="padding: 0px;"><div class="divide-y divide-gray-200 dark:divide-gray-800"><div class="flex cursor-pointer items-center px-4 py-4 hover:bg-gray-100 dark:border-gray-800 dark:hover:bg-white/[0.03]"><div class="flex items-center w-1/5"><label class="flex items-center space-x-3 group cursor-pointer "><div class="relative w-5 h-5"><input class="w-5 h-5 appearance-none cursor-pointer dark:border-gray-700 border border-gray-300 checked:border-transparent rounded-md checked:bg-brand-500 disabled:opacity-60 
+          " type="checkbox"></div></label><span class="ml-3 text-gray-400 cursor-pointer"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.99993 2.375C10.2854 2.375 10.5461 2.53707 10.6725 2.79308L12.7318 6.96563L17.3365 7.63473C17.619 7.67578 17.8537 7.87367 17.9419 8.14517C18.0301 8.41668 17.9565 8.71473 17.7521 8.914L14.4201 12.1619L15.2067 16.748C15.255 17.0293 15.1393 17.3137 14.9083 17.4815C14.6774 17.6493 14.3712 17.6714 14.1185 17.5386L9.99993 15.3733L5.88137 17.5386C5.62869 17.6714 5.32249 17.6493 5.09153 17.4815C4.86057 17.3137 4.7449 17.0293 4.79316 16.748L5.57974 12.1619L2.24775 8.914C2.04332 8.71473 1.96975 8.41668 2.05797 8.14517C2.14619 7.87367 2.3809 7.67578 2.66341 7.63473L7.2681 6.96563L9.32738 2.79308C9.45373 2.53707 9.71445 2.375 9.99993 2.375ZM9.99993 4.81966L8.4387 7.98306C8.32946 8.20442 8.11828 8.35785 7.874 8.39334L4.38298 8.90062L6.90911 11.363C7.08587 11.5353 7.16653 11.7835 7.1248 12.0268L6.52847 15.5037L9.65093 13.8622C9.86942 13.7473 10.1304 13.7473 10.3489 13.8622L13.4714 15.5037L12.8751 12.0268C12.8333 11.7835 12.914 11.5353 13.0908 11.363L15.6169 8.90062L12.1259 8.39334C11.8816 8.35785 11.6704 8.20442 11.5612 7.98306L9.99993 4.81966Z" fill="currentColor"></path></svg></span><span class="ml-3 text-sm text-gray-700 truncate dark:text-gray-400">Material UI</span></div><div class="flex items-center w-3/5 gap-3"><p class="text-sm text-gray-500 truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dolor dolore esse modi nesciunt, nobis numquam sed sequi sunt totam!</p><span class="hidden rounded-full px-2 py-0.5 text-xs font-medium sm:inline-block text-red-700 bg-red-100">Important</span></div><div class="w-1/5 text-right"><span class="block text-xs text-gray-400">12:16 pm</span></div></div><div class="flex cursor-pointer items-center px-4 py-4 hover:bg-gray-100 dark:border-gray-800 dark:hover:bg-white/[0.03]"><div class="flex items-center w-1/5"><label class="flex items-center space-x-3 group cursor-pointer "><div class="relative w-5 h-5"><input class="w-5 h-5 appearance-none cursor-pointer dark:border-gray-700 border border-gray-300 checked:border-transparent rounded-md checked:bg-brand-500 disabled:opacity-60 
+          " type="checkbox"></div></label><span class="ml-3 text-gray-400 cursor-pointer"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.99993 2.375C10.2854 2.375 10.5461 2.53707 10.6725 2.79308L12.7318 6.96563L17.3365 7.63473C17.619 7.67578 17.8537 7.87367 17.9419 8.14517C18.0301 8.41668 17.9565 8.71473 17.7521 8.914L14.4201 12.1619L15.2067 16.748C15.255 17.0293 15.1393 17.3137 14.9083 17.4815C14.6774 17.6493 14.3712 17.6714 14.1185 17.5386L9.99993 15.3733L5.88137 17.5386C5.62869 17.6714 5.32249 17.6493 5.09153 17.4815C4.86057 17.3137 4.7449 17.0293 4.79316 16.748L5.57974 12.1619L2.24775 8.914C2.04332 8.71473 1.96975 8.41668 2.05797 8.14517C2.14619 7.87367 2.3809 7.67578 2.66341 7.63473L7.2681 6.96563L9.32738 2.79308C9.45373 2.53707 9.71445 2.375 9.99993 2.375ZM9.99993 4.81966L8.4387 7.98306C8.32946 8.20442 8.11828 8.35785 7.874 8.39334L4.38298 8.90062L6.90911 11.363C7.08587 11.5353 7.16653 11.7835 7.1248 12.0268L6.52847 15.5037L9.65093 13.8622C9.86942 13.7473 10.1304 13.7473 10.3489 13.8622L13.4714 15.5037L12.8751 12.0268C12.8333 11.7835 12.914 11.5353 13.0908 11.363L15.6169 8.90062L12.1259 8.39334C11.8816 8.35785 11.6704 8.20442 11.5612 7.98306L9.99993 4.81966Z" fill="currentColor"></path></svg></span><span class="ml-3 text-sm text-gray-700 truncate dark:text-gray-400">Wise</span></div><div class="flex items-center w-3/5 gap-3"><p class="text-sm text-gray-500 truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dolor dolore esse modi nesciunt, nobis numquam sed sequi sunt totam!</p></div><div class="w-1/5 text-right"><span class="block text-xs text-gray-400">12:16 pm</span></div></div><div class="flex cursor-pointer items-center px-4 py-4 hover:bg-gray-100 dark:border-gray-800 dark:hover:bg-white/[0.03]"><div class="flex items-center w-1/5"><label class="flex items-center space-x-3 group cursor-pointer "><div class="relative w-5 h-5"><input class="w-5 h-5 appearance-none cursor-pointer dark:border-gray-700 border border-gray-300 checked:border-transparent rounded-md checked:bg-brand-500 disabled:opacity-60 
+          " type="checkbox"></div></label><span class="ml-3 text-gray-400 cursor-pointer"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.99993 2.375C10.2854 2.375 10.5461 2.53707 10.6725 2.79308L12.7318 6.96563L17.3365 7.63473C17.619 7.67578 17.8537 7.87367 17.9419 8.14517C18.0301 8.41668 17.9565 8.71473 17.7521 8.914L14.4201 12.1619L15.2067 16.748C15.255 17.0293 15.1393 17.3137 14.9083 17.4815C14.6774 17.6493 14.3712 17.6714 14.1185 17.5386L9.99993 15.3733L5.88137 17.5386C5.62869 17.6714 5.32249 17.6493 5.09153 17.4815C4.86057 17.3137 4.7449 17.0293 4.79316 16.748L5.57974 12.1619L2.24775 8.914C2.04332 8.71473 1.96975 8.41668 2.05797 8.14517C2.14619 7.87367 2.3809 7.67578 2.66341 7.63473L7.2681 6.96563L9.32738 2.79308C9.45373 2.53707 9.71445 2.375 9.99993 2.375ZM9.99993 4.81966L8.4387 7.98306C8.32946 8.20442 8.11828 8.35785 7.874 8.39334L4.38298 8.90062L6.90911 11.363C7.08587 11.5353 7.16653 11.7835 7.1248 12.0268L6.52847 15.5037L9.65093 13.8622C9.86942 13.7473 10.1304 13.7473 10.3489 13.8622L13.4714 15.5037L12.8751 12.0268C12.8333 11.7835 12.914 11.5353 13.0908 11.363L15.6169 8.90062L12.1259 8.39334C11.8816 8.35785 11.6704 8.20442 11.5612 7.98306L9.99993 4.81966Z" fill="currentColor"></path></svg></span><span class="ml-3 text-sm text-gray-700 truncate dark:text-gray-400">Search Console</span></div><div class="flex items-center w-3/5 gap-3"><p class="text-sm text-gray-500 truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dolor dolore esse modi nesciunt, nobis numquam sed sequi sunt totam!</p><span class="hidden rounded-full px-2 py-0.5 text-xs font-medium sm:inline-block text-green-700 bg-green-100">Social</span></div><div class="w-1/5 text-right"><span class="block text-xs text-gray-400">Apr, 24</span></div></div><div class="flex cursor-pointer items-center px-4 py-4 hover:bg-gray-100 dark:border-gray-800 dark:hover:bg-white/[0.03]"><div class="flex items-center w-1/5"><label class="flex items-center space-x-3 group cursor-pointer "><div class="relative w-5 h-5"><input class="w-5 h-5 appearance-none cursor-pointer dark:border-gray-700 border border-gray-300 checked:border-transparent rounded-md checked:bg-brand-500 disabled:opacity-60 
+          " type="checkbox"></div></label><span class="ml-3 text-gray-400 cursor-pointer"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.99993 2.375C10.2854 2.375 10.5461 2.53707 10.6725 2.79308L12.7318 6.96563L17.3365 7.63473C17.619 7.67578 17.8537 7.87367 17.9419 8.14517C18.0301 8.41668 17.9565 8.71473 17.7521 8.914L14.4201 12.1619L15.2067 16.748C15.255 17.0293 15.1393 17.3137 14.9083 17.4815C14.6774 17.6493 14.3712 17.6714 14.1185 17.5386L9.99993 15.3733L5.88137 17.5386C5.62869 17.6714 5.32249 17.6493 5.09153 17.4815C4.86057 17.3137 4.7449 17.0293 4.79316 16.748L5.57974 12.1619L2.24775 8.914C2.04332 8.71473 1.96975 8.41668 2.05797 8.14517C2.14619 7.87367 2.3809 7.67578 2.66341 7.63473L7.2681 6.96563L9.32738 2.79308C9.45373 2.53707 9.71445 2.375 9.99993 2.375ZM9.99993 4.81966L8.4387 7.98306C8.32946 8.20442 8.11828 8.35785 7.874 8.39334L4.38298 8.90062L6.90911 11.363C7.08587 11.5353 7.16653 11.7835 7.1248 12.0268L6.52847 15.5037L9.65093 13.8622C9.86942 13.7473 10.1304 13.7473 10.3489 13.8622L13.4714 15.5037L12.8751 12.0268C12.8333 11.7835 12.914 11.5353 13.0908 11.363L15.6169 8.90062L12.1259 8.39334C11.8816 8.35785 11.6704 8.20442 11.5612 7.98306L9.99993 4.81966Z" fill="currentColor"></path></svg></span><span class="ml-3 text-sm text-gray-700 truncate dark:text-gray-400">Paypal</span></div><div class="flex items-center w-3/5 gap-3"><p class="text-sm text-gray-500 truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dolor dolore esse modi nesciunt, nobis numquam sed sequi sunt totam!</p></div><div class="w-1/5 text-right"><span class="block text-xs text-gray-400">Apr, 30</span></div></div><div class="flex cursor-pointer items-center px-4 py-4 hover:bg-gray-100 dark:border-gray-800 dark:hover:bg-white/[0.03]"><div class="flex items-center w-1/5"><label class="flex items-center space-x-3 group cursor-pointer "><div class="relative w-5 h-5"><input class="w-5 h-5 appearance-none cursor-pointer dark:border-gray-700 border border-gray-300 checked:border-transparent rounded-md checked:bg-brand-500 disabled:opacity-60 
+          " type="checkbox"></div></label><span class="ml-3 text-gray-400 cursor-pointer"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.99993 2.375C10.2854 2.375 10.5461 2.53707 10.6725 2.79308L12.7318 6.96563L17.3365 7.63473C17.619 7.67578 17.8537 7.87367 17.9419 8.14517C18.0301 8.41668 17.9565 8.71473 17.7521 8.914L14.4201 12.1619L15.2067 16.748C15.255 17.0293 15.1393 17.3137 14.9083 17.4815C14.6774 17.6493 14.3712 17.6714 14.1185 17.5386L9.99993 15.3733L5.88137 17.5386C5.62869 17.6714 5.32249 17.6493 5.09153 17.4815C4.86057 17.3137 4.7449 17.0293 4.79316 16.748L5.57974 12.1619L2.24775 8.914C2.04332 8.71473 1.96975 8.41668 2.05797 8.14517C2.14619 7.87367 2.3809 7.67578 2.66341 7.63473L7.2681 6.96563L9.32738 2.79308C9.45373 2.53707 9.71445 2.375 9.99993 2.375ZM9.99993 4.81966L8.4387 7.98306C8.32946 8.20442 8.11828 8.35785 7.874 8.39334L4.38298 8.90062L6.90911 11.363C7.08587 11.5353 7.16653 11.7835 7.1248 12.0268L6.52847 15.5037L9.65093 13.8622C9.86942 13.7473 10.1304 13.7473 10.3489 13.8622L13.4714 15.5037L12.8751 12.0268C12.8333 11.7835 12.914 11.5353 13.0908 11.363L15.6169 8.90062L12.1259 8.39334C11.8816 8.35785 11.6704 8.20442 11.5612 7.98306L9.99993 4.81966Z" fill="currentColor"></path></svg></span><span class="ml-3 text-sm text-gray-700 truncate dark:text-gray-400">Google Meet</span></div><div class="flex items-center w-3/5 gap-3"><p class="text-sm text-gray-500 truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dolor dolore esse modi nesciunt, nobis numquam sed sequi sunt totam!</p></div><div class="w-1/5 text-right"><span class="block text-xs text-gray-400">Apr, 16</span></div></div><div class="flex cursor-pointer items-center px-4 py-4 hover:bg-gray-100 dark:border-gray-800 dark:hover:bg-white/[0.03]"><div class="flex items-center w-1/5"><label class="flex items-center space-x-3 group cursor-pointer "><div class="relative w-5 h-5"><input class="w-5 h-5 appearance-none cursor-pointer dark:border-gray-700 border border-gray-300 checked:border-transparent rounded-md checked:bg-brand-500 disabled:opacity-60 
+          " type="checkbox"></div></label><span class="ml-3 text-gray-400 cursor-pointer"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.99993 2.375C10.2854 2.375 10.5461 2.53707 10.6725 2.79308L12.7318 6.96563L17.3365 7.63473C17.619 7.67578 17.8537 7.87367 17.9419 8.14517C18.0301 8.41668 17.9565 8.71473 17.7521 8.914L14.4201 12.1619L15.2067 16.748C15.255 17.0293 15.1393 17.3137 14.9083 17.4815C14.6774 17.6493 14.3712 17.6714 14.1185 17.5386L9.99993 15.3733L5.88137 17.5386C5.62869 17.6714 5.32249 17.6493 5.09153 17.4815C4.86057 17.3137 4.7449 17.0293 4.79316 16.748L5.57974 12.1619L2.24775 8.914C2.04332 8.71473 1.96975 8.41668 2.05797 8.14517C2.14619 7.87367 2.3809 7.67578 2.66341 7.63473L7.2681 6.96563L9.32738 2.79308C9.45373 2.53707 9.71445 2.375 9.99993 2.375ZM9.99993 4.81966L8.4387 7.98306C8.32946 8.20442 8.11828 8.35785 7.874 8.39334L4.38298 8.90062L6.90911 11.363C7.08587 11.5353 7.16653 11.7835 7.1248 12.0268L6.52847 15.5037L9.65093 13.8622C9.86942 13.7473 10.1304 13.7473 10.3489 13.8622L13.4714 15.5037L12.8751 12.0268C12.8333 11.7835 12.914 11.5353 13.0908 11.363L15.6169 8.90062L12.1259 8.39334C11.8816 8.35785 11.6704 8.20442 11.5612 7.98306L9.99993 4.81966Z" fill="currentColor"></path></svg></span><span class="ml-3 text-sm text-gray-700 truncate dark:text-gray-400">Loom</span></div><div class="flex items-center w-3/5 gap-3"><p class="text-sm text-gray-500 truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dolor dolore esse modi nesciunt, nobis numquam sed sequi sunt totam!</p></div><div class="w-1/5 text-right"><span class="block text-xs text-gray-400">Apr, 24</span></div></div><div class="flex cursor-pointer items-center px-4 py-4 hover:bg-gray-100 dark:border-gray-800 dark:hover:bg-white/[0.03]"><div class="flex items-center w-1/5"><label class="flex items-center space-x-3 group cursor-pointer "><div class="relative w-5 h-5"><input class="w-5 h-5 appearance-none cursor-pointer dark:border-gray-700 border border-gray-300 checked:border-transparent rounded-md checked:bg-brand-500 disabled:opacity-60 
+          " type="checkbox"></div></label><span class="ml-3 text-gray-400 cursor-pointer"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.99993 2.375C10.2854 2.375 10.5461 2.53707 10.6725 2.79308L12.7318 6.96563L17.3365 7.63473C17.619 7.67578 17.8537 7.87367 17.9419 8.14517C18.0301 8.41668 17.9565 8.71473 17.7521 8.914L14.4201 12.1619L15.2067 16.748C15.255 17.0293 15.1393 17.3137 14.9083 17.4815C14.6774 17.6493 14.3712 17.6714 14.1185 17.5386L9.99993 15.3733L5.88137 17.5386C5.62869 17.6714 5.32249 17.6493 5.09153 17.4815C4.86057 17.3137 4.7449 17.0293 4.79316 16.748L5.57974 12.1619L2.24775 8.914C2.04332 8.71473 1.96975 8.41668 2.05797 8.14517C2.14619 7.87367 2.3809 7.67578 2.66341 7.63473L7.2681 6.96563L9.32738 2.79308C9.45373 2.53707 9.71445 2.375 9.99993 2.375ZM9.99993 4.81966L8.4387 7.98306C8.32946 8.20442 8.11828 8.35785 7.874 8.39334L4.38298 8.90062L6.90911 11.363C7.08587 11.5353 7.16653 11.7835 7.1248 12.0268L6.52847 15.5037L9.65093 13.8622C9.86942 13.7473 10.1304 13.7473 10.3489 13.8622L13.4714 15.5037L12.8751 12.0268C12.8333 11.7835 12.914 11.5353 13.0908 11.363L15.6169 8.90062L12.1259 8.39334C11.8816 8.35785 11.6704 8.20442 11.5612 7.98306L9.99993 4.81966Z" fill="currentColor"></path></svg></span><span class="ml-3 text-sm text-gray-700 truncate dark:text-gray-400">Airbnb</span></div><div class="flex items-center w-3/5 gap-3"><p class="text-sm text-gray-500 truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dolor dolore esse modi nesciunt, nobis numquam sed sequi sunt totam!</p></div><div class="w-1/5 text-right"><span class="block text-xs text-gray-400">Mar, 05</span></div></div><div class="flex cursor-pointer items-center px-4 py-4 hover:bg-gray-100 dark:border-gray-800 dark:hover:bg-white/[0.03]"><div class="flex items-center w-1/5"><label class="flex items-center space-x-3 group cursor-pointer "><div class="relative w-5 h-5"><input class="w-5 h-5 appearance-none cursor-pointer dark:border-gray-700 border border-gray-300 checked:border-transparent rounded-md checked:bg-brand-500 disabled:opacity-60 
+          " type="checkbox"></div></label><span class="ml-3 text-gray-400 cursor-pointer"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.99993 2.375C10.2854 2.375 10.5461 2.53707 10.6725 2.79308L12.7318 6.96563L17.3365 7.63473C17.619 7.67578 17.8537 7.87367 17.9419 8.14517C18.0301 8.41668 17.9565 8.71473 17.7521 8.914L14.4201 12.1619L15.2067 16.748C15.255 17.0293 15.1393 17.3137 14.9083 17.4815C14.6774 17.6493 14.3712 17.6714 14.1185 17.5386L9.99993 15.3733L5.88137 17.5386C5.62869 17.6714 5.32249 17.6493 5.09153 17.4815C4.86057 17.3137 4.7449 17.0293 4.79316 16.748L5.57974 12.1619L2.24775 8.914C2.04332 8.71473 1.96975 8.41668 2.05797 8.14517C2.14619 7.87367 2.3809 7.67578 2.66341 7.63473L7.2681 6.96563L9.32738 2.79308C9.45373 2.53707 9.71445 2.375 9.99993 2.375ZM9.99993 4.81966L8.4387 7.98306C8.32946 8.20442 8.11828 8.35785 7.874 8.39334L4.38298 8.90062L6.90911 11.363C7.08587 11.5353 7.16653 11.7835 7.1248 12.0268L6.52847 15.5037L9.65093 13.8622C9.86942 13.7473 10.1304 13.7473 10.3489 13.8622L13.4714 15.5037L12.8751 12.0268C12.8333 11.7835 12.914 11.5353 13.0908 11.363L15.6169 8.90062L12.1259 8.39334C11.8816 8.35785 11.6704 8.20442 11.5612 7.98306L9.99993 4.81966Z" fill="currentColor"></path></svg></span><span class="ml-3 text-sm text-gray-700 truncate dark:text-gray-400">Facebook</span></div><div class="flex items-center w-3/5 gap-3"><p class="text-sm text-gray-500 truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dolor dolore esse modi nesciunt, nobis numquam sed sequi sunt totam!</p></div><div class="w-1/5 text-right"><span class="block text-xs text-gray-400">Feb, 25</span></div></div><div class="flex cursor-pointer items-center px-4 py-4 hover:bg-gray-100 dark:border-gray-800 dark:hover:bg-white/[0.03]"><div class="flex items-center w-1/5"><label class="flex items-center space-x-3 group cursor-pointer "><div class="relative w-5 h-5"><input class="w-5 h-5 appearance-none cursor-pointer dark:border-gray-700 border border-gray-300 checked:border-transparent rounded-md checked:bg-brand-500 disabled:opacity-60 
+          " type="checkbox"></div></label><span class="ml-3 text-gray-400 cursor-pointer"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.99993 2.375C10.2854 2.375 10.5461 2.53707 10.6725 2.79308L12.7318 6.96563L17.3365 7.63473C17.619 7.67578 17.8537 7.87367 17.9419 8.14517C18.0301 8.41668 17.9565 8.71473 17.7521 8.914L14.4201 12.1619L15.2067 16.748C15.255 17.0293 15.1393 17.3137 14.9083 17.4815C14.6774 17.6493 14.3712 17.6714 14.1185 17.5386L9.99993 15.3733L5.88137 17.5386C5.62869 17.6714 5.32249 17.6493 5.09153 17.4815C4.86057 17.3137 4.7449 17.0293 4.79316 16.748L5.57974 12.1619L2.24775 8.914C2.04332 8.71473 1.96975 8.41668 2.05797 8.14517C2.14619 7.87367 2.3809 7.67578 2.66341 7.63473L7.2681 6.96563L9.32738 2.79308C9.45373 2.53707 9.71445 2.375 9.99993 2.375ZM9.99993 4.81966L8.4387 7.98306C8.32946 8.20442 8.11828 8.35785 7.874 8.39334L4.38298 8.90062L6.90911 11.363C7.08587 11.5353 7.16653 11.7835 7.1248 12.0268L6.52847 15.5037L9.65093 13.8622C9.86942 13.7473 10.1304 13.7473 10.3489 13.8622L13.4714 15.5037L12.8751 12.0268C12.8333 11.7835 12.914 11.5353 13.0908 11.363L15.6169 8.90062L12.1259 8.39334C11.8816 8.35785 11.6704 8.20442 11.5612 7.98306L9.99993 4.81966Z" fill="currentColor"></path></svg></span><span class="ml-3 text-sm text-gray-700 truncate dark:text-gray-400">Instagram</span></div><div class="flex items-center w-3/5 gap-3"><p class="text-sm text-gray-500 truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dolor dolore esse modi nesciunt, nobis numquam sed sequi sunt totam!</p><span class="hidden rounded-full px-2 py-0.5 text-xs font-medium sm:inline-block text-blue-700 bg-blue-100">Promotional</span></div><div class="w-1/5 text-right"><span class="block text-xs text-gray-400">Feb, 20</span></div></div><div class="flex cursor-pointer items-center px-4 py-4 hover:bg-gray-100 dark:border-gray-800 dark:hover:bg-white/[0.03]"><div class="flex items-center w-1/5"><label class="flex items-center space-x-3 group cursor-pointer "><div class="relative w-5 h-5"><input class="w-5 h-5 appearance-none cursor-pointer dark:border-gray-700 border border-gray-300 checked:border-transparent rounded-md checked:bg-brand-500 disabled:opacity-60 
+          " type="checkbox"></div></label><span class="ml-3 text-gray-400 cursor-pointer"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.99993 2.375C10.2854 2.375 10.5461 2.53707 10.6725 2.79308L12.7318 6.96563L17.3365 7.63473C17.619 7.67578 17.8537 7.87367 17.9419 8.14517C18.0301 8.41668 17.9565 8.71473 17.7521 8.914L14.4201 12.1619L15.2067 16.748C15.255 17.0293 15.1393 17.3137 14.9083 17.4815C14.6774 17.6493 14.3712 17.6714 14.1185 17.5386L9.99993 15.3733L5.88137 17.5386C5.62869 17.6714 5.32249 17.6493 5.09153 17.4815C4.86057 17.3137 4.7449 17.0293 4.79316 16.748L5.57974 12.1619L2.24775 8.914C2.04332 8.71473 1.96975 8.41668 2.05797 8.14517C2.14619 7.87367 2.3809 7.67578 2.66341 7.63473L7.2681 6.96563L9.32738 2.79308C9.45373 2.53707 9.71445 2.375 9.99993 2.375ZM9.99993 4.81966L8.4387 7.98306C8.32946 8.20442 8.11828 8.35785 7.874 8.39334L4.38298 8.90062L6.90911 11.363C7.08587 11.5353 7.16653 11.7835 7.1248 12.0268L6.52847 15.5037L9.65093 13.8622C9.86942 13.7473 10.1304 13.7473 10.3489 13.8622L13.4714 15.5037L12.8751 12.0268C12.8333 11.7835 12.914 11.5353 13.0908 11.363L15.6169 8.90062L12.1259 8.39334C11.8816 8.35785 11.6704 8.20442 11.5612 7.98306L9.99993 4.81966Z" fill="currentColor"></path></svg></span><span class="ml-3 text-sm text-gray-700 truncate dark:text-gray-400">Google</span></div><div class="flex items-center w-3/5 gap-3"><p class="text-sm text-gray-500 truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dolor dolore esse modi nesciunt, nobis numquam sed sequi sunt totam!</p></div><div class="w-1/5 text-right"><span class="block text-xs text-gray-400">Feb, 25</span></div></div><div class="flex cursor-pointer items-center px-4 py-4 hover:bg-gray-100 dark:border-gray-800 dark:hover:bg-white/[0.03]"><div class="flex items-center w-1/5"><label class="flex items-center space-x-3 group cursor-pointer "><div class="relative w-5 h-5"><input class="w-5 h-5 appearance-none cursor-pointer dark:border-gray-700 border border-gray-300 checked:border-transparent rounded-md checked:bg-brand-500 disabled:opacity-60 
+          " type="checkbox"></div></label><span class="ml-3 text-gray-400 cursor-pointer"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.99993 2.375C10.2854 2.375 10.5461 2.53707 10.6725 2.79308L12.7318 6.96563L17.3365 7.63473C17.619 7.67578 17.8537 7.87367 17.9419 8.14517C18.0301 8.41668 17.9565 8.71473 17.7521 8.914L14.4201 12.1619L15.2067 16.748C15.255 17.0293 15.1393 17.3137 14.9083 17.4815C14.6774 17.6493 14.3712 17.6714 14.1185 17.5386L9.99993 15.3733L5.88137 17.5386C5.62869 17.6714 5.32249 17.6493 5.09153 17.4815C4.86057 17.3137 4.7449 17.0293 4.79316 16.748L5.57974 12.1619L2.24775 8.914C2.04332 8.71473 1.96975 8.41668 2.05797 8.14517C2.14619 7.87367 2.3809 7.67578 2.66341 7.63473L7.2681 6.96563L9.32738 2.79308C9.45373 2.53707 9.71445 2.375 9.99993 2.375ZM9.99993 4.81966L8.4387 7.98306C8.32946 8.20442 8.11828 8.35785 7.874 8.39334L4.38298 8.90062L6.90911 11.363C7.08587 11.5353 7.16653 11.7835 7.1248 12.0268L6.52847 15.5037L9.65093 13.8622C9.86942 13.7473 10.1304 13.7473 10.3489 13.8622L13.4714 15.5037L12.8751 12.0268C12.8333 11.7835 12.914 11.5353 13.0908 11.363L15.6169 8.90062L12.1259 8.39334C11.8816 8.35785 11.6704 8.20442 11.5612 7.98306L9.99993 4.81966Z" fill="currentColor"></path></svg></span><span class="ml-3 text-sm text-gray-700 truncate dark:text-gray-400">FormBold</span></div><div class="flex items-center w-3/5 gap-3"><p class="text-sm text-gray-500 truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dolor dolore esse modi nesciunt, nobis numquam sed sequi sunt totam!</p></div><div class="w-1/5 text-right"><span class="block text-xs text-gray-400">Jan, 22</span></div></div><div class="flex cursor-pointer items-center px-4 py-4 hover:bg-gray-100 dark:border-gray-800 dark:hover:bg-white/[0.03]"><div class="flex items-center w-1/5"><label class="flex items-center space-x-3 group cursor-pointer "><div class="relative w-5 h-5"><input class="w-5 h-5 appearance-none cursor-pointer dark:border-gray-700 border border-gray-300 checked:border-transparent rounded-md checked:bg-brand-500 disabled:opacity-60 
+          " type="checkbox"></div></label><span class="ml-3 text-gray-400 cursor-pointer"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.99993 2.375C10.2854 2.375 10.5461 2.53707 10.6725 2.79308L12.7318 6.96563L17.3365 7.63473C17.619 7.67578 17.8537 7.87367 17.9419 8.14517C18.0301 8.41668 17.9565 8.71473 17.7521 8.914L14.4201 12.1619L15.2067 16.748C15.255 17.0293 15.1393 17.3137 14.9083 17.4815C14.6774 17.6493 14.3712 17.6714 14.1185 17.5386L9.99993 15.3733L5.88137 17.5386C5.62869 17.6714 5.32249 17.6493 5.09153 17.4815C4.86057 17.3137 4.7449 17.0293 4.79316 16.748L5.57974 12.1619L2.24775 8.914C2.04332 8.71473 1.96975 8.41668 2.05797 8.14517C2.14619 7.87367 2.3809 7.67578 2.66341 7.63473L7.2681 6.96563L9.32738 2.79308C9.45373 2.53707 9.71445 2.375 9.99993 2.375ZM9.99993 4.81966L8.4387 7.98306C8.32946 8.20442 8.11828 8.35785 7.874 8.39334L4.38298 8.90062L6.90911 11.363C7.08587 11.5353 7.16653 11.7835 7.1248 12.0268L6.52847 15.5037L9.65093 13.8622C9.86942 13.7473 10.1304 13.7473 10.3489 13.8622L13.4714 15.5037L12.8751 12.0268C12.8333 11.7835 12.914 11.5353 13.0908 11.363L15.6169 8.90062L12.1259 8.39334C11.8816 8.35785 11.6704 8.20442 11.5612 7.98306L9.99993 4.81966Z" fill="currentColor"></path></svg></span><span class="ml-3 text-sm text-gray-700 truncate dark:text-gray-400">GrayGrids</span></div><div class="flex items-center w-3/5 gap-3"><p class="text-sm text-gray-500 truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dolor dolore esse modi nesciunt, nobis numquam sed sequi sunt totam!</p></div><div class="w-1/5 text-right"><span class="block text-xs text-gray-400">Feb, 25</span></div></div><div class="flex cursor-pointer items-center px-4 py-4 hover:bg-gray-100 dark:border-gray-800 dark:hover:bg-white/[0.03]"><div class="flex items-center w-1/5"><label class="flex items-center space-x-3 group cursor-pointer "><div class="relative w-5 h-5"><input class="w-5 h-5 appearance-none cursor-pointer dark:border-gray-700 border border-gray-300 checked:border-transparent rounded-md checked:bg-brand-500 disabled:opacity-60 
+          " type="checkbox"></div></label><span class="ml-3 text-gray-400 cursor-pointer"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.99993 2.375C10.2854 2.375 10.5461 2.53707 10.6725 2.79308L12.7318 6.96563L17.3365 7.63473C17.619 7.67578 17.8537 7.87367 17.9419 8.14517C18.0301 8.41668 17.9565 8.71473 17.7521 8.914L14.4201 12.1619L15.2067 16.748C15.255 17.0293 15.1393 17.3137 14.9083 17.4815C14.6774 17.6493 14.3712 17.6714 14.1185 17.5386L9.99993 15.3733L5.88137 17.5386C5.62869 17.6714 5.32249 17.6493 5.09153 17.4815C4.86057 17.3137 4.7449 17.0293 4.79316 16.748L5.57974 12.1619L2.24775 8.914C2.04332 8.71473 1.96975 8.41668 2.05797 8.14517C2.14619 7.87367 2.3809 7.67578 2.66341 7.63473L7.2681 6.96563L9.32738 2.79308C9.45373 2.53707 9.71445 2.375 9.99993 2.375ZM9.99993 4.81966L8.4387 7.98306C8.32946 8.20442 8.11828 8.35785 7.874 8.39334L4.38298 8.90062L6.90911 11.363C7.08587 11.5353 7.16653 11.7835 7.1248 12.0268L6.52847 15.5037L9.65093 13.8622C9.86942 13.7473 10.1304 13.7473 10.3489 13.8622L13.4714 15.5037L12.8751 12.0268C12.8333 11.7835 12.914 11.5353 13.0908 11.363L15.6169 8.90062L12.1259 8.39334C11.8816 8.35785 11.6704 8.20442 11.5612 7.98306L9.99993 4.81966Z" fill="currentColor"></path></svg></span><span class="ml-3 text-sm text-gray-700 truncate dark:text-gray-400">UIdeck</span></div><div class="flex items-center w-3/5 gap-3"><p class="text-sm text-gray-500 truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dolor dolore esse modi nesciunt, nobis numquam sed sequi sunt totam!</p></div><div class="w-1/5 text-right"><span class="block text-xs text-gray-400">Feb, 15</span></div></div></div></div></div></div></div><div class="simplebar-placeholder" style="width: 1109px; height: 688px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 576px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div><div class="sticky bottom-0 flex items-center rounded-b-2xl justify-between border-t border-gray-200 bg-white px-4 py-3 dark:border-gray-800 dark:bg-[#171f2f]"><p class="text-sm text-gray-500 dark:text-gray-400">Showing 1 of 159</p><div class="flex items-center justify-end gap-2"><button class="flex h-8 w-8 items-center justify-center rounded-lg border border-gray-200 bg-white text-gray-500 hover:bg-gray-50 dark:border-gray-800 dark:bg-white/[0.03] dark:text-gray-400 dark:hover:bg-white/[0.03]"><svg class="stroke-current" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.7083 5L7.5 10.2083L12.7083 15.4167" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><button class="flex h-8 w-8 items-center justify-center rounded-lg border border-gray-200 bg-white text-gray-500 hover:bg-gray-50 dark:border-gray-800 dark:bg-white/[0.03] dark:text-gray-400 dark:hover:bg-white/[0.03]"><svg class="stroke-current" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.29167 15.8335L12.5 10.6252L7.29167 5.41683" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div></div></div></div></div></main></div></div></div>
+  <script type="module" src="./React.js detail Dashboard _ TailAdmin - React.js Admin Dashboard Template_files/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;67f7a278e3374824ae6dd92295d38f77&quot;,&quot;r&quot;:1}" crossorigin="anonymous"></script>
+
+
+<scribe-shadow id="crxjs-ext" data-crx="okfkdaglfjjjfefdcppliegebpoegaii" style="position: fixed; width: 0px; height: 0px; top: 0px; left: 0px; z-index: 2147483647; overflow: visible; visibility: visible;"><template shadowrootmode="open"><div id="root-scribe-elem" style="position: fixed; width: 0px; height: 0px; top: 0px; left: 0px; overflow: visible; color: var(--text-default);"><div class="brand-refresh brand-refresh-tokens" data-theme="light" style="display: contents;"><div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events: none;"><ol tabindex="-1" class="fixed bottom-auto right-0 top-0 z-[999999] flex max-h-screen w-[400px] max-w-full p-4 pointer-events-none"></ol></div></div></div><link rel="stylesheet" href="chrome-extension://okfkdaglfjjjfefdcppliegebpoegaii/assets/style.css"></template></scribe-shadow></body><div><template shadowrootmode="open"><style>
+:host{
+  --black: #515151;
+  --blue: #007BFF;
+  --babyblue: #6DC1E8;
+  --lightblue: #E1EEFF;
+  --gray: #9B9B9B;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.chatbox::-webkit-scrollbar, #text-area::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chatbox::-webkit-scrollbar-thumb, #text-area::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px; 
+}
+
+.chatbox::-webkit-scrollbar-thumb:hover, #text-area::-webkit-scrollbar-hover {
+  background: #555; 
+}
+
+.slider-container{
+  flex-direction: column;
+  position:fixed;
+  background: #F8FBFF;
+  font-family: 'Inter', 'sans-serif';
+  font-style: normal;
+  color: var(--black);
+  border-radius: 15px 0px 0px 15px;
+  height: 100vh;
+  width: 450px;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  padding: 0 0 16px 0;
+  transition: transform 300ms ease-in-out;
+}
+
+.isHidden {
+  transform: translateX(450px);
+  transition: transform 300ms ease-in-out;
+}
+
+.header {
+  padding: 0 20px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Poppins", serif;
+  height: 90px;
+  border-bottom: 1px solid #E2E2E2;
+  box-shadow: 0px 42px 67px 0px rgba(122, 122, 122, 0.1);
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.icon-border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(2*16px);
+  width: calc(2*16px);
+  margin: 0;
+  padding: 0;
+  background-color: #E1EEFF;
+  border-radius: 50%;
+}
+
+.chatbox {
+  padding-top: 16px;
+  overflow-y: auto;
+  height: 60vh;
+}
+
+.chatting {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.chat-bubble {
+  padding: 10px;
+}
+
+.user-chat {
+  color: #fff;
+  background-color: var(--blue);
+  align-self: flex-end;
+  border-radius: 10px 0px 10px 10px;
+}
+
+.ai-chat {
+  color: var(--black);
+  background-color: var(--lightblue);
+  align-self: flex-start;
+  border-radius: 0px 10px 10px 10px;
+  max-width: 90%;
+}
+
+.follow-up-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.follow-up {
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  border-radius: 16px;
+  padding: 8px;
+}
+
+.hero {
+  padding: 0 20px;
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.welcome {
+  color: var(--gray);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.file-type {
+  font-size: 16px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  margin-top: calc(1.5*16px);
+  margin-bottom: calc(1.5*16px);
+}
+
+.file-card {
+  background-color: var(--lightblue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 48%;
+  padding: 16px;
+  gap: calc(0.5*16px);
+  border-radius: 10px;
+}
+
+.file-card p:nth-of-type(2) {
+  color: var(--gray);
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.example-query {
+  font-size: 16px;
+  padding: 0 20px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 16px;
+}
+
+.example-card {
+  background-color: var(--lightblue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+}
+
+.example p:nth-child(2) {
+  color: var(--gray);
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.input-section {
+  flex: 1;
+  width: 100%;
+  border-top: 1px solid #E2E2E2;
+  box-shadow: 0px -42px 67px 0px rgba(122, 122, 122, 0.1);
+}
+
+.toolbar {
+  padding: 0 20px;
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.radio-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: calc(0.7*16px);
+  align-items: center;
+  font-size: 13.33px;
+  color: var(--gray);
+}
+
+.radio-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--babyblue);
+  gap: calc(0.5*16px);
+}
+
+.text-input {
+  min-height: 178px;
+  margin: 16px 20px 16px 20px;
+  border-radius: 20px;
+  padding: 16px 16px;
+  background-color: #ffffff;
+}
+
+#pdf-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  border-radius: 12px;
+  background-color: #F8F8F8;
+}
+
+#pdfimg-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#text-area {
+  font-family: 'Inter', 'sans-serif';
+  width: 100%;
+  height: 110px;
+  background-color: inherit;
+  color: var(--black);
+  resize: none;
+  outline: none;
+  border: none;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.copyright {
+  color: var(--gray);
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-card {
+  display: flex;
+  width: 60px;
+  height: 32px;
+  padding: 4px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 99px;
+  font-size: 16px;
+  background: rgba(6, 65, 135, 0.70);
+  color: #fff;
+}
+
+.point {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  text-align: center;
+  line-height: normal;
+}
+
+.subscription {
+  background: var(--Linear-Blue, linear-gradient(290deg, #064187 1.05%, #007BFF 100%));
+}
+
+.blue-text{
+  color:var(--blue);
+}
+
+.clickable{
+  cursor: pointer;
+}
+
+.switch_stealth_mode {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+
+.switch_stealth_mode input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #0066d3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+  .tooltip {
+    position: absolute;
+    background-color: white;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+  }
+
+  .tooltip.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .tooltip.top {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 5px;
+  }
+
+  .tooltip.topRightGpt4v,
+  .tooltip.topRightWolfram {
+    bottom: 100%;
+    left: 0;
+    margin-bottom: 5px;
+  }
+
+  .code-block-header {
+    background-color: #333333;
+    color: white;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem;
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+  }
+
+  .language-label {
+    width: fit-content;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: white;
+    font-size: 0.75rem;
+  }
+
+  .copy-button {
+    background: none;
+    border: none;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.375rem;
+    padding: 0 0.25rem;
+  }
+
+  .copy-text {
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: fit-content;
+    color: white;
+    font-size: 0.75rem;
+  }
+
+  .chat-bubble * {
+    line-height: 1.5;
+  }
+
+  .chat-bubble .katex-display {
+    overflow-y: visible;
+  }
+
+  .chat-bubble .katex {
+    font-size: 18px !important;
+  }
+
+  .chat-bubble p {
+    display: inline;
+    margin: 0.27em 0;
+  }
+
+  .chat-bubble li {
+    margin-bottom: 0.5em;
+  }
+
+  .chat-bubble h1, .chat-bubble h2, .chat-bubble h3, .chat-bubble h4, .chat-bubble h5, .chat-bubble h6 {
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+  }
+
+  .chat-bubble ul, .chat-bubble ol {
+    width: calc(100% - 20px);
+    padding-left: 20px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .chat-bubble pre {
+    border-radius: 0 0 12px 12px;
+    overflow: auto;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .chat-bubble pre code {
+    padding: 20px;
+    white-space: pre-wrap;
+  }
+
+  .chat-bubble table {
+    display: block;
+    margin: 0.5em 0;
+    border-collapse: collapse;
+    overflow: auto;
+  }
+
+  .chat-bubble table th, .chat-bubble table td {
+    padding: 0.5em 0.75em;
+    border: 1px solid #dfe2e5;
+  }
+
+  .chat-bubble ul {
+    list-style: disc;
+  }
+
+  .chat-bubble ol {
+    list-style: decimal;
+  }
+
+  .chat-bubble .code-block {
+    margin-block: 12px;
+  }
+
+    .chat-bubble .code-inline {
+    font-size: 15px;
+  }
+
+  pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em
+}
+
+  code.hljs {
+    padding: 3px 5px
+  }
+
+  .hljs {
+    background: #1d1f21;
+    color: #c5c8c6
+  }
+  .hljs::selection,
+  .hljs span::selection {
+    background: #373b41
+  }
+  .hljs::-moz-selection,
+  .hljs span::-moz-selection {
+    background: #373b41
+  }
+  .hljs-title,
+  .hljs-name {
+    color: #f0c674
+  }
+  .hljs-comment,
+  .hljs-meta,
+  .hljs-meta .hljs-keyword {
+    color: #707880
+  }
+  .hljs-number,
+  .hljs-symbol,
+  .hljs-literal,
+  .hljs-deletion,
+  .hljs-link {
+    color: #cc6666
+  }
+  .hljs-string,
+  .hljs-doctag,
+  .hljs-addition,
+  .hljs-regexp,
+  .hljs-selector-attr,
+  .hljs-selector-pseudo {
+    color: #b5bd68
+  }
+  .hljs-attribute,
+  .hljs-code,
+  .hljs-selector-id {
+    color: #b294bb
+  }
+  .hljs-keyword,
+  .hljs-selector-tag,
+  .hljs-bullet,
+  .hljs-tag {
+    color: #81a2be
+  }
+  .hljs-subst,
+  .hljs-variable,
+  .hljs-template-tag,
+  .hljs-template-variable {
+    color: #8abeb7
+  }
+  .hljs-type,
+  .hljs-built_in,
+  .hljs-quote,
+  .hljs-section,
+  .hljs-selector-class {
+    color: #de935f
+  }
+  .hljs-emphasis {
+    font-style: italic
+  }
+  .hljs-strong {
+    font-weight: bold
+  }
+</style><div class="slider-container isHidden" style="display: none;"><div class="header"><img class="clickable" src="chrome-extension://aeldeepjdhhldhbgfodleiodmeegnacm/icons/settings.svg" alt="settings"><h1 class="logo"><span class="blue-text">PhotoSolve</span></h1><img class="clickable" src="chrome-extension://aeldeepjdhhldhbgfodleiodmeegnacm/icons/exit.svg" alt="exit"></div><div class="chatbox"><div class="hero"><p>Hi <span class="blue-text">There!</span> 👋<br>Good Morning!</p><p class="welcome">Welcome to AI tutor. Ask me about ...</p></div><div class="file-type"><div class="file-card screenshot clickable"><img src="chrome-extension://aeldeepjdhhldhbgfodleiodmeegnacm/icons/crop.svg" alt="crop"><p>Screenshot</p><p>Capture an image from your screen.</p></div><div class="file-card attachment clickable" role="presentation" tabindex="0"><input accept="image/*,.png,.gif,.jpeg,.jpg,application/pdf,.pdf" multiple="" type="file" tabindex="-1" style="display: none;"><img src="chrome-extension://aeldeepjdhhldhbgfodleiodmeegnacm/icons/img-pdf.svg" alt="img-pdf"><p>Attachment</p><p>Drag and drop here to upload a file.</p></div></div><div class="example-query"><div class="example-card clickable"><div class="example"><p>Design a database schema</p><p>for an online merch store</p></div><i class="fa-solid fa-arrow-right"></i></div><div class="example-card clickable"><div class="example"><p>Make a content strategy</p><p>for local weekend events</p></div><i class="fa-solid fa-arrow-right"></i></div></div></div><div class="input-section"><div class="toolbar"><div class="radio-buttons"><div style="position: relative; display: inline-block;"><div style="position: absolute; border-radius: 0.5rem; box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px; z-index: 50; padding: 0.4rem; background-color: white; opacity: 0; visibility: hidden; transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out; width: 182px; top: -60px; left: 0%; color: black;">Image Vision only available to PRO subscribers</div><div class="gpt radio-button"><p>Image Vision</p><label class="switch_stealth_mode"><input type="checkbox" id="stealth_mode_toggle" disabled=""><span class="slider round"></span></label></div></div><div style="position: relative; display: inline-block;"><div style="position: absolute; border-radius: 0.5rem; box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px; z-index: 50; padding: 0.4rem; background-color: white; opacity: 0; visibility: hidden; transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out; width: 154px; top: -60px; left: 0%; color: black;">Wolfram only available to PRO subscribers</div><div class="wolfram radio-button"><p>Wolfram</p><label class="switch_stealth_mode"><input type="checkbox" id="stealth_mode_toggle" disabled=""><span class="slider round"></span></label></div></div></div><div class="tools"><div style="position: relative; display: inline-block;"><div style="position: absolute; border-radius: 0.5rem; box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px; z-index: 50; padding: 0.4rem; background-color: white; opacity: 0; visibility: hidden; transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out; width: 80px; white-space: nowrap; bottom: 100%; left: 50%; transform: translateX(-50%); margin-bottom: 5px; color: black; font-size: 12px; font-weight: 400;">Screenshot</div><img class="clickable" src="chrome-extension://aeldeepjdhhldhbgfodleiodmeegnacm/icons/crop-chatbox.svg" alt="crop"></div><div style="position: relative; display: inline-block;"><div style="position: absolute; border-radius: 0.5rem; box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px; z-index: 50; padding: 0.4rem; background-color: white; opacity: 0; visibility: hidden; transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out; width: 80px; white-space: nowrap; bottom: 100%; left: 50%; transform: translateX(-50%); margin-bottom: 5px; color: black; font-size: 12px; font-weight: 400;">Upload File</div><div role="presentation" tabindex="0"><img class="clickable" src="chrome-extension://aeldeepjdhhldhbgfodleiodmeegnacm/icons/uploadfile-chatbox.svg" alt="pdf"><input accept="image/*,.png,.gif,.jpeg,.jpg,application/pdf,.pdf" multiple="" type="file" tabindex="-1" style="display: none;"></div></div><div style="border-left: 2px solid rgb(226, 226, 226); height: 20px;"></div><div style="position: relative; display: inline-block;"><div style="position: absolute; border-radius: 0.5rem; box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px; z-index: 50; padding: 0.4rem; background-color: white; opacity: 0; visibility: hidden; transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out; width: 80px; white-space: nowrap; bottom: 100%; left: 50%; transform: translateX(-50%); margin-bottom: 5px; color: black; font-size: 12px; font-weight: 400;">New Chat</div><img class="clickable" src="chrome-extension://aeldeepjdhhldhbgfodleiodmeegnacm/icons/addconvo-chatbox.svg" alt="addconvo"></div></div></div><div class="text-input"><textarea name="text-input" id="text-area" placeholder="Ask me a question..."></textarea><div class="buttons"><img class="clickable" src="chrome-extension://aeldeepjdhhldhbgfodleiodmeegnacm/icons/mic-disabled.svg" alt="microphone"><img class="clickable" src="chrome-extension://aeldeepjdhhldhbgfodleiodmeegnacm/icons/send.svg" alt="send"></div></div><footer><p class="copyright"></p><div class="status"><div class="point status-card"><img src="chrome-extension://aeldeepjdhhldhbgfodleiodmeegnacm/icons/thunder.svg" alt="thunder"><p>0</p></div><div class="subscription status-card clickable"><p>PRO</p></div></div></footer></div></div></template></div></html>
