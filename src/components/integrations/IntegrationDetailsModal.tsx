@@ -4,34 +4,39 @@ import { IntegrationItem } from "./IntegrationCard";
 
 interface IntegrationDetailsModalProps {
   isOpen: boolean;
-  item: IntegrationItem | null;
+  integration: IntegrationItem | null;
   onClose: () => void;
-  onToggle: (id: string) => void;
+  onToggleConnected: (id: string) => void;
 }
 
 export const IntegrationDetailsModal: React.FC<IntegrationDetailsModalProps> = ({
   isOpen,
-  item,
+  integration,
   onClose,
-  onToggle,
+  onToggleConnected,
 }) => {
-  if (!isOpen || !item) return null;
+  if (!isOpen || !integration) return null;
 
   return (
     <div className="fixed inset-0 z-99999 flex items-center justify-center bg-gray-900/50 backdrop-blur-xs p-4">
       <div className="w-full max-w-lg rounded-3xl bg-white p-6 shadow-2xl dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
-        {/* Modal Header */}
         <div className="flex items-center justify-between pb-4 border-b border-gray-100 dark:border-gray-800">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gray-50 p-2 dark:bg-gray-800">
-              {item.icon}
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700">
+              {integration.logo}
             </div>
             <div>
               <h3 className="text-base font-bold text-gray-900 dark:text-white">
-                {item.name} Integration
+                {integration.name}
               </h3>
-              <span className={`text-[11px] font-semibold ${item.connected ? "text-emerald-500" : "text-gray-400"}`}>
-                {item.connected ? "Connected & Active" : "Not Connected"}
+              <span
+                className={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-semibold ${
+                  integration.connected
+                    ? "bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400"
+                    : "bg-gray-100 text-gray-500 dark:bg-gray-800 dark:text-gray-400"
+                }`}
+              >
+                {integration.connected ? "Connected" : "Disconnected"}
               </span>
             </div>
           </div>
@@ -47,51 +52,51 @@ export const IntegrationDetailsModal: React.FC<IntegrationDetailsModalProps> = (
           </button>
         </div>
 
-        {/* Modal Body */}
-        <div className="mt-5 space-y-4 text-xs">
+        <div className="mt-6 space-y-4 text-xs text-gray-600 dark:text-gray-300">
           <div>
-            <span className="font-semibold text-gray-700 dark:text-gray-300">Description:</span>
-            <p className="mt-1 text-gray-500 dark:text-gray-400 leading-relaxed">
-              {item.description}
+            <h4 className="font-semibold text-gray-900 dark:text-white mb-1">About Integration</h4>
+            <p className="leading-relaxed text-gray-500 dark:text-gray-400">
+              {integration.description}
             </p>
           </div>
 
-          <div className="rounded-2xl border border-gray-100 bg-gray-50 p-4 dark:border-gray-800 dark:bg-gray-800/40 space-y-3">
-            <div className="flex items-center justify-between">
-              <span className="font-medium text-gray-700 dark:text-gray-300">Auto Sync</span>
-              <span className="text-emerald-500 font-semibold">Enabled</span>
+          <div className="rounded-xl bg-gray-50 p-4 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800 space-y-2">
+            <div className="flex justify-between">
+              <span className="text-gray-500 dark:text-gray-400">Category:</span>
+              <span className="font-medium text-gray-800 dark:text-gray-200">{integration.category}</span>
             </div>
-            <div className="flex items-center justify-between">
-              <span className="font-medium text-gray-700 dark:text-gray-300">Webhook Status</span>
-              <span className="text-gray-500 dark:text-gray-400">Listening on /v1/webhooks</span>
+            <div className="flex justify-between">
+              <span className="text-gray-500 dark:text-gray-400">Permissions:</span>
+              <span className="font-medium text-gray-800 dark:text-gray-200">Read & Write Access</span>
             </div>
-            <div className="flex items-center justify-between">
-              <span className="font-medium text-gray-700 dark:text-gray-300">Last Synced</span>
-              <span className="text-gray-500 dark:text-gray-400">2 minutes ago</span>
+            <div className="flex justify-between">
+              <span className="text-gray-500 dark:text-gray-400">Sync Status:</span>
+              <span className="font-medium text-gray-800 dark:text-gray-200">Auto-sync (Realtime)</span>
             </div>
           </div>
         </div>
 
-        {/* Modal Footer */}
-        <div className="flex items-center justify-between pt-6 mt-6 border-t border-gray-100 dark:border-gray-800">
-          <button
-            type="button"
-            onClick={() => onToggle(item.id)}
-            className={`rounded-xl px-4 py-2.5 text-xs font-medium transition ${
-              item.connected
-                ? "bg-rose-50 text-rose-600 hover:bg-rose-100 dark:bg-rose-500/10 dark:text-rose-400"
-                : "bg-brand-500 text-white hover:bg-brand-600"
-            }`}
-          >
-            {item.connected ? "Disconnect App" : "Connect App"}
-          </button>
-
+        <div className="flex items-center justify-end gap-3 pt-6 mt-6 border-t border-gray-100 dark:border-gray-800">
           <button
             type="button"
             onClick={onClose}
             className="rounded-xl border border-gray-200 bg-white px-5 py-2.5 text-xs font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 transition"
           >
             Close
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              onToggleConnected(integration.id);
+              onClose();
+            }}
+            className={`rounded-xl px-5 py-2.5 text-xs font-medium text-white transition ${
+              integration.connected
+                ? "bg-rose-500 hover:bg-rose-600"
+                : "bg-brand-500 hover:bg-brand-600"
+            }`}
+          >
+            {integration.connected ? "Disconnect" : "Connect Integration"}
           </button>
         </div>
       </div>

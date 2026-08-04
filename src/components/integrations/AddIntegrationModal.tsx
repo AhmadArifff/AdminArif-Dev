@@ -4,7 +4,7 @@ import React, { useState } from "react";
 interface AddIntegrationModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onAddIntegration: (name: string, description: string) => void;
+  onAddIntegration: (name: string, description: string, category: string) => void;
 }
 
 export const AddIntegrationModal: React.FC<AddIntegrationModalProps> = ({
@@ -13,6 +13,7 @@ export const AddIntegrationModal: React.FC<AddIntegrationModalProps> = ({
   onAddIntegration,
 }) => {
   const [name, setName] = useState("");
+  const [category, setCategory] = useState("Communications");
   const [description, setDescription] = useState("");
 
   if (!isOpen) return null;
@@ -22,7 +23,8 @@ export const AddIntegrationModal: React.FC<AddIntegrationModalProps> = ({
     if (!name.trim()) return;
     onAddIntegration(
       name.trim(),
-      description.trim() || "Integrate seamlessly with your workspace."
+      description.trim() || `Integrate ${name.trim()} to streamline your workspace productivity.`,
+      category
     );
     setName("");
     setDescription("");
@@ -50,7 +52,7 @@ export const AddIntegrationModal: React.FC<AddIntegrationModalProps> = ({
         <form onSubmit={handleSubmit} className="mt-6 space-y-5">
           <div>
             <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-2">
-              Application Name <span className="text-rose-500">*</span>
+              Integration Service Name <span className="text-rose-500">*</span>
             </label>
             <input
               type="text"
@@ -64,14 +66,30 @@ export const AddIntegrationModal: React.FC<AddIntegrationModalProps> = ({
 
           <div>
             <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-2">
-              Short Description
+              Category
+            </label>
+            <select
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-xs text-gray-800 outline-none focus:border-brand-500 focus:bg-white dark:border-gray-800 dark:bg-gray-900/60 dark:text-white dark:focus:border-brand-500"
+            >
+              <option value="Communications">Communications & Video</option>
+              <option value="Marketing">Email & Marketing</option>
+              <option value="Project Management">Project Management & Productivity</option>
+              <option value="Developer Tools">Developer & Issue Tracking</option>
+            </select>
+          </div>
+
+          <div>
+            <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-2">
+              Description
             </label>
             <textarea
               rows={3}
-              placeholder="Brief summary of how this integration helps your workflow..."
+              placeholder="Briefly describe what this integration will be used for..."
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-xs text-gray-800 outline-none focus:border-brand-500 focus:bg-white dark:border-gray-800 dark:bg-gray-900/60 dark:text-white dark:focus:border-brand-500 resize-none"
+              className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-xs text-gray-800 outline-none focus:border-brand-500 focus:bg-white dark:border-gray-800 dark:bg-gray-900/60 dark:text-white dark:focus:border-brand-500"
             />
           </div>
 
@@ -87,7 +105,7 @@ export const AddIntegrationModal: React.FC<AddIntegrationModalProps> = ({
               type="submit"
               className="rounded-xl bg-brand-500 px-5 py-2.5 text-xs font-medium text-white hover:bg-brand-600 transition"
             >
-              Connect App
+              Connect Integration
             </button>
           </div>
         </form>
