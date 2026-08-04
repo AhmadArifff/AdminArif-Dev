@@ -128,6 +128,7 @@ const navItems: NavItem[] = [
     icon: <PageIcon />,
     subItems: [
       { name: "File Manager", path: "/file-manager", pro: true },
+      { name: "Pricing Tables", path: "/pricing-tables", pro: true },
       { name: "Blank Page", path: "/blank", pro: false },
       { name: "404 Error", path: "/error-404", pro: false },
     ],
