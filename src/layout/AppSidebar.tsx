@@ -193,6 +193,7 @@ const supportItems: NavItem[] = [
     new: true,
     subItems: [
       { name: "Ticket List", path: "/support-tickets", pro: false },
+      { name: "Ticket Reply", path: "/ticket-reply", pro: false },
     ],
   },
 ];
