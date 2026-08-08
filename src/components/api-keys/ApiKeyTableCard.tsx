@@ -45,7 +45,7 @@ export const ApiKeyTableCard: React.FC<ApiKeyTableCardProps> = ({
             API Keys
           </h3>
           <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
-            API keys are used to authentication requests to the tailadmin API
+            API keys are used to authentication requests to the AdminArif API
           </p>
         </div>
 

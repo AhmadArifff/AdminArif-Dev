@@ -36,7 +36,7 @@ export const FaqThree: React.FC = () => {
               &#10539;
             </span>
             <h4 className="text-sm font-bold text-gray-900 dark:text-white">
-              Can I Customize TailAdmin to suit my needs?
+              Can I Customize AdminArif to suit my needs?
             </h4>
           </div>
           <p className="text-xs leading-relaxed text-gray-500 dark:text-gray-400">

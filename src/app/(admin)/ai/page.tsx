@@ -7,8 +7,8 @@ import { AiAnalytics } from "@/components/ai/AiAnalytics";
 import { RecentTransactions } from "@/components/ai/RecentTransactions";
 
 export const metadata: Metadata = {
-  title: "AI Dashboard | Next.js TailAdmin Template",
-  description: "This is the AI Dashboard for TailAdmin Template",
+  title: "AI Dashboard | Next.js AdminArif Template",
+  description: "This is the AI Dashboard for AdminArif Template",
 };
 
 export default function AiDashboard() {

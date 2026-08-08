@@ -14,7 +14,7 @@ const initialMessages: ThreadMessage[] = [
     senderAvatar: "/images/user/user-01.jpg",
     timestamp: "Mon, 3:20 PM (2 hrs ago)",
     content:
-      "Hi TailAdmin Team, I hope you're doing well. I'm currently working on customizing the TailAdmin dashboard and would like to add a new section labeled \"Reports.\" Before I proceed, I wanted to check if there's any official guide or best practice you recommend for adding custom pages within the TailAdmin structure.",
+      "Hi AdminArif Team, I hope you're doing well. I'm currently working on customizing the AdminArif dashboard and would like to add a new section labeled \"Reports.\" Before I proceed, I wanted to check if there's any official guide or best practice you recommend for adding custom pages within the AdminArif structure.",
     isCustomer: true,
   },
 ];
@@ -26,8 +26,8 @@ export const TicketReplyLayout: React.FC = () => {
   const handleSendReply = (replyText: string) => {
     const newMessage: ThreadMessage = {
       id: Date.now().toString(),
-      senderName: "TailAdmin Support Team",
-      senderEmail: "support@tailadmin.com",
+      senderName: "AdminArif Support Team",
+      senderEmail: "support@adminarif.dev",
       senderAvatar: "/images/user/owner.png",
       timestamp: "Just now",
       content: replyText,

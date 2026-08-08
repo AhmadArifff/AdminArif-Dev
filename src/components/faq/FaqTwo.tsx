@@ -31,7 +31,7 @@ const leftFaqs: FaqItem[] = [
 const rightFaqs: FaqItem[] = [
   {
     id: "r1",
-    question: "Can I Customize TailAdmin to suit my needs?",
+    question: "Can I Customize AdminArif to suit my needs?",
     answer:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis magna ac nibh malesuada consectetur at vitae ipsum orem ipsum dolor sit amet, consectetur adipiscing elit nam fermentum, leo et lacinia accumsan.",
   },
@@ -51,7 +51,7 @@ const rightFaqs: FaqItem[] = [
     id: "r4",
     question: "Are there dark and light mode options?",
     answer:
-      "Yes! All TailAdmin components natively support seamless dark and light mode switching.",
+      "Yes! All AdminArif components natively support seamless dark and light mode switching.",
   },
 ];
 

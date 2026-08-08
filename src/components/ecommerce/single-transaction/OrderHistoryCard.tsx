@@ -23,7 +23,7 @@ export const OrderHistoryCard: React.FC = () => {
           <div className="flex flex-1 justify-between text-sm">
             <div>
               <p className="font-semibold text-gray-800 dark:text-white">Checkout Started</p>
-              <p className="text-xs text-gray-500 dark:text-gray-400">via tailadmin.com</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">via adminarif.dev</p>
             </div>
             <div className="text-right text-xs text-gray-400 dark:text-gray-500">
               <p>12:54</p>

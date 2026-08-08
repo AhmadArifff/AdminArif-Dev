@@ -10,7 +10,7 @@ export const SingleInvoiceHeader = () => {
  <nav>
   <ol className="flex items-center gap-1.5">
    <li>
-    <a className="inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400" data-discover="true" href="https://react-demo.tailadmin.com/">
+    <a className="inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400" data-discover="true" href="#">
      Home
      <svg className="stroke-current" fill="none" height="16" viewBox="0 0 17 16" width="17" xmlns="http://www.w3.org/2000/svg">
       <path d="M6.0765 12.667L10.2432 8.50033L6.0765 4.33366" stroke="" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.2">

@@ -11,7 +11,7 @@ export const InvoicesOverview = () => {
    </h2>
   </div>
   <div>
-   <a className="bg-brand-500 shadow-theme-xs hover:bg-brand-600 inline-flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium text-white transition" data-discover="true" href="https://react-demo.tailadmin.com/create-invoice">
+   <a className="bg-brand-500 shadow-theme-xs hover:bg-brand-600 inline-flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium text-white transition" data-discover="true" href="#">
     <svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
      <path d="M5 10.0002H15.0006M10.0002 5V15.0006" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5">
      </path>

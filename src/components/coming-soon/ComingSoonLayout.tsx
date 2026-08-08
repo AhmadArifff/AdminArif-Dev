@@ -20,7 +20,7 @@ export const ComingSoonLayout: React.FC = () => {
             </svg>
           </div>
           <span className="text-xl font-bold text-gray-900 dark:text-white">
-            TailAdmin
+            AdminArif
           </span>
         </div>
 

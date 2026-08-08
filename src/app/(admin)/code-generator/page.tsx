@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import CodeGeneratorLayout from "@/components/code-generator/CodeGeneratorLayout";
 
 export const metadata: Metadata = {
-  title: "AI Code Generator | TailAdmin - Next.js Dashboard Template",
-  description: "This is AI Code Generator page for TailAdmin - Next.js Tailwind CSS Admin Dashboard Template",
+  title: "AI Code Generator | AdminArif - Next.js Dashboard Template",
+  description: "This is AI Code Generator page for AdminArif - Next.js Tailwind CSS Admin Dashboard Template",
 };
 
 export default function CodeGeneratorPage() {

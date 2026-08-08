@@ -22,9 +22,9 @@ const mockFaqsOne: FaqItem[] = [
   },
   {
     id: "3",
-    question: "Can I Customize TailAdmin to suit my needs?",
+    question: "Can I Customize AdminArif to suit my needs?",
     answer:
-      "Yes, TailAdmin is highly customizable and modular. You can adjust theme colors, components, icons, and layout structures to fit your product requirements perfectly.",
+      "Yes, AdminArif is highly customizable and modular. You can adjust theme colors, components, icons, and layout structures to fit your product requirements perfectly.",
   },
   {
     id: "4",

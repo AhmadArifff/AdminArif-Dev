@@ -63,7 +63,7 @@ export const ChatSidebar = () => {
               <li className="group relative rounded-full px-3 py-1.5 hover:bg-gray-50 dark:hover:bg-gray-950">
                 <div className="flex cursor-pointer items-center justify-between">
                   <a
-                    href="https://react-demo.tailadmin.com/image-generator#"
+                    href="#"
                     className="block truncate text-sm text-gray-700 dark:text-gray-400"
                   >
                     Write a follow-up email to a client
@@ -93,7 +93,7 @@ export const ChatSidebar = () => {
               <li className="group relative rounded-full px-3 py-1.5 hover:bg-gray-50 dark:hover:bg-gray-950">
                 <div className="flex cursor-pointer items-center justify-between">
                   <a
-                    href="https://react-demo.tailadmin.com/image-generator#"
+                    href="#"
                     className="block truncate text-sm text-gray-700 dark:text-gray-400"
                   >
                     Generate responsive login form layout
@@ -123,7 +123,7 @@ export const ChatSidebar = () => {
               <li className="group relative rounded-full px-3 py-1.5 hover:bg-gray-50 dark:hover:bg-gray-950">
                 <div className="flex cursor-pointer items-center justify-between">
                   <a
-                    href="https://react-demo.tailadmin.com/image-generator#"
+                    href="#"
                     className="block truncate text-sm text-gray-700 dark:text-gray-400"
                   >
                     Create a warning state modal
@@ -153,7 +153,7 @@ export const ChatSidebar = () => {
               <li className="group relative rounded-full px-3 py-1.5 hover:bg-gray-50 dark:hover:bg-gray-950">
                 <div className="flex cursor-pointer items-center justify-between">
                   <a
-                    href="https://react-demo.tailadmin.com/image-generator#"
+                    href="#"
                     className="block truncate text-sm text-gray-700 dark:text-gray-400"
                   >
                     Suggest color palette for dark theme
@@ -190,7 +190,7 @@ export const ChatSidebar = () => {
               <li className="group relative rounded-full px-3 py-1.5 hover:bg-gray-50 dark:hover:bg-gray-950">
                 <div className="flex cursor-pointer items-center justify-between">
                   <a
-                    href="https://react-demo.tailadmin.com/image-generator#"
+                    href="#"
                     className="block truncate text-sm text-gray-700 dark:text-gray-400"
                   >
                     Improve login page accessibility
@@ -220,7 +220,7 @@ export const ChatSidebar = () => {
               <li className="group relative rounded-full px-3 py-1.5 hover:bg-gray-50 dark:hover:bg-gray-950">
                 <div className="flex cursor-pointer items-center justify-between">
                   <a
-                    href="https://react-demo.tailadmin.com/image-generator#"
+                    href="#"
                     className="block truncate text-sm text-gray-700 dark:text-gray-400"
                   >
                     Create a warning state modal with animation
@@ -250,7 +250,7 @@ export const ChatSidebar = () => {
               <li className="group relative rounded-full px-3 py-1.5 hover:bg-gray-50 dark:hover:bg-gray-950">
                 <div className="flex cursor-pointer items-center justify-between">
                   <a
-                    href="https://react-demo.tailadmin.com/image-generator#"
+                    href="#"
                     className="block truncate text-sm text-gray-700 dark:text-gray-400"
                   >
                     Add password visibility toggle
@@ -280,7 +280,7 @@ export const ChatSidebar = () => {
               <li className="group relative rounded-full px-3 py-1.5 hover:bg-gray-50 dark:hover:bg-gray-950">
                 <div className="flex cursor-pointer items-center justify-between">
                   <a
-                    href="https://react-demo.tailadmin.com/image-generator#"
+                    href="#"
                     className="block truncate text-sm text-gray-700 dark:text-gray-400"
                   >
                     Write validation logic for login form...
@@ -310,7 +310,7 @@ export const ChatSidebar = () => {
               <li className="group relative rounded-full px-3 py-1.5 hover:bg-gray-50 dark:hover:bg-gray-950">
                 <div className="flex cursor-pointer items-center justify-between">
                   <a
-                    href="https://react-demo.tailadmin.com/image-generator#"
+                    href="#"
                     className="block truncate text-sm text-gray-700 dark:text-gray-400"
                   >
                     Fix mobile responsiveness of login UI...

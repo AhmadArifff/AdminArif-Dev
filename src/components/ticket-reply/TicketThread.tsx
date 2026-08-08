@@ -21,7 +21,7 @@ export const TicketThread: React.FC<TicketThreadProps> = ({ messages }) => {
       {/* Top Guide Note Thread */}
       <div className="text-xs text-gray-500 dark:text-gray-400 space-y-2 leading-relaxed border-b border-gray-100 dark:border-gray-800 pb-6">
         <p>
-          Thanks for reaching out! It's great to hear you're customizing TailAdmin for your project. Adding custom pages like a "Reports" section is straightforward. Here's a quick guide to help you get started:
+          Thanks for reaching out! It's great to hear you're customizing AdminArif for your project. Adding custom pages like a "Reports" section is straightforward. Here's a quick guide to help you get started:
         </p>
         <p className="font-semibold text-gray-700 dark:text-gray-300 pt-1">
           To include your new page in the sidebar:
